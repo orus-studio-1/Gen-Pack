@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import CTAButton from "./CTAButton";
 
@@ -12,6 +13,10 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const isDarkText = scrolled || !isHomePage;
 
   const { scrollY } = useScroll();
 
@@ -50,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={`fixed top-0 sm:top-4 inset-x-0 z-50 select-none transition-all duration-300 ${
-        scrolled
+        isDarkText
           ? "bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-md text-gray-900 py-1"
           : "bg-transparent text-white py-2"
       } ${className}`}
@@ -61,14 +66,14 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         <a href="/" className="flex items-center gap-1 group cursor-pointer shrink-0">
           <span
             className={`text-2xl md:text-3xl font-bold tracking-tight font-urbanist transition-colors duration-300 ${
-              scrolled ? "text-gray-900" : "text-white"
+              isDarkText ? "text-gray-900" : "text-white"
             }`}
           >
             Genpact
           </span>
           <span
             className={`w-5 h-5 md:w-5.5 md:h-5.5 rounded border flex items-center justify-center -mt-2 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
-              scrolled
+              isDarkText
                 ? "border-gray-900 text-gray-900"
                 : "border-white/80 text-white"
             }`}
@@ -95,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               key={link.label}
               href={link.href}
               className={`font-medium text-sm xl:text-base tracking-wide transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all after:duration-300 ${
-                scrolled
+                isDarkText
                   ? "text-gray-800 hover:text-orange-600"
                   : "text-slate-100 hover:text-white"
               }`}
@@ -121,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`lg:hidden focus:outline-none p-2 rounded-lg backdrop-blur-md border transition-colors duration-300 ${
-              scrolled
+              isDarkText
                 ? "text-gray-900 bg-gray-100 border-gray-300"
                 : "text-white bg-black/20 border-white/20"
             }`}
@@ -176,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             exit={{ opacity: 0, height: 0, y: -10 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className={`lg:hidden w-full backdrop-blur-xl border-b px-6 py-6 overflow-hidden shadow-2xl ${
-              scrolled
+              isDarkText
                 ? "bg-white/95 border-gray-200 text-gray-900"
                 : "bg-[#1c1817]/95 border-white/10 text-white"
             }`}
@@ -191,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.25, delay: index * 0.05 }}
                   className={`font-medium text-base tracking-wide transition-colors py-1 ${
-                    scrolled
+                    isDarkText
                       ? "text-gray-800 hover:text-orange-600"
                       : "text-white hover:text-orange-400"
                   }`}
