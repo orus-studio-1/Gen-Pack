@@ -188,4 +188,40 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   initial={{ opacity: 0, x: -16 }}
-            
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.25, delay: index * 0.05 }}
+                  className={`font-medium text-base tracking-wide transition-colors py-1 ${
+                    scrolled
+                      ? "text-gray-800 hover:text-orange-600"
+                      : "text-white hover:text-orange-400"
+                  }`}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </nav>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25, delay: navLinks.length * 0.05 }}
+              className="pt-4 sm:hidden"
+            >
+              <CTAButton
+                label="Get a Quote"
+                href="#quote"
+                variant="solid"
+                size="sm"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
+};
+
+export default Navbar;
+
+
+
