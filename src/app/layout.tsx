@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
+import Navbar from "@/components/landing_page/Navbar";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -23,7 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={urbanist.variable}>
       <body className="font-urbanist antialiased bg-slate-950 text-slate-100 overflow-x-hidden selection:bg-orange-500 selection:text-white">
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <Navbar />
+
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

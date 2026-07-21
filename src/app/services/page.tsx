@@ -16,9 +16,6 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main className="w-full min-h-screen relative bg-[#f4f4f6] selection:bg-orange-500 selection:text-white">
-      {/* Shared Navbar */}
-      <Navbar />
-
       {/* Services Hero */}
       <ServicesHero />
 

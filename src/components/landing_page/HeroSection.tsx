@@ -34,7 +34,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Top Navbar overlapping the Top Pattern */}
-      <Navbar />
 
       {/* Main Content Area */}
       <div className="w-full h-full flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-28 sm:pt-32 md:pt-36 pb-12 relative z-20 max-w-[1500px] mx-auto">

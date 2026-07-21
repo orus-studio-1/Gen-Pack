@@ -6,6 +6,7 @@ import ServicesSection from "@/components/landing_page/ServicesSection";
 import IndustriesSection from "@/components/landing_page/IndustriesSection";
 import TestimonialsSection from "@/components/landing_page/TestimonialsSection";
 import Footer from "@/components/landing_page/Footer";
+import Navbar from "@/components/landing_page/Navbar";
 
 export default function Home() {
   return (
