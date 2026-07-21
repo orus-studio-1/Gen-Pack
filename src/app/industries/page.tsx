@@ -15,17 +15,13 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
     return (
         <main className="w-full min-h-screen relative bg-white selection:bg-orange-500 selection:text-white">
-            {/* 1. Primary Section: Tailored to your Industry */}
             <TailoredIndustriesHero />
 
-            {/* 2. Industries We Serve Section */}
             <WhyExpertiseMattersSection />
             <IndustriesWeServeSection />
             <TestimonialsSection />
 
-            {/* 3. Why Industry Expertise Matters Section */}
 
-            {/* 4. Shared Footer */}
             <Footer />
         </main>
     );
