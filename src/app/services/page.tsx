@@ -5,6 +5,7 @@ import Footer from "@/components/landing_page/Footer";
 import ServicesHero from "@/components/services/ServicesHero";
 import CoreCapabilities from "@/components/services/CoreCapabilities";
 import WhatSetsUsApart from "@/components/services/WhatSetsUsApart";
+import OurProcess from "@/components/services/OurProcess";
 
 export const metadata: Metadata = {
   title: "Services | Genpact - Transport & Logistics",
@@ -26,6 +27,9 @@ export default function ServicesPage() {
 
       {/* What Sets Us Apart Section */}
       <WhatSetsUsApart />
+
+      {/* Our Process Section */}
+      <OurProcess />
 
       {/* Shared Footer */}
       <Footer />
