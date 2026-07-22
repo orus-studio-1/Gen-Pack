@@ -1,0 +1,46 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import CTAButton from "@/components/landing_page/CTAButton";
+
+export const FleetCTA: React.FC = () => {
+  return (
+    <section className="w-full py-24 md:py-36 bg-[#1c1817] text-white relative overflow-hidden border-t border-white/10">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto flex flex-col items-center"
+        >
+          <div className="inline-flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-orange-400 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8 bg-orange-500/10">
+            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+            <span>BOOK FLEET CAPACITY</span>
+          </div>
+
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold font-urbanist text-white tracking-tight mb-6 leading-tight">
+            Need reliable fleet capacity for your cargo?
+          </h2>
+
+          <p className="text-lg sm:text-2xl text-slate-300 font-urbanist mb-10 max-w-2xl leading-relaxed">
+            Reserve dedicated trucks, semi-trailers, or refrigerated units tailored to your exact scheduling and route needs across Europe & the US.
+          </p>
+
+          <CTAButton
+            label="Request Fleet Availability"
+            href="#quote"
+            variant="solid"
+            size="lg"
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default FleetCTA;

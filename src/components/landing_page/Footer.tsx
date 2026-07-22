@@ -163,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 </li>
                 <li>
                   <a
-                    href="#fleet"
+                    href="/our-fleet"
                     className="hover:text-white transition-colors"
                   >
                     Our Fleet
