@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={`fixed inset-x-0 z-50 pt-6 pb-6 select-none transition-all duration-300 ${isDarkText
           ? "bg-white backdrop-blur-md border-b border-gray-200/80 shadow-md text-gray-900 py-1"
-          : "bg-white text-white py-2"
+          : "bg-transparent text-white py-2"
           } ${className}`}
       >
         {/* Navbar Container */}
