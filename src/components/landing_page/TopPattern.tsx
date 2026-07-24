@@ -123,7 +123,7 @@ export const TopPattern: React.FC<TopPatternProps> = ({
   strokeColor = "white",
   opacity = 0.4,
   duration = 35,
-  tileSize = "h-20 sm:h-24 md:h-28 lg:h-24 w-20 sm:w-24 md:w-28 lg:w-24",
+  tileSize = "h-16 sm:h-20 md:h-24 lg:h-24 w-16 sm:w-20 md:w-24 lg:w-24",
   strokeWidth = 10,
   animated = true,
 }) => {
@@ -131,8 +131,8 @@ export const TopPattern: React.FC<TopPatternProps> = ({
 
   if (!animated) {
     return (
-      <div className={`w-full overflow-hidden pointer-events-none select-none ${className}`}>
-        <div className="flex flex-nowrap w-max">
+      <div className={`w-full max-w-full overflow-hidden pointer-events-none select-none relative ${className}`}>
+        <div className="flex flex-nowrap w-max overflow-hidden">
           {items.map((_, idx) => (
             <PatternTile
               key={`static-${idx}`}
@@ -148,7 +148,7 @@ export const TopPattern: React.FC<TopPatternProps> = ({
   }
 
   return (
-    <div className={`w-full overflow-hidden pointer-events-none select-none ${className}`}>
+    <div className={`w-full max-w-full overflow-hidden pointer-events-none select-none relative ${className}`}>
       <motion.div
         animate={{ x: ["-50%", "0%"] }}
         transition={{

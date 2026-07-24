@@ -247,68 +247,68 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   const [selectedFlute, setSelectedFlute] = useState(0);
 
   return (
-    <main className="w-full min-h-screen bg-white text-[#1c1817] selection:bg-orange-500 selection:text-white">
+    <main className="w-full min-h-screen bg-white text-[#1c1817] selection:bg-orange-500 selection:text-white overflow-x-hidden">
 
       {/* ─── Breadcrumb Strip ─── */}
-      <section className="w-full pt-28 md:pt-36 pb-4 bg-white">
-        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-          <nav className="flex items-center gap-2 text-xs sm:text-sm text-[#999999] font-urbanist">
+      <section className="w-full pt-24 sm:pt-28 md:pt-36 pb-3 sm:pb-4 bg-white">
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
+          <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#999999] font-urbanist flex-wrap">
             <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
             <span>/</span>
             <Link href="/product" className="hover:text-orange-500 transition-colors">Products</Link>
             <span>/</span>
-            <span className="text-[#1c1817] font-semibold">{product.name}</span>
+            <span className="text-[#1c1817] font-semibold truncate max-w-[200px] sm:max-w-none">{product.name}</span>
           </nav>
         </div>
       </section>
 
       {/* ─── Hero: Product Title + Visual ─── */}
-      <section className="w-full pb-16 md:pb-24 bg-white">
-        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            
+      <section className="w-full pb-12 sm:pb-16 md:pb-24 bg-white">
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-20 items-start">
+
             {/* Left: Title Block */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="lg:col-span-5 pt-4"
+              className="lg:col-span-5 pt-2 sm:pt-4"
             >
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
                 <svg className="w-3.5 h-3.5 text-orange-500 shrink-0" viewBox="0 0 16 16" fill="none">
                   <circle cx="8" cy="8" r="6" stroke="#f97316" strokeWidth="2.5" />
                   <circle cx="8" cy="8" r="2" fill="#f97316" />
                 </svg>
-                <span className="font-bold text-xs md:text-sm tracking-[0.25em] uppercase text-[#1c1817]">
+                <span className="font-bold text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] uppercase text-[#1c1817]">
                   {product.category}
                 </span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight font-urbanist text-[#1c1817] leading-none mb-6">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight font-urbanist text-[#1c1817] leading-[1.08] mb-4 sm:mb-6">
                 {product.name}
               </h1>
 
-              <p className="text-lg sm:text-xl text-[#555555] font-normal font-urbanist leading-relaxed max-w-md mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-[#555555] font-normal font-urbanist leading-relaxed max-w-md mb-6 sm:mb-8">
                 {product.tagline}
               </p>
 
               {/* Quick Stats Row */}
-              <div className="grid grid-cols-2 gap-x-8 gap-y-5 text-[#1c1817] font-urbanist mb-10">
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 sm:gap-6 text-[#1c1817] font-urbanist mb-8 sm:mb-10 bg-slate-50 sm:bg-transparent p-4 sm:p-0 rounded-2xl border sm:border-0 border-slate-200/80">
                 <div>
-                  <p className="text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-1">ECT Rating</p>
-                  <p className="text-2xl font-bold">{product.ectRating}</p>
+                  <p className="text-[10px] sm:text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-0.5 sm:mb-1">ECT Rating</p>
+                  <p className="text-lg sm:text-2xl font-bold truncate">{product.ectRating}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-1">Stack Load</p>
-                  <p className="text-2xl font-bold">{product.maxStackingLoad}</p>
+                  <p className="text-[10px] sm:text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-0.5 sm:mb-1">Stack Load</p>
+                  <p className="text-lg sm:text-2xl font-bold truncate">{product.maxStackingLoad}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-1">Burst Strength</p>
-                  <p className="text-2xl font-bold">{product.mullenBurst}</p>
+                  <p className="text-[10px] sm:text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-0.5 sm:mb-1">Burst Strength</p>
+                  <p className="text-lg sm:text-2xl font-bold truncate">{product.mullenBurst}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-1">Board Thickness</p>
-                  <p className="text-2xl font-bold">{product.boardThickness}</p>
+                  <p className="text-[10px] sm:text-xs font-bold tracking-widest text-[#999999] uppercase font-mono mb-0.5 sm:mb-1">Board Thickness</p>
+                  <p className="text-lg sm:text-2xl font-bold truncate">{product.boardThickness}</p>
                 </div>
               </div>
 
@@ -325,9 +325,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
               initial={{ opacity: 0, scale: 0.98, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              className="lg:col-span-7 relative"
+              className="lg:col-span-7 relative w-full"
             >
-              <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden bg-[#f4f4f6] border border-[#e5e5e5] p-8 md:p-12 flex items-center justify-center aspect-[4/3] max-h-[560px]">
+              <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden bg-[#f4f4f6] border border-[#e5e5e5] p-4 sm:p-8 md:p-12 flex items-center justify-center min-h-[260px] sm:min-h-[380px] max-h-[560px]">
                 <ProductBoxVisual slug={product.slug} isHovered={true} viewMode="3d" className="bg-transparent border-0" />
               </div>
             </motion.div>
@@ -336,29 +336,29 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         </div>
       </section>
 
-      {/* ─── Description Section ─── bg-[#e8e8ea] matching WhatSetsUsApart */}
-      <section className="w-full py-20 md:py-32 bg-[#e8e8ea] text-[#1c1817] font-urbanist select-none">
-        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      {/* ─── Description Section ─── */}
+      <section className="w-full py-14 sm:py-20 md:py-32 bg-[#e8e8ea] text-[#1c1817] font-urbanist select-none">
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-20 items-start">
 
             {/* Left: Sticky Title */}
             <div className="lg:col-span-5 lg:sticky lg:top-36 self-start">
-              <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
+              <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-2 sm:mb-4 font-mono">
                 PRODUCT OVERVIEW
               </p>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.06]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.08]">
                 About This Product.
               </h2>
             </div>
 
             {/* Right: Scrollable Content */}
-            <div className="lg:col-span-7 space-y-10">
+            <div className="lg:col-span-7 space-y-8 sm:space-y-10">
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-lg sm:text-xl text-[#333333] font-normal leading-relaxed font-urbanist"
+                className="text-base sm:text-lg md:text-xl text-[#333333] font-normal leading-relaxed font-urbanist"
               >
                 {product.longDescription}
               </motion.p>
@@ -369,24 +369,23 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="border-t border-black/10 pt-8"
+                className="border-t border-black/10 pt-6 sm:pt-8"
               >
-                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
-                  MATERIAL GRADE: {product.materialGrade}
+                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-3 font-mono">
+                  MATERIAL GRADE: <span className="text-[#1c1817]">{product.materialGrade}</span>
                 </p>
-                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
+                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-3 font-mono">
                   AVAILABLE FLUTE PROFILES
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {product.fluteTypes.map((flute, idx) => (
                     <button
                       key={flute}
                       onClick={() => setSelectedFlute(idx)}
-                      className={`px-4 py-2 rounded-full text-sm font-semibold font-urbanist transition-all border ${
-                        selectedFlute === idx
-                          ? "bg-[#1c1817] text-white border-[#1c1817]"
-                          : "bg-transparent text-[#1c1817] border-[#999999] hover:border-[#1c1817]"
-                      }`}
+                      className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold font-urbanist transition-all border ${selectedFlute === idx
+                        ? "bg-[#1c1817] text-white border-[#1c1817] shadow-sm"
+                        : "bg-transparent text-[#1c1817] border-[#999999] hover:border-[#1c1817]"
+                        }`}
                     >
                       {flute}
                     </button>
@@ -400,14 +399,14 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="border-t border-black/10 pt-8"
+                className="border-t border-black/10 pt-6 sm:pt-8"
               >
-                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
+                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-3 font-mono">
                   COMMON APPLICATIONS
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {product.commonUses.map((use) => (
-                    <span key={use} className="px-4 py-2 rounded-full text-sm font-medium font-urbanist text-[#1c1817] border border-[#cccccc] bg-white">
+                    <span key={use} className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium font-urbanist text-[#1c1817] border border-[#cccccc] bg-white shadow-2xs">
                       {use}
                     </span>
                   ))}
@@ -420,14 +419,14 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="border-t border-black/10 pt-8"
+                className="border-t border-black/10 pt-6 sm:pt-8"
               >
-                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
+                <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-3 font-mono">
                   INDUSTRIES SERVED
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {product.industries.map((ind) => (
-                    <span key={ind} className="px-4 py-2 rounded-full text-sm font-medium font-urbanist text-[#1c1817] border border-[#cccccc] bg-white">
+                    <span key={ind} className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium font-urbanist text-[#1c1817] border border-[#cccccc] bg-white shadow-2xs">
                       {ind}
                     </span>
                   ))}
@@ -439,40 +438,40 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         </div>
       </section>
 
-      {/* ─── Key Features – matches WhatSetsUsApart layout ─── */}
-      <section className="w-full py-20 md:py-32 bg-white text-[#1c1817] font-urbanist select-none">
-        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      {/* ─── Key Features ─── */}
+      <section className="w-full py-14 sm:py-20 md:py-32 bg-white text-[#1c1817] font-urbanist select-none">
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-20 items-start">
 
             <div className="lg:col-span-5 lg:sticky lg:top-36 self-start">
-              <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
+              <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-2 sm:mb-4 font-mono">
                 WHY CHOOSE THIS PRODUCT
               </p>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.06]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.08]">
                 Key Features.
               </h2>
             </div>
 
-            <div className="lg:col-span-7 flex flex-col space-y-10 sm:space-y-14">
+            <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-10">
               {product.features.map((feat, index) => (
                 <motion.div
                   key={feat.title}
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.2 }}
-                  transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6 items-center border-b border-black/10 pb-8 sm:pb-10 last:border-b-0"
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+                  className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6 items-start sm:items-center border-b border-black/10 pb-6 sm:pb-8 last:border-b-0"
                 >
-                  <div className="sm:col-span-5 flex items-center gap-4">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ff5500" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                  <div className="sm:col-span-5 flex items-center gap-3 sm:gap-4">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5500" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                       <path d="M5 4v16" /><path d="M5 12h14" /><path d="M13 6l6 6-6 6" />
                     </svg>
-                    <span className="text-xl sm:text-2xl font-bold font-urbanist text-[#1c1817] leading-snug">
+                    <span className="text-lg sm:text-xl md:text-2xl font-bold font-urbanist text-[#1c1817] leading-snug">
                       {feat.title}
                     </span>
                   </div>
-                  <div className="sm:col-span-7">
-                    <p className="text-base sm:text-lg text-[#333333] font-normal leading-relaxed font-urbanist">
+                  <div className="sm:col-span-7 pl-8 sm:pl-0">
+                    <p className="text-sm sm:text-base md:text-lg text-[#333333] font-normal leading-relaxed font-urbanist">
                       {feat.desc}
                     </p>
                   </div>
@@ -484,95 +483,113 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         </div>
       </section>
 
-      {/* ─── Assembly Guide – matches OurProcess timeline style ─── */}
-      <section className="w-full py-20 md:py-32 bg-white text-[#1c1817] font-urbanist select-none">
-        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+      {/* ─── Assembly Guide – Fully Responsive Timeline ─── */}
+      <section className="w-full py-14 sm:py-20 md:py-32 bg-[#fafafa] text-[#1c1817] font-urbanist select-none border-t border-slate-200/80">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
 
-          <div className="text-center mb-16 md:mb-24 max-w-2xl mx-auto">
-            <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-3 font-mono">
+          <div className="text-center mb-12 sm:mb-16 md:mb-24 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-2 sm:mb-3 font-mono">
               HOW TO ASSEMBLE
             </p>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-urbanist text-[#1c1817] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-urbanist text-[#1c1817] tracking-tight">
               Assembly Guide
             </h2>
           </div>
 
-          {/* Timeline Steps */}
-          <div className="relative w-full max-w-5xl mx-auto">
-            {/* Center vertical line */}
-            <svg className="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 h-full pointer-events-none z-0" width="24" height="100%" preserveAspectRatio="none">
+          {/* Desktop Timeline (>= md) */}
+          <div className="hidden md:block relative w-full max-w-5xl mx-auto">
+            <svg className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 h-full pointer-events-none z-0" width="24" height="100%" preserveAspectRatio="none">
               <line x1="4" y1="0" x2="4" y2="100%" stroke="#e2e8f0" strokeWidth="1" />
-              <motion.line x1="12" y1="0" x2="12" y2="100%" stroke="#cbd5e1" strokeWidth="1.2" strokeDasharray="8 6" animate={{ strokeDashoffset: [0, -14] }} transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }} />
+              <motion.line x1="12" y1="0" x2="12" y2="100%" stroke="#f97316" strokeWidth="1.5" strokeDasharray="8 6" animate={{ strokeDashoffset: [0, -14] }} transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }} />
               <line x1="20" y1="0" x2="20" y2="100%" stroke="#e2e8f0" strokeWidth="1" />
             </svg>
 
-            <div className="space-y-16 md:space-y-28 relative z-10">
+            <div className="space-y-20 relative z-10">
               {product.assemblySteps.map((step, index) => {
                 const isRight = index % 2 === 0;
                 return (
                   <motion.div
                     key={step.step}
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                    className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-16 items-start"
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                    className="grid grid-cols-2 gap-16 items-center"
                   >
-                    <div className={`flex flex-col ${isRight ? "md:opacity-0 md:pointer-events-none hidden md:flex" : "md:items-end md:text-right"}`}>
-                      {!isRight && (
-                        <>
-                          <div className="flex items-center gap-2 mb-2 justify-end">
-                            <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">0{step.step}</span>
-                            <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-500 bg-transparent shrink-0" />
-                          </div>
-                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">{step.title}</h3>
-                          <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-sm">{step.desc}</p>
-                        </>
-                      )}
-                    </div>
-                    <div className={`flex flex-col ${!isRight ? "md:opacity-0 md:pointer-events-none hidden md:flex" : "md:items-start md:text-left"}`}>
-                      {isRight && (
-                        <>
+                    {isRight ? (
+                      <>
+                        <div />
+                        <div className="flex flex-col text-left">
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-500 bg-transparent shrink-0" />
-                            <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">0{step.step}</span>
+                            <span className="w-3 h-3 rounded-full border-2 border-orange-500 bg-white shrink-0" />
+                            <span className="text-xs font-bold tracking-widest text-orange-600 font-mono">STEP 0{step.step}</span>
                           </div>
-                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">{step.title}</h3>
-                          <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-sm">{step.desc}</p>
-                        </>
-                      )}
-                    </div>
-                    {/* Mobile fallback */}
-                    <div className="md:hidden flex flex-col -mt-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-500 bg-transparent shrink-0" />
-                        <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">0{step.step}</span>
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">{step.title}</h3>
-                      <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-urbanist">{step.desc}</p>
-                    </div>
+                          <h3 className="text-2xl md:text-3xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">{step.title}</h3>
+                          <p className="text-base md:text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-md">{step.desc}</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex flex-col items-end text-right">
+                          <div className="flex items-center gap-2 mb-2 justify-end">
+                            <span className="text-xs font-bold tracking-widest text-orange-600 font-mono">STEP 0{step.step}</span>
+                            <span className="w-3 h-3 rounded-full border-2 border-orange-500 bg-white shrink-0" />
+                          </div>
+                          <h3 className="text-2xl md:text-3xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">{step.title}</h3>
+                          <p className="text-base md:text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-md">{step.desc}</p>
+                        </div>
+                        <div />
+                      </>
+                    )}
                   </motion.div>
                 );
               })}
             </div>
           </div>
 
+          {/* Mobile Timeline (< md) */}
+          <div className="block md:hidden relative pl-6 border-l-2 border-dashed border-orange-500/40 space-y-8 ml-2">
+            {product.assemblySteps.map((step, index) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, x: -15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="relative"
+              >
+                <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-white border-2 border-orange-500 flex items-center justify-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                </div>
+                <span className="text-xs font-bold tracking-widest text-orange-600 font-mono block mb-1">
+                  STEP 0{step.step}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold font-urbanist text-[#1c1817] mb-1.5 leading-snug">
+                  {step.title}
+                </h3>
+                <p className="text-sm sm:text-base text-[#555555] font-normal leading-relaxed font-urbanist">
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </section>
 
-      {/* ─── CTA Section – same as FleetCTA / AboutCTA ─── */}
-      <section className="w-full py-24 md:py-36 bg-[#1c1817] text-white relative overflow-hidden border-t border-white/10 select-none font-urbanist">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
-        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24 relative z-10 text-center">
+      {/* ─── CTA Section ─── */}
+      <section className="w-full py-16 sm:py-24 md:py-36 bg-orange-500/5 text-black relative overflow-hidden border-t border-white/10 select-none font-urbanist">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[350px] bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-4xl mx-auto flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-orange-400 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8 bg-orange-500/10">
+            <div className="inline-flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-black border border-orange-500/30 rounded-full px-3.5 py-1.5 mb-6 sm:mb-8 bg-orange-500/10">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
               <span>CUSTOM PACKAGING</span>
             </div>
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold font-urbanist text-white tracking-tight mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-urbanist text-white tracking-tight mb-4 sm:mb-6 leading-tight">
               Ready to order {product.name}?
             </h2>
-            <p className="text-lg sm:text-2xl text-slate-300 font-urbanist mb-10 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl text-black font-urbanist mb-8 sm:mb-10 max-w-2xl leading-relaxed">
               Get a tailored quote with custom sizing, printing, and volume pricing. Our specialists respond within 4 hours.
             </p>
             <CTAButton label="Get a Custom Quote" href="/contact" variant="solid" size="lg" />

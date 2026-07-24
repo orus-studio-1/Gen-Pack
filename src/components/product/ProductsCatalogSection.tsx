@@ -206,14 +206,75 @@ export const ProductsCatalogSection: React.FC = () => {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <section className="w-full bg-[#fafafa] text-slate-900 py-16 sm:py-20 md:py-24 font-urbanist">
+    <section className="w-full bg-[#fafafa] text-slate-900 py-10 sm:py-16 md:py-24 font-urbanist">
       <div className="w-full max-w-[1450px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
         
         {/* Layout Grid: Left Sidebar Filter + Right Product Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
           
-          {/* Left Sidebar Filter Section (Matching mockups image 1, 2, 3) */}
-          <div className="lg:col-span-3 bg-white p-6 sm:p-7 rounded-2xl border border-gray-200 shadow-sm sticky top-28 space-y-6">
+          {/* Mobile Filter Section (< lg) */}
+          <div className="lg:hidden w-full bg-white p-4 sm:p-5 rounded-2xl border border-gray-200 shadow-sm space-y-4">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight font-urbanist">
+                  All Products
+                </h2>
+                <span className="text-xs text-slate-500">
+                  Showing {filteredProducts.length} items
+                </span>
+              </div>
+              {(selectedCategory !== "All" || searchQuery !== "") && (
+                <button
+                  onClick={() => {
+                    setSelectedCategory("All");
+                    setSearchQuery("");
+                  }}
+                  className="text-xs text-orange-600 hover:underline font-semibold"
+                >
+                  Reset Filters
+                </button>
+              )}
+            </div>
+
+            {/* Mobile Search Bar */}
+            <div className="relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products..."
+                className="w-full text-xs sm:text-sm px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl focus:outline-none focus:border-orange-500 focus:bg-white transition-colors"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 text-xs"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+
+            {/* Horizontal Scrollable Category Pills */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-none -mx-1 px-1">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`text-xs px-3.5 py-1.5 rounded-full border font-medium whitespace-nowrap transition-all ${
+                    selectedCategory === cat
+                      ? "bg-slate-900 text-white border-slate-900 shadow-sm"
+                      : "bg-slate-50 text-slate-600 border-gray-200 hover:bg-slate-100 hover:text-slate-900"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Left Sidebar Filter Section (>= lg) */}
+          <div className="hidden lg:block lg:col-span-3 bg-white p-6 sm:p-7 rounded-2xl border border-gray-200 shadow-sm sticky top-28 space-y-6">
             <div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-urbanist">
                 All Products
@@ -314,8 +375,8 @@ export const ProductsCatalogSection: React.FC = () => {
           {/* Right Product Cards Grid Section */}
           <div className="lg:col-span-9">
             {filteredProducts.length === 0 ? (
-              <div className="w-full bg-white rounded-2xl border border-gray-200 p-12 text-center">
-                <p className="text-slate-500 text-base font-medium">
+              <div className="w-full bg-white rounded-2xl border border-gray-200 p-8 sm:p-12 text-center">
+                <p className="text-slate-500 text-sm sm:text-base font-medium">
                   No products matched your search filter query &ldquo;{searchQuery}&rdquo;.
                 </p>
                 <button
@@ -329,7 +390,7 @@ export const ProductsCatalogSection: React.FC = () => {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7">
                 {filteredProducts.map((product) => (
                   <ProductCard
                     key={product.id}

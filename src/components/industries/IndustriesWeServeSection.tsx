@@ -88,16 +88,16 @@ export const IndustriesWeServeSection: React.FC = () => {
   const remainingCards = serveCards.slice(1);
 
   return (
-    <section className="relative w-full bg-[#fdeee9] text-[#1c1817] py-20 sm:py-28 lg:py-32 font-urbanist select-none overflow-hidden">
+    <section className="relative w-full bg-[#fdeee9] text-[#1c1817] py-14 sm:py-28 lg:py-32 font-urbanist select-none overflow-hidden">
 
       {/* Container */}
-      <div className="relative z-10 w-full max-w-[1500px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
 
         {/* Top 2-Column Grid: Header on Left, Card 1 (Food & Beverage) on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-start mb-6 sm:mb-8 lg:mb-10">
 
           {/* Header Block (Top Left) */}
-          <div className="relative pt-4 sm:pt-6 pr-0 lg:pr-6 pb-6">
+          <div className="relative pt-2 sm:pt-6 pr-0 lg:pr-6 pb-4 sm:pb-6">
 
             {/* Soft Background Vertical Pattern Tile Watermark behind text */}
             <div className="absolute top-0 -left-6 w-48 sm:w-60 h-60 pointer-events-none z-0 opacity-20 overflow-hidden">
@@ -116,7 +116,7 @@ export const IndustriesWeServeSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="flex items-center gap-2 mb-4"
+                className="flex items-center gap-2 mb-3 sm:mb-4"
               >
                 <span className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
                   <span className="w-1 h-1 rounded-full bg-orange-600" />
@@ -132,7 +132,7 @@ export const IndustriesWeServeSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="text-4xl sm:text-5xl lg:text-[4rem] font-bold tracking-tight text-[#1c1817] leading-[1.08] mb-5"
+                className="text-3xl xs:text-4xl sm:text-5xl lg:text-[4rem] font-bold tracking-tight text-[#1c1817] leading-[1.08] mb-3 sm:mb-5"
               >
                 <span className="block">Industries</span>
                 <span className="block">We Serve</span>
@@ -144,7 +144,7 @@ export const IndustriesWeServeSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-md"
+                className="text-sm sm:text-lg text-slate-700 font-normal leading-relaxed max-w-md"
               >
                 Each industry has its own logistics DNA — we tailor our services to meet yours with precision, reliability, and care.
               </motion.p>

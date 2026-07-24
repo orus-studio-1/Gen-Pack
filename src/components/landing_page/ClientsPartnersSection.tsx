@@ -47,9 +47,9 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
 
   return (
     <section
-      className={`w-full bg-[#f4f4f4] py-10 flex justify-center items-center flex-col  sm:py-14 border-t border-b border-gray-200/60 overflow-hidden font-urbanist select-none ${className}`}
+      className={`w-full bg-[#f4f4f4] py-10 sm:py-14 border-t border-b border-gray-200/60 overflow-hidden font-urbanist select-none ${className}`}
     >
-      <div className="w-[98%] sm:w-[95%] lg:w-[80%] md:w-[90%] mb-6 sm:mb-8 flex justify-start">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 mb-6 sm:mb-8 flex justify-start">
         {/* Top-left Badge Indicator */}
         <div className="flex items-center gap-2">
           <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
@@ -62,7 +62,7 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
       </div>
 
       {/* Moving Marquee Container */}
-      <div className="w-[98%] sm:w-[95%] md:w-[90%] lg:w-[80%] overflow-hidden flex pointer-events-none">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 overflow-hidden flex pointer-events-none">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{

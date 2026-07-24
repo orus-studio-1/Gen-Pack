@@ -308,13 +308,13 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({
   ];
 
   return (
-    <section className={`relative w-full bg-white text-gray-900 py-20 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
-      <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <section className={`relative w-full bg-white text-gray-900 py-14 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Column: Badge, Title, Subtitle, & CTA Button */}
           <div className="lg:col-span-5 max-w-xl">
             {/* Upper Badge */}
-            <div className="flex items-center gap-2 mb-4 sm:mb-5">
+            <div className="flex items-center gap-2 mb-3 sm:mb-5">
               <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
                 <div className="w-1 h-1 rounded-full bg-orange-500" />
               </div>
@@ -323,22 +323,22 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({
               </span>
             </div>
 
-            {/* Headline using font-semibold as requested */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-gray-900 leading-[1.1]">
+            {/* Headline */}
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-gray-900 leading-[1.08]">
               <span className="block">{titleLine1}</span>
               <span className="block">{titleLine2}</span>
             </h2>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-gray-600 font-normal mt-5 leading-relaxed max-w-md">
+            <p className="text-sm sm:text-lg text-gray-600 font-normal mt-3 sm:mt-5 leading-relaxed max-w-md">
               {subtitle}
             </p>
 
             {/* CTA Button */}
-            <div className="pt-10">
+            <div className="pt-6 sm:pt-10">
               <CTAButton
                 label="Know More About Us"
-                href="#about"
+                href="/about-us"
                 variant="outline"
                 size="sm"
                 textColor="text-gray-900"
@@ -348,7 +348,7 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({
           </div>
 
           {/* Right Column: 2x2 Feature Cards Grid */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 pt-2 sm:pt-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               {cards.map((card) => (
                 <div

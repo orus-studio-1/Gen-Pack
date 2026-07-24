@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const ProductsHero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-[500px] md:min-h-[580px] pt-32 md:pt-40 pb-20 flex items-center justify-center overflow-hidden bg-slate-950 text-white select-none">
+    <section className="relative w-full min-h-[420px] sm:min-h-[500px] md:min-h-[580px] pt-28 sm:pt-36 md:pt-40 pb-14 sm:pb-20 flex items-center justify-center overflow-hidden bg-slate-950 text-white select-none">
       {/* Background Image Overlay with Industrial Warehouse Cardboard Packaging atmosphere */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 scale-105 transition-transform duration-1000"
@@ -19,34 +19,34 @@ export const ProductsHero: React.FC = () => {
       <div className="absolute inset-0 bg-radial-vignette opacity-50" />
 
       {/* Hero Content Container */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 text-center flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-8 text-center flex flex-col items-center">
         {/* Animated Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-xs font-semibold uppercase tracking-widest mb-6 backdrop-blur-md shadow-lg"
+          className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-6 backdrop-blur-md shadow-lg"
         >
-          <span className="w-2 h-2 rounded-full bg-orange-500 animate-ping" />
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-orange-500 animate-ping" />
           <span>PRECISION PACKAGING SOLUTIONS</span>
         </motion.div>
 
-        {/* Main Heading matching image 1 */}
+        {/* Main Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight font-urbanist text-white drop-shadow-md"
+          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight font-urbanist text-white drop-shadow-md"
         >
           Our Products
         </motion.h1>
 
-        {/* Subtitle matching image 1 */}
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="mt-6 text-lg sm:text-xl md:text-2xl text-slate-200 max-w-2xl font-light font-urbanist leading-relaxed drop-shadow"
+          className="mt-4 sm:mt-6 text-base sm:text-xl md:text-2xl text-slate-200 max-w-2xl font-light font-urbanist leading-relaxed drop-shadow"
         >
           From corrugated boxes and shipping cartons to custom-printed packaging.
         </motion.p>

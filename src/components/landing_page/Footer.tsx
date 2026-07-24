@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import TopPattern from "./TopPattern";
 import CTAButton from "./CTAButton";
 
@@ -33,20 +34,20 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24 py-16 sm:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 py-12 sm:py-20 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           {/* Left Block (Logo, Newsletter, Connect) */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-10">
             <div>
               {/* Logo */}
-              <div className="flex items-center gap-1">
-                <span className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+              <Link href="/" className="inline-flex items-center gap-1 group">
+                <span className="text-4xl sm:text-5xl font-bold tracking-tight text-white group-hover:text-orange-400 transition-colors">
                   Genpact
                 </span>
-                <span className="text-3xl sm:text-4xl font-bold text-orange-500">
+                <span className="text-3xl sm:text-4xl font-bold text-orange-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
                   ↗
                 </span>
-              </div>
+              </Link>
 
               {/* Newsletter Block */}
               <div className="mt-8 sm:mt-10">
@@ -142,40 +143,56 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                     houston@genpact.com
                   </a>
                 </li>
-                <li className="pt-1">+31 23 732 600</li>
-                <li>+1 713 5976172</li>
+                <li className="pt-1">
+                  <a href="tel:+3123732600" className="hover:text-orange-400 transition-colors">
+                    +31 23 732 600
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+17135976172" className="hover:text-orange-400 transition-colors">
+                    +1 713 5976172
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Services Column */}
             <div>
               <h4 className="text-lg font-semibold text-white mb-4 sm:mb-5">
-                Services
+                Services & Products
               </h4>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li>
-                  <a
-                    href="#services"
-                    className="hover:text-white transition-colors"
+                  <Link
+                    href="/services"
+                    className="hover:text-orange-400 transition-colors"
                   >
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    href="/product"
+                    className="hover:text-orange-400 transition-colors"
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/our-fleet"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-orange-400 transition-colors"
                   >
                     Our Fleet
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#industries"
-                    className="hover:text-white transition-colors"
+                  <Link
+                    href="/industries"
+                    className="hover:text-orange-400 transition-colors"
                   >
                     Industries
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -187,56 +204,34 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               </h4>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li>
-                  <a
-                    href="#about"
-                    className="hover:text-white transition-colors"
+                  <Link
+                    href="/"
+                    className="hover:text-orange-400 transition-colors"
                   >
-                    About Us
-                  </a>
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#contact"
-                    className="hover:text-white transition-colors"
+                  <Link
+                    href="/about-us"
+                    className="hover:text-orange-400 transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="hover:text-orange-400 transition-colors"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom Copyright Strip */}
-      {/* <div className="w-full bg-[#282322] border-t border-gray-800/80 py-5">
-        <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-          <div>
-            © Copyright 2025 - Made by{" "}
-            <a
-              href="#"
-              className="underline hover:text-white transition-colors"
-            >
-              JBStudio
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="#"
-              className="underline hover:text-white transition-colors"
-            >
-              Get Template
-            </a>
-            <span>-</span>
-            <a
-              href="#"
-              className="underline hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </a>
-          </div>
-        </div>
-      </div> */}
     </footer>
   );
 };

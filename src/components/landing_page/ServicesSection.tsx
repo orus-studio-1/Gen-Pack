@@ -64,22 +64,22 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   ];
 
   return (
-    <section className={`relative w-full bg-white text-gray-900 py-20 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
-      <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+    <section className={`relative w-full bg-white text-gray-900 py-14 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-start">
           {/* Left Column: Sticky Title & Subtitle */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start pt-6 sm:pt-10 pb-8">
-            <h2 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-gray-900 leading-[1]">
+          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start pt-2 sm:pt-10 pb-4 sm:pb-8">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-gray-900 leading-[1.08]">
               <span className="block">{titleLine1}</span>
               <span className="block">{titleLine2}</span>
             </h2>
-            <p className="text-base sm:text-lg text-gray-800 font-normal mt-5 leading-relaxed max-w-md">
+            <p className="text-sm sm:text-lg text-gray-800 font-normal mt-3 sm:mt-5 leading-relaxed max-w-md">
               {subtitle}
             </p>
           </div>
 
           {/* Right Column: Scrollable Services Stack (Starting at Bottom Offset) */}
-          <div className="lg:col-span-7 pt-12 lg:pt-[35vh] space-y-16 sm:space-y-24 pb-20">
+          <div className="lg:col-span-7 pt-4 lg:pt-[35vh] space-y-12 sm:space-y-24 pb-12 sm:pb-20">
             {services.map((service) => (
               <motion.div
                 key={service.id}
@@ -90,7 +90,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 className="flex flex-col"
               >
                 {/* Number Badge */}
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-2 sm:mb-3">
                   <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
                     <div className="w-1 h-1 rounded-full bg-orange-500" />
                   </div>
@@ -100,12 +100,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 </div>
 
                 {/* Service Title */}
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-6">
+                <h3 className="text-xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-4 sm:mb-6">
                   {service.title}
                 </h3>
 
                 {/* Service Card Image */}
-                <div className="relative w-full h-[300px] sm:h-[380px] md:h-[460px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-gray-100/80 group">
+                <div className="relative w-full h-[220px] sm:h-[340px] md:h-[460px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-gray-100/80 group">
                   <Image
                     src={service.imageSrc}
                     alt={service.alt}

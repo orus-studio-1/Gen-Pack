@@ -51,18 +51,18 @@ const industriesList: IndustryCardData[] = [
 
 export const TailoredIndustriesHero: React.FC = () => {
   return (
-    <section className="w-full pt-28 md:pt-36 pb-20 md:pb-28 bg-white text-[#1c1817] font-urbanist select-none overflow-hidden">
-      <div className="w-full max-w-[1500px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
+    <section className="w-full pt-24 sm:pt-28 md:pt-36 pb-14 sm:pb-20 md:pb-28 bg-white text-[#1c1817] font-urbanist select-none overflow-hidden">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
         
         {/* Header Section matching screenshot */}
-        <div className="flex flex-col items-center text-center mb-10 md:mb-14">
+        <div className="flex flex-col items-center text-center mb-8 sm:mb-10 md:mb-14">
           
           {/* Top Target Badge */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex items-center gap-2 mb-4"
+            className="flex items-center gap-2 mb-3 sm:mb-4"
           >
             <span className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
               <span className="w-1 h-1 rounded-full bg-orange-600" />
@@ -77,7 +77,7 @@ export const TailoredIndustriesHero: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold tracking-tight text-[#1c1817] leading-[1.08] max-w-4xl"
+            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold tracking-tight text-[#1c1817] leading-[1.08] max-w-4xl"
           >
             Tailored to your Industry.
           </motion.h1>
@@ -87,7 +87,7 @@ export const TailoredIndustriesHero: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-base sm:text-lg md:text-xl text-slate-600 font-normal mt-4 md:mt-5 max-w-2xl leading-relaxed"
+            className="text-sm sm:text-lg md:text-xl text-slate-600 font-normal mt-3 sm:mt-4 md:mt-5 max-w-2xl leading-relaxed"
           >
             From perishable foods to high-value electronics. Loginord crafts specialized supply-chain solutions that fit your requirements and regulations.
           </motion.p>
@@ -118,7 +118,7 @@ const IndustryCard: React.FC<{ item: IndustryCardData; index: number }> = ({ ite
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.35 + index * 0.08 }}
-      className="group relative w-full h-[360px] sm:h-[420px] md:h-[460px] lg:h-[500px] xl:h-[540px] rounded-2xl md:rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-slate-900 cursor-pointer"
+      className="group relative w-full h-[280px] sm:h-[380px] md:h-[460px] lg:h-[500px] xl:h-[540px] rounded-2xl md:rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-slate-900 cursor-pointer"
     >
       <Image
         src={imgSrc}

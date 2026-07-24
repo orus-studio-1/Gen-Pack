@@ -66,37 +66,37 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
   ];
 
   return (
-    <section className={`relative w-full bg-[#1c1817] text-white py-20 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
+    <section className={`relative w-full bg-[#1c1817] text-white py-14 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
       {/* Background Vertical Static Chevron SVG Arrow Column on Left */}
-      <div className="absolute top-0 left-0 w-64 md:w-80 h-full pointer-events-none z-0 opacity-40 overflow-hidden flex flex-col items-center pt-8">
+      <div className="absolute top-0 left-0 w-48 sm:w-64 md:w-80 h-full pointer-events-none z-0 opacity-40 overflow-hidden flex flex-col items-center pt-8">
         {Array.from({ length: 8 }).map((_, i) => (
           <VerticalPatternTile
             key={`v-pattern-${i}`}
             strokeColor="#7c2410"
             strokeWidth={7}
             opacity={0.6}
-            tileSize="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72"
+            tileSize="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72"
           />
         ))}
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-start">
           {/* Left Column: Sticky Title, Subtitle, & CTA Button */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start pt-6 sm:pt-10 pb-8 flex flex-col justify-between min-h-[460px]">
+          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start pt-2 sm:pt-10 pb-4 sm:pb-8 flex flex-col justify-between min-h-0 lg:min-h-[460px]">
             <div>
-              <h2 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-white leading-[1.08]">
+              <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-white leading-[1.08]">
                 <span className="block">{titleLine1}</span>
                 <span className="block">{titleLine2}</span>
               </h2>
-              <p className="text-base sm:text-lg text-slate-300 font-normal mt-5 leading-relaxed max-w-md">
+              <p className="text-sm sm:text-lg text-slate-300 font-normal mt-3 sm:mt-5 leading-relaxed max-w-md">
                 {subtitle}
               </p>
             </div>
 
             {/* Bottom Left CTA Button */}
-            <div className="pt-10">
+            <div className="pt-6 sm:pt-10">
               <CTAButton
                 label="Know Our Industries"
                 href="#industries"
@@ -106,8 +106,8 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Scrollable Industry Cards (Starting at Bottom Offset) */}
-          <div className="lg:col-span-7 pt-12 lg:pt-[35vh] space-y-12 sm:space-y-20 pb-20">
+          {/* Right Column: Scrollable Industry Cards */}
+          <div className="lg:col-span-7 pt-4 lg:pt-[35vh] space-y-8 sm:space-y-20 pb-12 sm:pb-20">
             {industries.map((ind) => (
               <motion.div
                 key={ind.id}
