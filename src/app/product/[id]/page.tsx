@@ -247,7 +247,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   const [selectedFlute, setSelectedFlute] = useState(0);
 
   return (
-    <main className="w-full min-h-screen bg-white text-[#1c1817] selection:bg-orange-500 selection:text-white overflow-x-hidden">
+    <main className="w-full min-h-screen bg-white text-[#1c1817] selection:bg-orange-500 selection:text-white overflow-x-clip">
 
       {/* ─── Breadcrumb Strip ─── */}
       <section className="w-full pt-24 sm:pt-28 md:pt-36 pb-3 sm:pb-4 bg-white">

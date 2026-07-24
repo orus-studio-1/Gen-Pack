@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
     return (
-        <main className="w-full max-w-full min-h-screen relative bg-white selection:bg-orange-500 selection:text-white overflow-x-hidden">
+        <main className="w-full max-w-full min-h-screen relative bg-white selection:bg-orange-500 selection:text-white overflow-x-clip">
             <TailoredIndustriesHero />
             <WhyExpertiseMattersSection />
             <IndustriesWeServeSection />

@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={urbanist.variable}>
-      <body className="font-urbanist antialiased bg-slate-950 text-slate-100 overflow-x-hidden selection:bg-orange-500 selection:text-white">
+      <body className="font-urbanist antialiased bg-slate-950 text-slate-100 overflow-x-clip selection:bg-orange-500 selection:text-white">
         <SmoothScroll>
           <Navbar />
 

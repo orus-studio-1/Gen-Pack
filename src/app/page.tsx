@@ -10,7 +10,7 @@ import Navbar from "@/components/landing_page/Navbar";
 
 export default function Home() {
   return (
-    <main className="w-full max-w-full min-h-screen relative bg-[#1c1817] overflow-x-hidden">
+    <main className="w-full max-w-full min-h-screen relative bg-[#1c1817] overflow-x-clip">
       <HeroSection />
       <QuickFactsSection />
       <ClientsPartnersSection />
