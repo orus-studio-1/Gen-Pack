@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import TailoredIndustriesHero from "@/components/industries/TailoredIndustriesHero";
 import IndustriesWeServeSection from "@/components/industries/IndustriesWeServeSection";
 import WhyExpertiseMattersSection from "@/components/industries/WhyExpertiseMattersSection";
-import Footer from "@/components/landing_page/Footer";
+
 import TestimonialsSection from "@/components/landing_page/TestimonialsSection";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function IndustriesPage() {
             <WhyExpertiseMattersSection />
             <IndustriesWeServeSection />
             <TestimonialsSection />
-            <Footer />
+
         </main>
     );
 }

@@ -4,7 +4,7 @@ import FleetHero from "@/components/fleet/FleetHero";
 import FleetByTheNumbers from "@/components/fleet/FleetByTheNumbers";
 import FleetCategoriesAccordion from "@/components/fleet/FleetCategoriesAccordion";
 import ConnectedFleetSection from "@/components/fleet/ConnectedFleetSection";
-import Footer from "@/components/landing_page/Footer";
+
 
 export const metadata: Metadata = {
     title: "Our Fleet | Genpact - Transport & Logistics",
@@ -19,7 +19,7 @@ export default function OurFleetPage() {
             <FleetByTheNumbers />
             <FleetCategoriesAccordion />
             <ConnectedFleetSection />
-            <Footer />
+
         </main>
     );
 }

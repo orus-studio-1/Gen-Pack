@@ -2,8 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import ProductsHero from "@/components/product/ProductsHero";
 import ProductsCatalogSection from "@/components/product/ProductsCatalogSection";
+import ProductInfoSections from "@/components/product/ProductInfoSections";
 import ProductSpecsCTA from "@/components/product/ProductSpecsCTA";
-import Footer from "@/components/landing_page/Footer";
 
 export const metadata: Metadata = {
   title: "Our Products | Genpact - Precision Packaging & Corrugated Solutions",
@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="w-full min-h-screen relative bg-[#fafafa] selection:bg-orange-500 selection:text-white">
+    <main className="w-full min-h-screen relative bg-white selection:bg-orange-500 selection:text-white font-urbanist">
       <ProductsHero />
       <ProductsCatalogSection />
+      <ProductInfoSections />
       <ProductSpecsCTA />
-      <Footer />
     </main>
   );
 }

@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Footer from "@/components/landing_page/Footer";
+
 import ProductBoxVisual from "@/components/product/ProductBoxVisual";
 import CTAButton from "@/components/landing_page/CTAButton";
 
@@ -597,7 +597,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Navbar from "@/components/landing_page/Navbar";
-import Footer from "@/components/landing_page/Footer";
+
 import ServicesHero from "@/components/services/ServicesHero";
 import CoreCapabilities from "@/components/services/CoreCapabilities";
 import WhatSetsUsApart from "@/components/services/WhatSetsUsApart";
@@ -29,7 +29,7 @@ export default function ServicesPage() {
       <OurProcess />
 
       {/* Shared Footer */}
-      <Footer />
+
     </main>
   );
 }

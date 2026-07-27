@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Navbar from "@/components/landing_page/Navbar";
-import Footer from "@/components/landing_page/Footer";
+
 import ContactHero from "@/components/contact/ContactHero";
 import ContactFormSection from "@/components/contact/ContactFormSection";
 import KeyContacts from "@/components/contact/KeyContacts";
@@ -34,7 +34,7 @@ export default function ContactPage() {
       <ContactFAQSection />
 
       {/* Shared Footer */}
-      <Footer />
+
     </main>
   );
 }
