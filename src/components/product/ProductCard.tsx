@@ -11,6 +11,11 @@ export interface ProductItem {
   description: string;
   image: string;
   href: string;
+  features?: string[];
+  specs?: {
+    material?: string;
+    ecoRating?: string;
+  };
 }
 
 interface ProductCardProps {

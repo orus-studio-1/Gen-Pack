@@ -87,11 +87,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               <div className="relative z-10 grid grid-cols-2 gap-3 text-xs pt-4 border-t border-slate-800">
                 <div className="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
                   <span className="text-slate-400 block text-[10px] uppercase">Material</span>
-                  <span className="font-semibold text-white">{product.specs.material}</span>
+                  <span className="font-semibold text-white">{product.specs?.material || "Corrugated Cardboard"}</span>
                 </div>
                 <div className="bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
                   <span className="text-slate-400 block text-[10px] uppercase">Eco Rating</span>
-                  <span className="font-semibold text-emerald-400">100% Recyclable</span>
+                  <span className="font-semibold text-emerald-400">{product.specs?.ecoRating || "100% Recyclable"}</span>
                 </div>
               </div>
             </div>
@@ -107,21 +107,23 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </p>
 
                 {/* Key Features */}
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                      Key Capabilities & Features
-                    </span>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700 font-urbanist">
-                      {product.features.map((feat, idx) => (
-                        <li key={idx} className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
+                {product.features && product.features.length > 0 && (
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                        Key Capabilities & Features
+                      </span>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700 font-urbanist">
+                        {product.features.map((feat: string, idx: number) => (
+                          <li key={idx} className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Quote Request Form */}
