@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Navbar from "./Navbar";
 import TopPattern from "./TopPattern";
 import BackgroundVideo from "./BackgroundVideo";
+import { IMAGES } from "@/data/products";
 import CTAButton from "./CTAButton";
 
 interface HeroSectionProps {
@@ -16,17 +16,20 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  titleLine1 = "Your Freight, delivered",
-  titleLine2 = "with Precision.",
-  locationText = "Across Europe and the US.",
-  subtextLine1 = "Reliable transport. Real-time tracking.",
-  subtextLine2 = "Tailored logistics for your business.",
-  ctaText = "Know Our Services",
+  titleLine1 = "Packaging that protects",
+  titleLine2 = "the planet too.",
+  locationText = "Manufactured in India. Shipped worldwide.",
+  subtextLine1 = "100% recyclable corrugated rolls, boxes and inserts.",
+  subtextLine2 = "Engineered around your product, not a catalogue.",
+  ctaText = "Explore Our Products",
 }) => {
   return (
     <section className="relative w-full max-w-full min-h-screen sm:min-h-[720px] flex flex-col justify-between overflow-hidden font-urbanist text-white select-none">
       {/* Background Video with token color overlays */}
-      <BackgroundVideo videoSrc="/hero_section_bg.mp4" />
+      <BackgroundVideo
+        imageSrc={`${IMAGES.factory}?auto=format&fit=crop&w=2000&q=75`}
+        imageAlt="Corrugated board being converted and stacked inside the Genpack plant"
+      />
 
       {/* Top Edge-to-Edge Moving SVG Arrow Banner (Behind Navbar) */}
       <div className="absolute top-0 inset-x-0 w-full max-w-full z-10 pt-2 sm:pt-3 opacity-60 pointer-events-none overflow-hidden">
@@ -68,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Bottom Right CTA Action */}
           <div className="self-start sm:self-end">
-            <CTAButton label={ctaText} href="#services" variant="outline" size="sm" />
+            <CTAButton label={ctaText} href="/product" variant="outline" size="sm" />
           </div>
         </div>
       </div>

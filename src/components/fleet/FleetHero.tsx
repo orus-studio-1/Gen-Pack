@@ -46,12 +46,14 @@ export const FleetHero: React.FC = () => {
 
           {/* Title */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817] leading-none">
-            Our Fleet in Motion.
+            From our plant to
+            <br />
+            your packing line.
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-normal font-urbanist leading-relaxed max-w-3xl mx-auto pt-2">
-            Modern vehicles, advanced technology, total reliability — engineered to move your cargo safely and on time, every time.
+            Flat-packed cartons are easy to crush and easy to lose. We run our own delivery fleet so the pack you approved is the pack that reaches your line — square, dry and on schedule.
           </p>
         </motion.div>
       </div>

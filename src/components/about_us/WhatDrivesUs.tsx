@@ -12,16 +12,16 @@ const itemsData: Item[] = [
   {
     label: "Mission",
     description:
-      "To deliver seamless, efficient, and honest logistics solutions for growing businesses.",
+      "To make protective packaging that is fully recyclable by default — never as a paid upgrade.",
   },
   {
     label: "Vision",
     description:
-      "To become the most trusted logistics partner for companies across borders.",
+      "A supply chain where every pack that leaves a plant can go back into one, with nothing left over.",
   },
   {
     label: "Values",
-    description: "Reliability. Transparency. Sustainability. Respect.",
+    description: "Engineered protection. Honest specifications. Zero plastic by default. Fibre we can trace.",
   },
 ];
 

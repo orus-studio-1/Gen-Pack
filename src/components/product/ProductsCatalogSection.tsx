@@ -1,190 +1,192 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import ProductCard, { ProductItem } from "./ProductCard";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import ProductCard from "./ProductCard";
+import {
+  CATEGORIES,
+  PRODUCTS,
+  type CategoryId,
+  type Product,
+} from "@/data/products";
 
-const PRODUCTS_DATA: ProductItem[] = [
-  {
-    id: "bespoke-packaging",
-    name: "Bespoke Packaging",
-    category: "Bespoke",
-    tagline: "Innovative and cost-effective packaging created by our team of designers.",
-    description:
-      "Innovative and cost-effective packaging created by our team of designers.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/bespoke-packaging-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "crash-lock",
-    name: "Crash Lock",
-    category: "Boxes",
-    tagline: "Convenient and practical solution for businesses.",
-    description:
-      "Crash Lock corrugated cardboard boxes which are a convenient and practical solution for businesses.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/crash-lock-box-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "counter-display-units",
-    name: "Counter Display Units",
-    category: "Displays",
-    tagline: "Brand enhancing retail display units.",
-    description:
-      "Counter display units that are branded, cost effective and can maximise your products selling potential.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/cdu-packaging-box-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "fully-enclosed",
-    name: "Fully Enclosed",
-    category: "Boxes",
-    tagline: "Printed, glued and folded for maximum efficiency.",
-    description:
-      "Printed, glued and folded to make assembly as efficient as possible.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/fully-enclosed-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "gift-pack",
-    name: "Gift Pack",
-    category: "Gift & Retail",
-    tagline: "High quality printed presentation packs.",
-    description:
-      "High quality printed gift and presentation packs which are self sealing without the need for glue or tape.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/gift-packaging-box-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "plastic-free",
-    name: "Plastic Free",
-    category: "Eco-Friendly",
-    tagline: "Zero-plastic cardboard packaging solutions.",
-    description:
-      "Cardboard packaging solutions which eliminate the need for any plastic within the packaging.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/plastic-free-packaging-box-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "point-of-sale",
-    name: "Point of Sale",
-    category: "Displays",
-    tagline: "Branded point of sale retail displays.",
-    description:
-      "Point of sale display units that are branded, cost-effective and that stand out at the till.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/point-of-sale-packaging-box-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "shelf-ready-packaging",
-    name: "Shelf Ready Packaging (SRP)",
-    category: "Displays",
-    tagline: "Supermarket shelf ready packaging.",
-    description:
-      "High quality printed packaging that looks amazing on the supermarket shelf.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/srp-packaging-box-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "subscription-boxes",
-    name: "Subscription Boxes",
-    category: "E-Commerce",
-    tagline: "Easy to assemble e-commerce delivery boxes.",
-    description:
-      "Easy to assemble boxes that are sealed with double sided tape and inbuilt perforation tear strip.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/subscription-boxes-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "postal-packaging",
-    name: "Postal Packaging 0427",
-    category: "E-Commerce",
-    tagline: "PIP letterbox sized postal boxes.",
-    description:
-      "PIP packaging is the perfect choice for products that fit within a regular letterbox sized box.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/postal-packaging-box-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "pallet-boxes",
-    name: "Pallet Boxes",
-    category: "Heavy Duty",
-    tagline: "Heavy duty double walled cardboard pallet boxes.",
-    description:
-      "Low cost heavy duty double walled cardboard pallet boxes with or without a pallet attached.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/pallet-box-packaging-680x450px.png",
-    href: "/contact",
-  },
-  {
-    id: "ecommerce",
-    name: "Ecommerce Packaging",
-    category: "E-Commerce",
-    tagline: "Unboxing experience for home delivery.",
-    description:
-      "Create an unboxing experience with a range of innovative products for home delivery.",
-    image:
-      "https://www.atlaspackaging.co.uk/-/m/images/atlas/product-icons-680x450px/subscription-boxes-680x450px.png",
-    href: "/contact",
-  },
-];
+type Filter = CategoryId | "all";
 
 export const ProductsCatalogSection: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const searchParams = useSearchParams();
+  const requested = searchParams.get("category") as CategoryId | null;
+  const initial: Filter =
+    requested && CATEGORIES.some((c) => c.id === requested) ? requested : "all";
 
-  const categories = ["All", "Bespoke", "Boxes", "Displays", "E-Commerce", "Heavy Duty", "Eco-Friendly"];
+  const [selected, setSelected] = useState<Filter>(initial);
+  const [lastRequested, setLastRequested] = useState<Filter>(initial);
+  const [query, setQuery] = useState("");
 
-  const filteredProducts = useMemo(() => {
-    if (selectedCategory === "All") return PRODUCTS_DATA;
-    return PRODUCTS_DATA.filter((item) => item.category === selectedCategory);
-  }, [selectedCategory]);
+  // Keep the active filter in step with ?category= links arriving from the
+  // hero, the footer or a shared URL, without an extra render pass.
+  if (initial !== lastRequested) {
+    setLastRequested(initial);
+    setSelected(initial);
+  }
+
+  const activeCategory = CATEGORIES.find((c) => c.id === selected);
+
+  const filtered: Product[] = useMemo(() => {
+    const term = query.trim().toLowerCase();
+    return PRODUCTS.filter((p) => {
+      const inCategory = selected === "all" || p.categories.includes(selected);
+      if (!inCategory) return false;
+      if (!term) return true;
+      return (
+        p.name.toLowerCase().includes(term) ||
+        p.description.toLowerCase().includes(term) ||
+        p.spec.toLowerCase().includes(term) ||
+        p.useCase.toLowerCase().includes(term) ||
+        p.idealFor.some((t) => t.toLowerCase().includes(term))
+      );
+    });
+  }, [selected, query]);
+
+  /** Short label shown on each card — the first category the product belongs to. */
+  const labelFor = (product: Product) =>
+    CATEGORIES.find((c) => c.id === product.categories[0])?.shortName;
 
   return (
-    <section id="catalog" className="w-full bg-[#fcfcfc] text-[#1c1817] py-16 sm:py-24 md:py-32 font-urbanist select-none border-t border-slate-100">
+    <section
+      id="catalog"
+      className="w-full bg-[#fcfcfc] text-[#1c1817] py-16 sm:py-24 md:py-28 font-urbanist border-t border-slate-100 scroll-mt-24"
+    >
       <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-        
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1c1817] font-urbanist mb-4">
-            Our product packaging solutions
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-2.5 mb-4">
+            <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
+              <div className="w-1 h-1 rounded-full bg-orange-500" />
+            </div>
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-slate-500">
+              PRODUCT CATALOGUE
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            {PRODUCTS.length}+ corrugated packaging solutions,
+            <br className="hidden sm:block" /> all 100% recyclable.
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
-            Explore precision-engineered corrugated cardboard boxes, retail displays, and bespoke packaging solutions.
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Rolls, boxes, inserts, displays and print finishes — filter by what
+            you need, or tell us what you are shipping and we will engineer the
+            pack around it.
           </p>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex items-center justify-center gap-2.5 flex-wrap mb-12 sm:mb-16">
-          {categories.map((cat) => (
+        {/* Filters */}
+        <div className="flex flex-col gap-4 mb-10 sm:mb-12">
+          <div className="flex items-center gap-2.5 flex-wrap">
             <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`text-xs sm:text-sm px-6 py-2.5 rounded-full font-semibold transition-all ${
-                selectedCategory === cat
+              onClick={() => setSelected("all")}
+              className={`text-xs sm:text-sm px-5 py-2.5 rounded-full font-semibold transition-all ${
+                selected === "all"
                   ? "bg-[#1c1817] text-white shadow-sm"
                   : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 hover:text-slate-900"
               }`}
             >
-              {cat}
+              All ({PRODUCTS.length})
             </button>
-          ))}
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setSelected(cat.id)}
+                className={`text-xs sm:text-sm px-5 py-2.5 rounded-full font-semibold transition-all ${
+                  selected === cat.id
+                    ? "bg-[#1c1817] text-white shadow-sm"
+                    : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 hover:text-slate-900"
+                }`}
+              >
+                {cat.shortName}
+              </button>
+            ))}
+          </div>
+
+          <div className="relative max-w-md">
+            <svg
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" strokeLinecap="round" />
+            </svg>
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search by product, flute, use case or industry"
+              aria-label="Search products"
+              className="w-full bg-white border border-slate-200 rounded-full pl-11 pr-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-orange-500 transition-colors"
+            />
+          </div>
         </div>
 
-        {/* Product Cards Grid - 4 Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {/* Category banner */}
+        {activeCategory && (
+          <div className="relative mb-10 sm:mb-12 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-200/80">
+            <div className="relative h-40 sm:h-52 md:h-60 w-full">
+              <Image
+                src={`${activeCategory.image}?auto=format&fit=crop&w=1600&q=70`}
+                alt={activeCategory.name}
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1c1817]/92 via-[#1c1817]/60 to-[#1c1817]/10" />
+              <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-10 md:px-12 max-w-3xl">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight mb-2">
+                  {activeCategory.name}
+                </h3>
+                <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+                  {activeCategory.blurb}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Result count */}
+        <p className="text-sm text-slate-500 mb-6">
+          Showing <span className="font-semibold text-slate-800">{filtered.length}</span>{" "}
+          {filtered.length === 1 ? "product" : "products"}
+          {query && (
+            <>
+              {" "}
+              for <span className="font-semibold text-slate-800">“{query}”</span>
+            </>
+          )}
+        </p>
+
+        {/* Product Grid */}
+        {filtered.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+            {filtered.map((product) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                categoryLabel={labelFor(product)}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16 border border-dashed border-slate-300 rounded-2xl">
+            <p className="text-slate-600 mb-2 font-semibold">
+              Nothing matches that search yet.
+            </p>
+            <p className="text-slate-500 text-sm">
+              We manufacture to specification — tell us the product, weight and
+              transit route and we will build the pack for it.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

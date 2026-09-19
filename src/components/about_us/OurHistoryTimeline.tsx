@@ -14,33 +14,33 @@ interface HistoryItem {
 const historyData: HistoryItem[] = [
   {
     year: "2010",
-    title: "One Truck. One Dream.",
-    text: "LogiNord was founded in a small Rotterdam warehouse with just one vehicle and a clear mission: to offer reliable transport for local businesses with the kind of service larger firms couldn't match.",
-    image: "/about-us/history_1.avif",
+    title: "One Corrugator. One Idea.",
+    text: "Genpack started in a single shed with one corrugating line, supplying plain kraft cartons to local manufacturers who were tired of boxes that collapsed two pallets high.",
+    image: "https://images.unsplash.com/photo-1727517786578-ff2bb896b852?auto=format&fit=crop&w=1200&q=72",
   },
   {
     year: "2013",
-    title: "Growing Beyond Borders.",
-    text: "After earning the trust of local partners, we expanded to cover all of the Benelux region. Our early success was driven by flexibility, transparent pricing, and on-time delivery.",
-    image: "/about-us/history_2.avif",
+    title: "From Boxes to Structures.",
+    text: "We added die-cutting and brought structural design in-house. Instead of selling customers the nearest stock size, we began engineering the pack around the product — and damage rates fell.",
+    image: "https://images.unsplash.com/photo-1638560926839-cb90ababd947?auto=format&fit=crop&w=1200&q=72",
   },
   {
     year: "2017",
-    title: "Hello, North America.",
-    text: "With an increasing number of international clients, we opened our first overseas branch in Houston, TX — strategically connecting European and US logistics operations under one roof.",
-    image: "/about-us/history_3.webp",
+    title: "Print, and a Plastic Problem.",
+    text: "Flexo and offset printing brought retail brands through the door. It also made something obvious: beautiful boxes were still being filled with bubble wrap, foam and plastic tape.",
+    image: "https://images.unsplash.com/photo-1758183961426-88d64eb5f787?auto=format&fit=crop&w=1200&q=72",
   },
   {
     year: "2021",
-    title: "Smart Logistics, Greener Moves.",
-    text: "We invested in smart fleet management, route optimization, and sustainable transport — including refrigerated and low-emissions vehicles — reducing delivery time and carbon impact.",
-    image: "/about-us/history_5.webp",
+    title: "Going Plastic-Free by Default.",
+    text: "We rebuilt the protective range around paper: honeycomb, moulded pulp, kraft cushioning and paper void fill. Water-based inks and paper tape became the standard, not the premium option.",
+    image: "https://images.unsplash.com/photo-1654078054613-a56cfcabdb84?auto=format&fit=crop&w=1200&q=72",
   },
   {
     year: "2025",
-    title: "Logistics You Can Trust.",
-    text: "Now serving hundreds of clients across multiple industries, Loginord remains independent, agile, and focused on delivering real results. Our next chapter? Scaling up without losing our personal touch.",
-    image: "/about-us/history_4.webp",
+    title: "Packaging You Can Recycle.",
+    text: "Today we supply e-commerce, FMCG, pharma, electronics and export manufacturers across the country — every product in the catalogue recyclable in a standard paper stream. Next: closing the loop on our own offcuts.",
+    image: "https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&w=1200&q=72",
   },
 ];
 

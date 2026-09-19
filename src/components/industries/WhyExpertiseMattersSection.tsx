@@ -36,7 +36,7 @@ export const WhyExpertiseMattersSection: React.FC = () => {
             <span className="w-1 h-1 rounded-full bg-orange-600" />
           </span>
           <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#1c1817] uppercase">
-            WHY INDUSTRY EXPERTISE MATTERS
+            WHY SECTOR EXPERIENCE MATTERS
           </span>
         </motion.div>
 
@@ -48,8 +48,8 @@ export const WhyExpertiseMattersSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold tracking-tight text-[#1c1817] leading-[1.12] max-w-4xl mb-4 sm:mb-6 font-urbanist"
         >
-          <span className="block">Deep Sector Knowledge,</span>
-          <span className="block">Seamless Execution.</span>
+          <span className="block">Every sector breaks</span>
+          <span className="block">packaging differently.</span>
         </motion.h2>
 
         {/* Paragraph Description matching screenshot text */}
@@ -60,7 +60,7 @@ export const WhyExpertiseMattersSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="text-sm sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl sm:max-w-3xl mx-auto"
         >
-          In complex logistics, one size never fits all. By focusing on your industry’s unique requirements - regulatory standards, handling protocols, temperature control, packaging norms - we ensure compliance, reduce risk, and optimize costs. Our teams speak your language and anticipate challenges before they arise.
+          A carton that is perfect for a warehouse pallet will fail in a monsoon yard, and a pack engineered for a courier belt is over-specified for a shop floor. We look at compression loads, humidity, handling and shelf life for your sector first — then choose the flute, the GSM, the coating and the closure. That is how you cut damage and material cost at the same time.
         </motion.p>
 
       </div>

@@ -13,7 +13,7 @@ const standardsData: StandardItem[] = [
   {
     title: "ISO 9001:2015",
     description:
-      "Our operations follow strict quality management standards, ensuring consistency, efficiency, and customer satisfaction at every stage.",
+      "Board grade, GSM, bursting strength and ECT are tested batch by batch, so the carton you approve is the carton you keep receiving.",
     icon: (
       <svg
         width="38"
@@ -32,9 +32,9 @@ const standardsData: StandardItem[] = [
     ),
   },
   {
-    title: "GDP Certification",
+    title: "FSC® Certified Fibre",
     description:
-      "We comply with Good Distribution Practices to guarantee the integrity and safety of products throughout the supply chain.",
+      "Virgin kraft comes from certified, responsibly managed forests, and recycled content is traceable back to the mill that supplied it.",
     icon: (
       <svg
         width="38"
@@ -51,9 +51,9 @@ const standardsData: StandardItem[] = [
     ),
   },
   {
-    title: "Environmental Compliance",
+    title: "ISO 14001 & EPR Ready",
     description:
-      "Commitment to sustainable logistics practices that meet international environmental and safety regulations.",
+      "Environmental management across the plant, with the documentation your team needs for extended producer responsibility reporting.",
     icon: (
       <svg
         width="38"
@@ -87,7 +87,7 @@ export const IndustryStandards: React.FC = () => {
               Certified. Verified. Compliant.
             </h2>
             <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed max-w-md font-urbanist">
-              Loginord operates under ISO 9001 standards and complies with HACCP and ADR regulations. All vehicles and processes are regularly audited for quality and safety.
+              Genpack runs to ISO 9001 quality management and ISO 14001 environmental management, with FSC-certified fibre and food-grade compliant liners available across the range. Board is tested batch by batch and the documentation ships with the order.
             </p>
           </div>
 

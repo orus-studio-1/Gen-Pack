@@ -14,37 +14,37 @@ const faqData: FAQItem[] = [
   {
     id: "faq-1",
     number: "01",
-    question: "Do you handle temperature-controlled shipments internationally?",
+    question: "What is your minimum order quantity?",
     answer:
-      "Yes. We operate a modern fleet of refrigerated trailers certified for international transport, with real-time temperature monitoring and full HACCP compliance. Whether you're shipping perishable food, pharmaceuticals, or temperature-sensitive components, we ensure consistent cold-chain integrity across borders.",
+      "Stock sizes start from 100 units. Custom die-cut structures usually start from 250 to 500 units, because a cutting forme has to be made first. Digital print lets us go lower for launches and sampling — tell us the volume and we will tell you honestly whether tooling is worth it yet.",
   },
   {
     id: "faq-2",
     number: "02",
-    question: "What's the average quote response time?",
+    question: "How quickly will I get a quote and a sample?",
     answer:
-      "Our dedicated commercial team typically responds to standard freight and logistics quote requests within 2 to 4 business hours. For complex 3PL or custom multi-modal proposals, we provide a detailed proposal within 24 hours.",
+      "Most quotes go out within one working day of receiving product dimensions, weight and the transit route. A physical structural sample follows in three to five working days, and it is free — we would rather you break it in testing than break a customer's order.",
   },
   {
     id: "faq-3",
     number: "03",
-    question: "Can I request dedicated capacity for seasonal peaks?",
+    question: "Is your packaging genuinely recyclable?",
     answer:
-      "Yes, we offer seasonal volume planning and dedicated asset allocation for high-demand periods. By locking in capacity ahead of peak seasons, you ensure reliable throughput and guaranteed SLAs without unexpected spot-rate spikes.",
+      "Yes, and that is a design constraint rather than a claim. Standard packs use kraft board, water-based inks, paper tape and paper-based inserts, so the whole pack goes into one recycling stream. Where a brief needs a barrier coating or a cold-chain liner, we say so up front and specify the most recoverable option available.",
   },
   {
     id: "faq-4",
     number: "04",
-    question: "How do you handle customs clearance for cross-border freight?",
+    question: "Can you replace the plastic in our current packaging?",
     answer:
-      "Our in-house customs specialists manage all export/import documentation, tariff classifications, and regulatory compliance. We handle clearance directly at major European ports and US hubs to prevent transit delays.",
+      "That is most of what we do. Bubble wrap becomes paper bubble wrap or kraft cushioning, air pillows become paper void fill, EPS becomes honeycomb or moulded pulp, and plastic partitions become die-cut corrugated dividers. Send us your current pack and we will quote a like-for-like paper equivalent with test results.",
   },
   {
     id: "faq-5",
     number: "05",
-    question: "What digital tracking and integration options are available?",
+    question: "What are your lead times and how do you deliver?",
     answer:
-      "We provide full API and EDI integration for automated order processing, live GPS asset tracking, automated status milestones, and real-time electronic Proof of Delivery (ePOD) directly to your ERP or TMS dashboard.",
+      "Standard lead time is seven to twelve working days from artwork sign-off, with repeat orders faster. We deliver flat-packed on our own fleet across the region and by contracted carrier elsewhere, and we can hold buffer stock at the plant against a scheduled call-off so your line never waits on cartons.",
   },
 ];
 
@@ -62,14 +62,14 @@ export const ContactFAQSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 max-w-2xl mx-auto">
           <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-3 font-mono">
-            WE'RE HERE TO HELP YOU
+            WE&apos;RE HERE TO HELP YOU
           </p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-urbanist text-[#1c1817] tracking-tight mb-5 leading-tight">
             Frequently <br />
             Asked Questions
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-            We've answered some of the most common questions below. Still unsure? Reach out — our team is here to help.
+            The questions we get asked most about board grades, tooling, lead times and going plastic-free. Still unsure? Send us your current pack and we will look at it.
           </p>
         </div>
 

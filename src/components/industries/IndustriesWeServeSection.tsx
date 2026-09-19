@@ -18,67 +18,67 @@ interface IndustryServeCardData {
 const serveCards: IndustryServeCardData[] = [
   {
     id: "food-beverage",
-    title: "Food & Beverage",
-    subtitle: "Temperature-controlled transport from farm to market.",
-    imageSrc: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1000",
-    fallbackSrc: "/Industry1.png",
-    alt: "Food plates with sandwiches, croissants and coffee top down view",
+    title: "Food, FMCG & Fresh Produce",
+    subtitle: "Food-grade board, airflow and cold-chain coatings.",
+    imageSrc: "https://images.unsplash.com/photo-1771904867001-1ee164bf353c?auto=format&fit=crop&q=80&w=1000",
+    fallbackSrc: "https://images.unsplash.com/photo-1762591871417-67d8940c34a5?auto=format&fit=crop&q=80&w=1000",
+    alt: "Fresh produce packed into ventilated crates",
     points: [
-      "HACCP-certified cold chain",
-      "Cross-docking & warehousing",
-      "Last-mile refrigerated delivery",
+      "Food-grade virgin kraft liners and inks",
+      "Ventilated cartons for forced-air pre-cooling",
+      "Wax and moisture-resistant coatings for cold chain",
     ],
   },
   {
     id: "pharma-medical",
     title: "Pharmaceutical & Medical",
-    subtitle: "Safe, traceable logistics for healthcare essentials.",
-    imageSrc: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&q=80&w=1000",
-    fallbackSrc: "/industry2.png",
-    alt: "Medicine bottles and pharmaceutical jars on shelves",
+    subtitle: "Insulated, tamper-evident and traceable packs.",
+    imageSrc: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000",
+    fallbackSrc: "https://images.unsplash.com/photo-1577401132921-cb39bb0adcff?auto=format&fit=crop&q=80&w=1000",
+    alt: "Pharmaceutical blister packs awaiting secondary packaging",
     points: [
-      "GDP/GMP-compliant transport",
-      "Tamper-evident packaging",
-      "Real-time tracking",
+      "Thermally insulated shippers for temperature-controlled transit",
+      "Tamper-evident closures and perforated tear lines",
+      "Security print, batch codes and sequential numbering",
     ],
   },
   {
     id: "industrial-manufacturing",
     title: "Industrial & Manufacturing",
-    subtitle: "Just-in-time heavy transport for manufacturing logistics.",
-    imageSrc: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000",
-    fallbackSrc: "/industry3.png",
-    alt: "Abstract 3D geometric teal and cream industrial shapes",
+    subtitle: "Corrugated that replaces timber crating.",
+    imageSrc: "https://images.unsplash.com/photo-1779517225996-d5b751f80f48?auto=format&fit=crop&q=80&w=1000",
+    fallbackSrc: "https://images.unsplash.com/photo-1672552226380-486fe900b322?auto=format&fit=crop&q=80&w=1000",
+    alt: "Palletised industrial freight being loaded for despatch",
     points: [
-      "Full & breakbulk FTL services",
-      "Real-time route optimization",
-      "Customs-cleared cross-border",
+      "Triple-wall crates, octabins and pallet boxes",
+      "ISPM-15 exempt — no fumigation paperwork",
+      "Custom partitions cut from your component drawing",
     ],
   },
   {
     id: "electronics-tech",
     title: "Electronics & Technology",
-    subtitle: "Secure logistics for high-value tech components.",
-    imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000",
-    fallbackSrc: "/industry4.png",
-    alt: "Close up of dark blue and gold printed circuit board",
+    subtitle: "ESD-safe board and precision cushioning.",
+    imageSrc: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=1000",
+    fallbackSrc: "https://images.unsplash.com/photo-1640955785023-1854685dae05?auto=format&fit=crop&q=80&w=1000",
+    alt: "Circuit boards under test before ESD-safe packing",
     points: [
-      "ESD-safe handling & packaging",
-      "Express air & ground transport",
-      "Customs-ready documentation support",
+      "ESD-treated board and conductive foam inserts",
+      "Honeycomb and die-cut fitments in place of EPS",
+      "Drop and vibration tested against your own unit",
     ],
   },
   {
     id: "retail-ecommerce",
     title: "Retail & E-Commerce",
-    subtitle: "Fast, scalable delivery for retail and online sales.",
-    imageSrc: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=1000",
-    fallbackSrc: "/industry5.png",
-    alt: "Clothing garments hanging on racks with brick wall background",
+    subtitle: "Right-sized mailers and shelf-ready cartons.",
+    imageSrc: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&q=80&w=1000",
+    fallbackSrc: "https://images.unsplash.com/photo-1631010231130-5c7828d9a3a7?auto=format&fit=crop&q=80&w=1000",
+    alt: "E-commerce parcel handed over for delivery",
     points: [
-      "Nationwide fulfillment & distribution",
-      "Integrated returns management",
-      "Last-mile delivery optimization",
+      "Die-cut mailers sized to remove void fill",
+      "Perforated tear strips and tamper evidence",
+      "Shelf-ready packaging that opens in one motion",
     ],
   },
 ];
@@ -146,7 +146,7 @@ export const IndustriesWeServeSection: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 className="text-sm sm:text-lg text-slate-700 font-normal leading-relaxed max-w-md"
               >
-                Each industry has its own logistics DNA — we tailor our services to meet yours with precision, reliability, and care.
+                Each sector has its own failure mode. We pick the board, the flute and the closure that answers yours — then prove it on a sample before you commit to a run.
               </motion.p>
             </div>
           </div>

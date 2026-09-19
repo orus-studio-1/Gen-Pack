@@ -13,32 +13,32 @@ interface ProcessStep {
 const processSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "Discovery",
-    description: "We assess your needs and KPIs.",
+    title: "Brief",
+    description: "Product dimensions, weight, transit route and volumes.",
     side: "right",
   },
   {
     number: "02",
-    title: "Solution Design",
-    description: "We build a custom logistics plan.",
+    title: "Design",
+    description: "Structural CAD, board specification and artwork layout.",
     side: "left",
   },
   {
     number: "03",
-    title: "Onboarding",
-    description: "You get connected to our systems.",
+    title: "Sample",
+    description: "A free physical first article, drop and compression tested.",
     side: "right",
   },
   {
     number: "04",
-    title: "Operations",
-    description: "We deliver, track, and optimize.",
+    title: "Production",
+    description: "Tooling cut, board run, printed and converted in our plant.",
     side: "left",
   },
   {
     number: "05",
-    title: "Review",
-    description: "We meet monthly to improve.",
+    title: "Supply",
+    description: "Scheduled call-offs, buffer stock and delivery to your line.",
     side: "right",
   },
 ];

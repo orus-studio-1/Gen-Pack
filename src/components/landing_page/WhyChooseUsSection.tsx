@@ -278,31 +278,31 @@ const CertifiedFleetIllustration: React.FC = () => (
 );
 
 export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({
-  badgeText = "WHY GENPACT",
-  titleLine1 = "Why Leading",
-  titleLine2 = "Businesses Rely on Us",
-  subtitle = "We combine smart operations with real-world reliability to move what matters — faster, safer, and smarter.",
+  badgeText = "WHY GENPACK",
+  titleLine1 = "Why brands switch",
+  titleLine2 = "their packaging to us.",
+  subtitle = "We are a manufacturer with a design studio attached. That means the specification, the tooling and the print all answer to one team — and to your damage rate.",
   className = "",
 }) => {
   const cards = [
     {
       id: "card-1",
-      title: "Multilingual support across Europe and the US",
+      title: "A named packaging engineer on every account",
       illustration: <MultilingualIllustration />,
     },
     {
       id: "card-2",
-      title: "Real-Time Shipment Visibility",
+      title: "Nationwide delivery on 7–12 day lead times",
       illustration: <ShipmentVisibilityIllustration />,
     },
     {
       id: "card-3",
-      title: "Fast Delivery across 20+ Countries",
+      title: "Export-ready packs shipping to 20+ countries",
       illustration: <FastDeliveryIllustration />,
     },
     {
       id: "card-4",
-      title: "Certified and Compliant Fleet",
+      title: "FSC fibre, ISO-audited, 100% recyclable",
       illustration: <CertifiedFleetIllustration />,
     },
   ];

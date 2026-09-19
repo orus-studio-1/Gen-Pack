@@ -4,12 +4,14 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
+import { IMAGES } from "@/data/products";
 import { VerticalPatternTile } from "./TopPattern";
 
 interface IndustryItem {
   id: string;
   number: string;
   title: string;
+  blurb: string;
   imageSrc: string;
   alt: string;
 }
@@ -22,46 +24,56 @@ interface IndustriesSectionProps {
 }
 
 export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
-  titleLine1 = "Built for Critical",
-  titleLine2 = "Industries.",
-  subtitle = "We support companies in Food, Pharma, Retail, and Manufacturing with Tailored Logistics.",
+  titleLine1 = "Built for the",
+  titleLine2 = "way you ship.",
+  subtitle = "Every sector breaks packaging differently. We specify board, flute and structure against how your product actually travels.",
   className = "",
 }) => {
   const industries: IndustryItem[] = [
     {
       id: "ind-1",
       number: "01",
-      title: "Pharmaceutical & Medical",
-      imageSrc: "/Industry1.png",
-      alt: "Pharmaceutical and Medical Logistics",
+      title: "E-Commerce & D2C",
+      blurb:
+        "Right-sized mailers, tear strips and printed interiors that survive the courier network and still open well on camera.",
+      imageSrc: IMAGES.boxHandover,
+      alt: "Parcel being handed over for e-commerce delivery",
     },
     {
       id: "ind-2",
       number: "02",
-      title: "Industrial & Manufacturing",
-      imageSrc: "/industry2.png",
-      alt: "Industrial and Manufacturing Logistics",
+      title: "Food, FMCG & Fresh Produce",
+      blurb:
+        "Food-grade liners, ventilated cartons and wax-coated cold-chain boxes that hold up from the pack house to the shelf.",
+      imageSrc: IMAGES.cratesApples,
+      alt: "Fresh produce packed in crates for distribution",
     },
     {
       id: "ind-3",
       number: "03",
-      title: "Electronics & Technology",
-      imageSrc: "/industry3.png",
-      alt: "Electronics and Technology Logistics",
+      title: "Pharma & Healthcare",
+      blurb:
+        "Thermally insulated shippers, tamper-evident closures and security print for temperature-controlled and regulated goods.",
+      imageSrc: IMAGES.blister,
+      alt: "Pharmaceutical blister packs ready for secondary packaging",
     },
     {
       id: "ind-4",
       number: "04",
-      title: "Retail & E-Commerce",
-      imageSrc: "/industry4.png",
-      alt: "Retail and E-Commerce Logistics",
+      title: "Electronics & Appliances",
+      blurb:
+        "ESD-safe board, honeycomb cushioning and die-cut fitments that hold high-value units still through every drop test.",
+      imageSrc: IMAGES.phonePack,
+      alt: "Electronics presented in recyclable kraft packaging",
     },
     {
       id: "ind-5",
       number: "05",
-      title: "Automotive & Heavy Goods",
-      imageSrc: "/industry5.png",
-      alt: "Automotive and Heavy Goods Logistics",
+      title: "Industrial, Automotive & Export",
+      blurb:
+        "Triple-wall crates, octabins and pallet boxes that replace timber — no fumigation certificate, a fraction of the weight.",
+      imageSrc: IMAGES.forklift,
+      alt: "Palletised export freight being loaded",
     },
   ];
 
@@ -99,7 +111,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
             <div className="pt-6 sm:pt-10">
               <CTAButton
                 label="Know Our Industries"
-                href="#industries"
+                href="/industries"
                 variant="outline"
                 size="sm"
               />
@@ -130,7 +142,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
                 {/* Industry Card Image */}
                 <div className="relative w-full h-[220px] sm:h-[280px] md:h-[340px] rounded-2xl overflow-hidden shadow-md">
                   <Image
-                    src={ind.imageSrc}
+                    src={`${ind.imageSrc}?auto=format&fit=crop&w=1200&q=72`}
                     alt={ind.alt}
                     fill
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -142,6 +154,9 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
                 <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-semibold text-white tracking-tight mt-5 sm:mt-6">
                   {ind.title}
                 </h3>
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed mt-2.5 max-w-xl">
+                  {ind.blurb}
+                </p>
               </motion.div>
             ))}
           </div>

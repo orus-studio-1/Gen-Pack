@@ -1,19 +1,25 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 
 interface BackgroundVideoProps {
   videoSrc?: string;
+  /** Render a still photograph instead of a video loop. */
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   videoSrc = "/hero_section_bg.mp4",
+  imageSrc,
+  imageAlt = "",
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || imageSrc) return;
 
     video.muted = true;
     video.defaultMuted = true;
@@ -44,30 +50,42 @@ export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
       window.removeEventListener("pointerdown", handleUserInteraction);
       window.removeEventListener("scroll", handleUserInteraction);
     };
-  }, [videoSrc]);
+  }, [videoSrc, imageSrc]);
 
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden z-0 select-none bg-[#1c1817]">
-      {/* Background Video Stream */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        disablePictureInPicture
-        disableRemotePlayback
-        onCanPlay={() => {
-          if (videoRef.current?.paused) {
-            videoRef.current.play().catch(() => {});
-          }
-        }}
-        className="w-full h-full object-cover object-center scale-105 opacity-85"
-      >
-        <source src={videoSrc} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {imageSrc ? (
+        /* Background Still Photograph */
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center scale-105 opacity-85"
+        />
+      ) : (
+        /* Background Video Stream */
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+          disableRemotePlayback
+          onCanPlay={() => {
+            if (videoRef.current?.paused) {
+              videoRef.current.play().catch(() => {});
+            }
+          }}
+          className="w-full h-full object-cover object-center scale-105 opacity-85"
+        >
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
 
       {/* Layer 1: Warm Base Overlay */}
       <div className="absolute inset-0 bg-[#1c1817]/35 mix-blend-multiply pointer-events-none" />

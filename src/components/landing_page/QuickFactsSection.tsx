@@ -12,26 +12,26 @@ interface QuickFactsSectionProps {
 
 export const QuickFactsSection: React.FC<QuickFactsSectionProps> = ({
   badgeText = "QUICK FACTS",
-  titleLine1 = "Trusted by dozens",
-  titleLine2 = "of Companies",
-  titleLine3 = "across Industries.",
+  titleLine1 = "Trusted by brands",
+  titleLine2 = "that ship millions",
+  titleLine3 = "of parcels a year.",
 }) => {
   const stats = [
     {
-      value: "98.6%",
-      label: "On-Time Delivery Rate.",
+      value: "100%",
+      label: "Recyclable, plastic-free board.",
     },
     {
-      value: "24/7",
-      label: "GPS Tracking Coverage.",
+      value: "70+",
+      label: "Packaging products in production.",
     },
     {
-      value: "+20",
-      label: "Countries covered daily.",
+      value: "12M+",
+      label: "Boxes converted every year.",
     },
     {
-      value: "+2.5K",
-      label: "Monthly Orders Fullfilled.",
+      value: "48h",
+      label: "Average quote turnaround.",
     },
   ];
 

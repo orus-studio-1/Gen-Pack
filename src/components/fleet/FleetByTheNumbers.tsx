@@ -8,19 +8,19 @@ export const FleetByTheNumbers: React.FC = () => {
   const stats = [
     {
       number: "30+",
-      label: "Total Vehicles.",
+      label: "Delivery vehicles in the fleet.",
     },
     {
       number: "20+",
-      label: "Heavy-duty Semi-Trailers.",
+      label: "Closed-body trucks for flat-packed loads.",
     },
     {
-      number: "+10",
-      label: "Urban Delivery Vehicles.",
+      number: "10+",
+      label: "City vans for urgent top-ups.",
     },
     {
-      number: "100%",
-      label: "ADR & HACCP–Compliant Units.",
+      number: "98%",
+      label: "Deliveries arriving on the promised day.",
     },
   ];
 
@@ -59,7 +59,7 @@ export const FleetByTheNumbers: React.FC = () => {
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-[44px] font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.12] max-w-[380px]">
-              A diverse fleet serving Europe & United States.
+              A fleet that exists so your cartons arrive square.
             </h2>
           </motion.div>
 

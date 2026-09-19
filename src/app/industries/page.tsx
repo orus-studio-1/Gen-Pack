@@ -7,9 +7,9 @@ import WhyExpertiseMattersSection from "@/components/industries/WhyExpertiseMatt
 import TestimonialsSection from "@/components/landing_page/TestimonialsSection";
 
 export const metadata: Metadata = {
-    title: "Industries | Genpact - Tailored Logistics Solutions",
+    title: "Industries We Package For",
     description:
-        "From perishable foods to high-value electronics, Loginord crafts specialized supply-chain solutions that fit your requirements and regulations.",
+        "From fresh produce and pharmaceuticals to electronics and heavy engineering, Genpack specifies corrugated packaging against how each sector actually ships.",
 };
 
 export default function IndustriesPage() {

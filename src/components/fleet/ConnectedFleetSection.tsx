@@ -37,10 +37,10 @@ export const ConnectedFleetSection: React.FC = () => {
             className="text-center max-w-xl mx-auto space-y-2"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1c1817] font-urbanist">
-              Connected Fleet, Connected You.
+              Every load, tracked to your dock.
             </h2>
             <p className="text-slate-700 text-xs sm:text-sm lg:text-base font-urbanist max-w-lg mx-auto leading-relaxed">
-              Every vehicle is equipped with advanced telematics hardware, giving you real-time visibility and proactive alerts.
+              Dispatch is tied to the production schedule, so you can see where your consignment is and plan goods-in around it.
             </p>
           </motion.div>
 
@@ -63,10 +63,10 @@ export const ConnectedFleetSection: React.FC = () => {
                 </div>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Live GPS Tracking
+                Live Dispatch Tracking
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                See exact location and ETA.
+                Vehicle location and delivery ETA.
               </p>
             </motion.div>
 
@@ -81,17 +81,17 @@ export const ConnectedFleetSection: React.FC = () => {
               <div className="relative w-full aspect-[16/9.2] max-h-[145px] rounded-xl overflow-hidden mb-3 bg-slate-900">
                 <Image
                   src="/Logistic6.png"
-                  alt="API Integration TMS Dashboard"
+                  alt="Warehouse team preparing a packaging consignment"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                API Integration
+                Order Portal
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                Embed tracking into your TMS or portal.
+                Job status from proof to despatch.
               </p>
             </motion.div>
 
@@ -128,10 +128,10 @@ export const ConnectedFleetSection: React.FC = () => {
                 </div>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Automated Alerts
+                Proactive Alerts
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                Route deviations, temperature excursions.
+                Delays flagged before they hit your line.
               </p>
             </motion.div>
 
@@ -165,10 +165,10 @@ export const ConnectedFleetSection: React.FC = () => {
                 </div>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Telematics Dashboard
+                Delivery Reporting
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                Speed, fuel consumption, driver behavior.
+                On-time rate, load counts, signed PODs.
               </p>
             </motion.div>
           </div>
@@ -185,10 +185,10 @@ export const ConnectedFleetSection: React.FC = () => {
             className="text-center max-w-xl mx-auto space-y-2"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1c1817] font-urbanist">
-              Rigorous Care. Maximum Uptime.
+              Handled so it arrives square.
             </h2>
             <p className="text-slate-700 text-xs sm:text-sm lg:text-base font-urbanist max-w-lg mx-auto leading-relaxed">
-              Loginord's in-house maintenance team follows strict inspection schedules and leverages predictive analytics to minimize downtime and maximize safety.
+              Most carton damage happens after the pack leaves the plant. Our loading standards, vehicle checks and unloading procedure exist specifically to stop that.
             </p>
           </motion.div>
 
@@ -210,10 +210,10 @@ export const ConnectedFleetSection: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Preventive Maintenance
+                Load Standards
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                Regular checks on vehicles & refrigeration.
+                Banded bundles, corner protection, no overhang.
               </p>
             </motion.div>
 
@@ -228,17 +228,17 @@ export const ConnectedFleetSection: React.FC = () => {
               <div className="relative w-full aspect-[16/9.2] max-h-[145px] rounded-xl overflow-hidden mb-3 bg-slate-900">
                 <Image
                   src="/industry5.png"
-                  alt="Compliance Audit Certificate Documents"
+                  alt="Flat-packed corrugated bundles banded for despatch"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Compliance Audits
+                Closed, Dry Bodies
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                ADR, HACCP and EU/US transport regulations.
+                Kraft board never travels exposed to weather.
               </p>
             </motion.div>
 
@@ -253,17 +253,17 @@ export const ConnectedFleetSection: React.FC = () => {
               <div className="relative w-full aspect-[16/9.2] max-h-[145px] rounded-xl overflow-hidden mb-3 bg-slate-900">
                 <Image
                   src="/Logistic1.png"
-                  alt="Driver Training Windshield Road View"
+                  alt="Delivery crew loading flat-packed cartons"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Driver Training
+                Trained Handling
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                Regular safety and eco-driving courses.
+                Crews trained on how corrugated fails.
               </p>
             </motion.div>
 
@@ -289,10 +289,10 @@ export const ConnectedFleetSection: React.FC = () => {
                 </div>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                24/7 Roadside Support
+                Shortfall Response
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                Rapid response for on-route issues.
+                Damaged bundles replaced, not argued over.
               </p>
             </motion.div>
           </div>
@@ -309,10 +309,10 @@ export const ConnectedFleetSection: React.FC = () => {
             className="text-center max-w-xl mx-auto space-y-2"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1c1817] font-urbanist">
-              Towards a Greener Fleet.
+              Lower carbon, end to end.
             </h2>
             <p className="text-slate-700 text-xs sm:text-sm lg:text-base font-urbanist max-w-lg mx-auto leading-relaxed">
-              We're investing in eco-friendly vehicles and processes to reduce carbon footprint and support your ESG goals.
+              The packaging is recyclable, so the delivery should not undo it. We consolidate loads, plan routes and cut empty running to keep the footprint honest.
             </p>
           </motion.div>
 
@@ -337,10 +337,10 @@ export const ConnectedFleetSection: React.FC = () => {
                 </div>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Route Optimization
+                Consolidated Loads
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                For lower fuel consumption.
+                Fewer trips per tonne delivered.
               </p>
             </motion.div>
 
@@ -355,17 +355,17 @@ export const ConnectedFleetSection: React.FC = () => {
               <div className="relative w-full aspect-[16/9.2] max-h-[145px] rounded-xl overflow-hidden mb-3 bg-slate-900">
                 <Image
                   src="/industry2.png"
-                  alt="Partnership Globe Earth Hand"
+                  alt="Baled board offcuts collected for recycling"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Partnership
+                Offcut Recovery
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                With carbon offset programs.
+                Board waste collected back on return trips.
               </p>
             </motion.div>
 
@@ -380,17 +380,17 @@ export const ConnectedFleetSection: React.FC = () => {
               <div className="relative w-full aspect-[16/9.2] max-h-[145px] rounded-xl overflow-hidden mb-3 bg-slate-900">
                 <Image
                   src="/Logistic3.png"
-                  alt="Pilot Program Electric Vans"
+                  alt="Delivery vans used on city packaging routes"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Pilot Program
+                Electric Pilot
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                With electric urban vans.
+                Electric vans on city routes.
               </p>
             </motion.div>
 
@@ -410,10 +410,10 @@ export const ConnectedFleetSection: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#1c1817] font-urbanist mb-0.5">
-                Euro VI
+                BS-VI
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-xs font-urbanist">
-                Emission standards on all heavy vehicles.
+                Emission standard across the heavy fleet.
               </p>
             </motion.div>
           </div>

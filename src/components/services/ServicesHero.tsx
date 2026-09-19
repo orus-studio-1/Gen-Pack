@@ -17,7 +17,7 @@ export const ServicesHero: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817]"
           >
-            Tailored Logistics
+            Packaging Services
           </motion.h1>
 
           <motion.div
@@ -39,8 +39,8 @@ export const ServicesHero: React.FC = () => {
           className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl bg-slate-900 aspect-[16/9] max-h-[650px] my-10 md:my-14"
         >
           <Image
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1800"
-            alt="Tailored Logistics Warehouse and Freight Truck"
+            src="https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&q=80&w=1400"
+            alt="Corrugated board being converted and stacked in the plant"
             fill
             priority
             unoptimized
@@ -58,7 +58,7 @@ export const ServicesHero: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817] mb-6"
           >
-            For a Global World.
+            From brief to pallet.
           </motion.h2>
 
           <motion.p
@@ -68,7 +68,7 @@ export const ServicesHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="text-lg sm:text-xl md:text-2xl text-slate-600 font-urbanist leading-relaxed max-w-3xl"
           >
-            From last-mile delivery to international freight, Loginord offers flexible and scalable logistics solutions designed for your operational success.
+            Structural design, CAD prototyping, transit testing, printing and just-in-time supply. We do not just take an order for boxes — we work out what the box has to survive first.
           </motion.p>
         </div>
 

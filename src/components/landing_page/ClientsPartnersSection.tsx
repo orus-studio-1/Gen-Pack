@@ -3,18 +3,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaFedex,
-  FaDhl,
-  FaAmazon,
-  FaUber,
-  FaGoogle,
-  FaShopify,
-  FaStripe,
-  FaMicrosoft,
-  FaSlack,
-  FaAirbnb,
-  FaSpotify,
-  FaApple,
+  FaTree,
+  FaRecycle,
+  FaCertificate,
+  FaShieldHalved,
+  FaLeaf,
+  FaSeedling,
+  FaFlask,
+  FaClipboardCheck,
+  FaGlobe,
+  FaBoxOpen,
 } from "react-icons/fa6";
 
 interface ClientsPartnersProps {
@@ -23,33 +21,32 @@ interface ClientsPartnersProps {
 }
 
 export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
-  badgeText = "CLIENTS & PARTNERS",
+  badgeText = "CERTIFICATIONS & STANDARDS",
   className = "",
 }) => {
-  // Brand partners list with custom colors
-  const partners = [
-    { name: "FedEx", icon: FaFedex, color: "text-[#4D148C]" },
-    { name: "DHL", icon: FaDhl, color: "text-[#FFCC00]" },
-    { name: "Amazon", icon: FaAmazon, color: "text-[#FF9900]" },
-    { name: "Uber", icon: FaUber, color: "text-[#000000]" },
-    { name: "Apple", icon: FaApple, color: "text-[#555555]" },
-    { name: "Shopify", icon: FaShopify, color: "text-[#95BF47]" },
-    { name: "Google", icon: FaGoogle, color: "text-[#4285F4]" },
-    { name: "Stripe", icon: FaStripe, color: "text-[#635BFF]" },
-    { name: "Microsoft", icon: FaMicrosoft, color: "text-[#F25022]" },
-    { name: "Slack", icon: FaSlack, color: "text-[#4A154B]" },
-    { name: "Airbnb", icon: FaAirbnb, color: "text-[#FF5A5F]" },
-    { name: "Spotify", icon: FaSpotify, color: "text-[#1DB954]" },
+  /* The credentials that actually matter when a buyer audits a packaging
+     supplier — swap these for your own certificate numbers once issued. */
+  const standards = [
+    { name: "FSC® Certified Fibre", icon: FaTree, color: "text-emerald-600" },
+    { name: "100% Recyclable", icon: FaRecycle, color: "text-emerald-600" },
+    { name: "ISO 9001:2015", icon: FaCertificate, color: "text-orange-600" },
+    { name: "ISO 14001", icon: FaLeaf, color: "text-emerald-600" },
+    { name: "BRCGS Packaging", icon: FaShieldHalved, color: "text-slate-700" },
+    { name: "Food-Grade Compliant", icon: FaFlask, color: "text-orange-600" },
+    { name: "Home Compostable", icon: FaSeedling, color: "text-emerald-600" },
+    { name: "EPR Ready", icon: FaClipboardCheck, color: "text-slate-700" },
+    { name: "ISPM-15 Exempt", icon: FaGlobe, color: "text-orange-600" },
+    { name: "Plastic-Free Packs", icon: FaBoxOpen, color: "text-slate-700" },
   ];
 
-  // Duplicate for seamless 100% infinite marquee scroll
-  const marqueeItems = [...partners, ...partners];
+  // Duplicated for a seamless 50% infinite marquee loop.
+  const marqueeItems = [...standards, ...standards];
 
   return (
     <section
       className={`w-full bg-[#f4f4f4] py-10 sm:py-14 border-t border-b border-gray-200/60 overflow-hidden font-urbanist select-none ${className}`}
     >
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 mb-6 sm:mb-8 flex justify-start">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
         {/* Top-left Badge Indicator */}
         <div className="flex items-center gap-2">
           <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
@@ -59,6 +56,10 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             {badgeText}
           </span>
         </div>
+        <p className="text-xs sm:text-sm text-gray-600 max-w-md sm:text-right">
+          Audited processes, traceable fibre and documentation supplied with
+          every consignment.
+        </p>
       </div>
 
       {/* Moving Marquee Container */}
@@ -69,20 +70,20 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear",
-            duration: 25,
+            duration: 30,
           }}
-          className="flex items-center gap-12 sm:gap-16 md:gap-24 w-max shrink-0 pr-12 sm:pr-16 md:pr-24"
+          className="flex items-center gap-10 sm:gap-14 md:gap-20 w-max shrink-0 pr-10 sm:pr-14 md:pr-20"
         >
-          {marqueeItems.map((partner, index) => {
-            const Icon = partner.icon;
+          {marqueeItems.map((item, index) => {
+            const Icon = item.icon;
             return (
               <div
-                key={`${partner.name}-${index}`}
-                className="flex items-center gap-3 shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-200"
+                key={`${item.name}-${index}`}
+                className="flex items-center gap-3 shrink-0 opacity-80"
               >
-                <Icon className={`w-8 h-8 sm:w-10 sm:h-10 ${partner.color}`} />
-                <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-800">
-                  {partner.name}
+                <Icon className={`w-7 h-7 sm:w-9 sm:h-9 ${item.color}`} />
+                <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-800 whitespace-nowrap">
+                  {item.name}
                 </span>
               </div>
             );

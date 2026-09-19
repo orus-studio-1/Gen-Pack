@@ -18,7 +18,7 @@ export const BuiltOnTrust: React.FC = () => {
             Built on Trust.
           </h2>
           <p className="text-xl sm:text-2xl md:text-3xl text-slate-800 font-normal leading-relaxed max-w-4xl tracking-tight">
-            From last-mile delivery to international freight, Loginord offers flexible and scalable logistics solutions designed for your operational success.
+            Genpack was started by people who had spent years watching good products arrive damaged inside bad packaging — and watching perfectly recyclable cartons get contaminated by the plastic stuffed inside them. We manufacture corrugated packaging that solves both problems at once.
           </p>
         </motion.div>
       </div>

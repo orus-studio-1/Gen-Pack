@@ -18,53 +18,53 @@ export const FleetCategoriesAccordion: React.FC = () => {
     {
       id: "cat-1",
       number: "01",
-      title: "Heavy-duty Semi-Trailers",
+      title: "Full-Load Plant Dispatch",
       imageSrc: "/Logistic1.png",
       description:
-        "Our backbone for long-haul and full-truckload (FTL) shipments. Robust chassis and high-capacity trailers keep your freight secure across borders.",
+        "Bulk runs straight from the corrugator to your warehouse. Flat-packed bundles are strapped, corner-protected and loaded so nothing arrives creased or crushed.",
       bullets: [
-        "Payload up to 25 tons",
-        "Available as dry van, curtain side, refrigerated",
-        "ADR-compliant options for hazardous goods",
+        "Up to 25 tonnes of flat-packed board per load",
+        "Closed bodies — no rain, no road spray on kraft",
+        "Bundles banded and edge-protected before loading",
       ],
     },
     {
       id: "cat-2",
       number: "02",
-      title: "Refrigerated Trailers",
+      title: "Scheduled Call-Off Deliveries",
       imageSrc: "/Logistic2.png",
       description:
-        "Precision temperature control for perishables and pharmaceuticals. Our refrigerated units maintain exact setpoints from door to door.",
+        "Annual pricing, monthly releases. We hold your buffer stock at the plant and deliver against your production schedule so cartons never occupy your floor space.",
       bullets: [
-        "Temperature range -25 °C to +25 °C",
-        "Real-time temperature & humidity monitoring",
-        "HACCP-certified and GMP-aligned",
+        "Buffer stock held at our warehouse, not yours",
+        "Fixed weekly or fortnightly delivery slots",
+        "Pallet labels matched to your goods-in system",
       ],
     },
     {
       id: "cat-3",
       number: "03",
-      title: "Urban Express Delivery Vans",
+      title: "City Vans for Urgent Top-Ups",
       imageSrc: "/Logistic3.png",
       description:
-        "Agile, high-efficiency transport tailored for quick city replenishment, retail store delivery, and express last-mile logistics.",
+        "For the day a promotion lands early or a line runs hot. Same-city vans cover short-notice top-ups and sample deliveries without waiting for the next full load.",
       bullets: [
-        "Payload up to 3.5 tons",
-        "Euro 6 & electric eco-friendly power units",
-        "Hydraulic tail-lift for effortless street unloading",
+        "Same-day dispatch within the metro area",
+        "Ideal for samples, first articles and shortfalls",
+        "Tail-lift equipped for kerbside unloading",
       ],
     },
     {
       id: "cat-4",
       number: "04",
-      title: "Specialized & ADR Units",
+      title: "Export & Forwarder Handover",
       imageSrc: "/Logistic4.png",
       description:
-        "Certified transport solutions engineered for hazardous chemicals, high-value electronics, and oversized heavy cargo.",
+        "For customers shipping overseas, we deliver direct to your freight forwarder or container yard with the paperwork and stack pattern already sorted.",
       bullets: [
-        "Certified ADR driver & safety equipment",
-        "Real-time spill & telemetry hazard monitoring",
-        "Custom securing & heavy-load chassis options",
+        "Delivery to port, ICD or forwarder warehouse",
+        "Container-optimised stacking patterns",
+        "ISPM-15 exempt — no fumigation certificates needed",
       ],
     },
   ];
@@ -90,22 +90,22 @@ export const FleetCategoriesAccordion: React.FC = () => {
                   <circle cx="8" cy="8" r="2" fill="#f97316" />
                 </svg>
                 <span className="font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-slate-300">
-                  VEHICLE CATEGORIES
+                  HOW YOUR ORDER ARRIVES
                 </span>
               </div>
 
               {/* Heading */}
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
-                Built for Every Route and Requirement
+                Four ways we get packaging to you
               </h2>
 
               {/* Description Paragraphs */}
               <div className="space-y-5 text-slate-300 font-urbanist text-base sm:text-lg leading-relaxed max-w-lg">
                 <p>
-                  At Loginord, versatility is key. Our fleet is strategically diversified to meet the full spectrum of transportation demands — from heavy industrial freight to time-sensitive cold chain deliveries and agile urban distribution.
+                  Corrugated is bulky, light and easy to damage — which makes the last leg surprisingly easy to get wrong. Running our own vehicles means we control how bundles are stacked, strapped and unloaded.
                 </p>
                 <p>
-                  Whether you're moving raw materials, consumer goods, or specialized cargo, we have the right vehicle to ensure safety, compliance, and on-time performance.
+                  Whether you need a full trailer once a month or a van of samples this afternoon, the delivery method is part of the quote, not an afterthought.
                 </p>
               </div>
             </div>

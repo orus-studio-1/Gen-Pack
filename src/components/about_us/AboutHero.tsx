@@ -15,7 +15,9 @@ export const AboutHero: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817]"
           >
-            Driven by Purpose.
+            Packaging with
+            <br />
+            a conscience.
           </motion.h1>
 
           <motion.div

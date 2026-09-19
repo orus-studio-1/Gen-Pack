@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import CTAButton from "./CTAButton";
+import Logo from "@/components/brand/Logo";
+import { NAV_LINKS } from "@/data/site";
 
 interface NavbarProps {
   className?: string;
@@ -56,15 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about-us" },
-    { label: "Products", href: "/product" },
-    { label: "Services", href: "/services" },
-    { label: "Fleet", href: "/our-fleet" },
-    { label: "Industries", href: "/industries" },
-    { label: "Contact Us", href: "/contact" },
-  ];
+  const navLinks = NAV_LINKS;
 
   return (
     <>
@@ -97,34 +91,11 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
       >
         {/* Navbar Container */}
         <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-10 lg:px-16 xl:px-24 py-3 md:py-4 flex items-center justify-between">
-          {/* Brand Logo with Upward Arrow Box */}
-          <a href="/" className="flex items-center gap-1 group cursor-pointer shrink-0">
-            <span
-              className={`text-2xl md:text-3xl font-bold tracking-tight font-urbanist transition-colors duration-300 ${isDarkText ? "text-gray-900" : "text-white"
-                }`}
-            >
-              Genpact
-            </span>
-            <span
-              className={`w-5 h-5 md:w-5.5 md:h-5.5 rounded border flex items-center justify-center -mt-2 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${isDarkText
-                ? "border-gray-900 text-gray-900"
-                : "border-white text-white"
-                }`}
-            >
-              <svg
-                className="w-3.5 h-3.5 md:w-4 md:h-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </span>
-          </a>
+          {/* Brand Logo */}
+          <div className="shrink-0 flex items-center">
+            <Logo height={30} priority className="md:hidden" />
+            <Logo height={36} priority className="hidden md:inline-flex" />
+          </div>
 
           {/* Desktop Navigation Links (Visible on Large Screens >= 1024px) */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">

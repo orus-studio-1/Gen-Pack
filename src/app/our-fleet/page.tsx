@@ -4,12 +4,13 @@ import FleetHero from "@/components/fleet/FleetHero";
 import FleetByTheNumbers from "@/components/fleet/FleetByTheNumbers";
 import FleetCategoriesAccordion from "@/components/fleet/FleetCategoriesAccordion";
 import ConnectedFleetSection from "@/components/fleet/ConnectedFleetSection";
+import FleetCTA from "@/components/fleet/FleetCTA";
 
 
 export const metadata: Metadata = {
-    title: "Our Fleet | Genpact - Transport & Logistics",
+    title: "Our Delivery Fleet",
     description:
-        "Modern vehicles, advanced technology, total reliability — engineered to move your cargo safely and on time across Europe and North America.",
+        "Own fleet, scheduled routes and full-load dispatch — how Genpack gets packaging from the plant to your line without the flat-pack arriving crushed.",
 };
 
 export default function OurFleetPage() {
@@ -19,6 +20,7 @@ export default function OurFleetPage() {
             <FleetByTheNumbers />
             <FleetCategoriesAccordion />
             <ConnectedFleetSection />
+            <FleetCTA />
 
         </main>
     );

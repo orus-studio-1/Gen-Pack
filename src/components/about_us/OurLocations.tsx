@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface LocationInfo {
-  id: "rotterdam" | "houston";
+  id: "bengaluru" | "pune";
   city: string;
   subtitle: string;
   description: string;
@@ -14,31 +14,31 @@ interface LocationInfo {
   pinLeft: string;
 }
 
-const locationsData: Record<"rotterdam" | "houston", LocationInfo> = {
-  rotterdam: {
-    id: "rotterdam",
-    city: "Rotterdam, Netherlands",
-    subtitle: "European Headquarters & Warehouse",
+const locationsData: Record<"bengaluru" | "pune", LocationInfo> = {
+  bengaluru: {
+    id: "bengaluru",
+    city: "Bengaluru, Karnataka",
+    subtitle: "Head Office & Corrugation Plant",
     description:
-      "Located in the heart of Europe's logistics corridor, our Rotterdam HQ oversees ground freight, regional distribution, and B2B partnerships across France, Germany, Benelux, and Spain.",
-    image: "/about-us/history_1.avif",
-    pinTop: "40%",
-    pinLeft: "49.5%",
+      "Our main plant houses the corrugator, flexo and offset presses, die-cutting and the structural design studio — where every CAD sample and first article is produced.",
+    image: "https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&w=400&q=70",
+    pinTop: "52%",
+    pinLeft: "66%",
   },
-  houston: {
-    id: "houston",
-    city: "Houston, Texas",
-    subtitle: "North American Operations Hub",
+  pune: {
+    id: "pune",
+    city: "Pune, Maharashtra",
+    subtitle: "Western Region Converting & Warehouse",
     description:
-      "Strategically positioned near major Gulf Coast ports, our Houston office manages US domestic freight, cross-border logistics with Mexico and Canada, and partnerships across the Southeastern and Central United States.",
-    image: "/about-us/history_3.webp",
-    pinTop: "47%",
-    pinLeft: "26.8%",
+      "Our western converting unit serves automotive, engineering and export customers, holding stock lines for just-in-time supply into manufacturing and packing halls.",
+    image: "https://images.unsplash.com/photo-1709804945989-c8be542e04db?auto=format&fit=crop&w=400&q=70",
+    pinTop: "50.5%",
+    pinLeft: "64.5%",
   },
 };
 
 export const OurLocations: React.FC = () => {
-  const [activeLocation, setActiveLocation] = useState<"rotterdam" | "houston">("rotterdam");
+  const [activeLocation, setActiveLocation] = useState<"bengaluru" | "pune">("bengaluru");
 
   const current = locationsData[activeLocation];
 
@@ -72,13 +72,13 @@ export const OurLocations: React.FC = () => {
 
           {/* Rotterdam Location Pin */}
           <button
-            onClick={() => setActiveLocation("rotterdam")}
-            style={{ top: locationsData.rotterdam.pinTop, left: locationsData.rotterdam.pinLeft }}
+            onClick={() => setActiveLocation("bengaluru")}
+            style={{ top: locationsData.bengaluru.pinTop, left: locationsData.bengaluru.pinLeft }}
             className="absolute -translate-x-1/2 -translate-y-1/2 z-30 group focus:outline-none cursor-pointer"
-            aria-label="Select Rotterdam HQ"
+            aria-label="Select Bengaluru plant"
           >
             <span className="relative flex items-center justify-center">
-              {activeLocation === "rotterdam" ? (
+              {activeLocation === "bengaluru" ? (
                 <>
                   <span className="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-orange-500 opacity-60" />
                   <span className="relative inline-flex rounded-full h-5 w-5 bg-orange-500 border-2 border-white shadow-lg scale-110 transition-transform" />
@@ -91,13 +91,13 @@ export const OurLocations: React.FC = () => {
 
           {/* Houston Location Pin */}
           <button
-            onClick={() => setActiveLocation("houston")}
-            style={{ top: locationsData.houston.pinTop, left: locationsData.houston.pinLeft }}
+            onClick={() => setActiveLocation("pune")}
+            style={{ top: locationsData.pune.pinTop, left: locationsData.pune.pinLeft }}
             className="absolute -translate-x-1/2 -translate-y-1/2 z-30 group focus:outline-none cursor-pointer"
-            aria-label="Select Houston Hub"
+            aria-label="Select Pune unit"
           >
             <span className="relative flex items-center justify-center">
-              {activeLocation === "houston" ? (
+              {activeLocation === "pune" ? (
                 <>
                   <span className="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-orange-500 opacity-60" />
                   <span className="relative inline-flex rounded-full h-5 w-5 bg-orange-500 border-2 border-white shadow-lg scale-110 transition-transform" />

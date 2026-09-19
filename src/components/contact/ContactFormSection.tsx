@@ -62,7 +62,7 @@ export const ContactFormSection: React.FC = () => {
                 Thank you for reaching out!
               </h3>
               <p className="text-slate-600 max-w-md mx-auto">
-                We've received your message and will get back to you within 1–3 business days.
+                We have your enquiry. A packaging specialist will come back to you with a specification and a price — usually within one working day.
               </p>
             </div>
           ) : (
@@ -106,7 +106,7 @@ export const ContactFormSection: React.FC = () => {
                   <input
                     type="email"
                     required
-                    placeholder="jane@framer.com"
+                    placeholder="jane@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors"
@@ -139,10 +139,11 @@ export const ContactFormSection: React.FC = () => {
                     className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] bg-white appearance-none focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors pr-10 cursor-pointer"
                   >
                     <option value="">Select..</option>
-                    <option value="freight">Freight Quote</option>
-                    <option value="distribution">Regional Distribution</option>
-                    <option value="warehousing">Warehousing & Fulfillment</option>
-                    <option value="partnership">3PL Partnership</option>
+                    <option value="boxes">Corrugated Boxes</option>
+                    <option value="rolls">Corrugated Rolls &amp; Sheets</option>
+                    <option value="eco">Plastic-Free Protection</option>
+                    <option value="retail">Retail &amp; Display Packaging</option>
+                    <option value="custom">Custom Design &amp; Printing</option>
                     <option value="other">General Inquiry</option>
                   </select>
                   <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
@@ -158,7 +159,7 @@ export const ContactFormSection: React.FC = () => {
                 </label>
                 <textarea
                   rows={4}
-                  placeholder="How can we help? Share a few details."
+                  placeholder="Product dimensions, weight, monthly volume and where it ships — the more detail, the sharper the quote."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-5 py-4 rounded-2xl border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors resize-none"
@@ -182,7 +183,7 @@ export const ContactFormSection: React.FC = () => {
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-500 font-normal">
-                  We'll get back to you within 1-3 business days.
+                  Most quotes go out within one working day. Samples are free.
                 </p>
               </div>
             </form>

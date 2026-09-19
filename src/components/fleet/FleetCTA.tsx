@@ -20,20 +20,20 @@ export const FleetCTA: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-orange-400 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8 bg-orange-500/10">
             <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-            <span>BOOK FLEET CAPACITY</span>
+            <span>PLAN YOUR SUPPLY</span>
           </div>
 
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold font-urbanist text-white tracking-tight mb-6 leading-tight">
-            Need reliable fleet capacity for your cargo?
+            Want cartons that arrive when your line needs them?
           </h2>
 
           <p className="text-lg sm:text-2xl text-slate-300 font-urbanist mb-10 max-w-2xl leading-relaxed">
-            Reserve dedicated trucks, semi-trailers, or refrigerated units tailored to your exact scheduling and route needs across Europe & the US.
+            Set up a call-off schedule with buffer stock held at our plant, and stop storing three months of flat-packed board in your own warehouse.
           </p>
 
           <CTAButton
-            label="Request Fleet Availability"
-            href="#quote"
+            label="Talk to Us About Scheduling"
+            href="/contact"
             variant="solid"
             size="lg"
           />

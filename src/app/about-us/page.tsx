@@ -1,7 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import Navbar from "@/components/landing_page/Navbar";
-
 import AboutHero from "@/components/about_us/AboutHero";
 import BuiltOnTrust from "@/components/about_us/BuiltOnTrust";
 import OurHistoryTimeline from "@/components/about_us/OurHistoryTimeline";
@@ -12,17 +10,14 @@ import IndustryStandards from "@/components/about_us/IndustryStandards";
 import AboutCTA from "@/components/about_us/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "About Us | Genpact - Transport & Logistics",
+  title: "About Us",
   description:
-    "Discover Genpact (Loginord) history, mission, leadership team, and global operations connecting Europe and North America.",
+    "Genpack is a corrugated packaging manufacturer built around one idea: protective packaging should be fully recyclable by default. Our story, our plant and the people behind it.",
 };
 
 export default function AboutUsPage() {
   return (
     <main className="w-full min-h-screen relative bg-white selection:bg-orange-500 selection:text-white">
-      {/* Existing Navbar component */}
-      <Navbar />
-
       {/* Main About Us Page Sections */}
       <AboutHero />
       <BuiltOnTrust />

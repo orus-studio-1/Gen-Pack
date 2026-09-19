@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Navbar from "@/components/landing_page/Navbar";
 import Footer from "@/components/landing_page/Footer";
+import { SITE } from "@/data/site";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -13,8 +14,27 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "Genpact - Freight & Logistics",
-  description: "Your Freight, delivered with Precision. Across Europe and the US.",
+  title: {
+    default: "Genpack — Sustainable Corrugated Packaging Manufacturer",
+    template: "%s | Genpack",
+  },
+  description: SITE.description,
+  keywords: [
+    "sustainable packaging",
+    "corrugated boxes",
+    "corrugated rolls",
+    "eco-friendly packaging",
+    "custom printed boxes",
+    "plastic-free packaging",
+    "shelf ready packaging",
+    "export packaging",
+  ],
+  openGraph: {
+    title: "Genpack — Sustainable Corrugated Packaging Manufacturer",
+    description: SITE.description,
+    siteName: "Genpack",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

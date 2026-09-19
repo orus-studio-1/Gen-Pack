@@ -14,38 +14,38 @@ export interface IndustryCardData {
 const industriesList: IndustryCardData[] = [
   {
     id: "perishable-foods",
-    imageSrc: "/Industry1.png",
+    imageSrc: "https://images.unsplash.com/photo-1771904867001-1ee164bf353c?auto=format&fit=crop&q=80&w=1000",
     fallbackSrc:
       "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&q=80&w=800",
-    alt: "Raw steak on ice with chili peppers representing cold-chain perishable foods logistics",
+    alt: "Fresh produce packed in ventilated crates for distribution",
   },
   {
     id: "pharmaceuticals",
-    imageSrc: "/industry2.png",
+    imageSrc: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000",
     fallbackSrc:
       "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800",
-    alt: "Medical pills and pharmaceutical tablets in clean organized rows",
+    alt: "Pharmaceutical blister packs ready for secondary packaging",
   },
   {
     id: "manufacturing",
-    imageSrc: "/industry3.png",
+    imageSrc: "https://images.unsplash.com/photo-1693031630157-7ecc8d06de63?auto=format&fit=crop&q=80&w=1000",
     fallbackSrc:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-    alt: "Industrial manufacturing plant with blue metal piping and machinery",
+    alt: "Industrial converting line inside a packaging plant",
   },
   {
     id: "electronics",
-    imageSrc: "/industry4.png",
+    imageSrc: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=1000",
     fallbackSrc:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-    alt: "Microchip printed circuit board and high tech electronics assembly",
+    alt: "Circuit boards being tested before ESD-safe packing",
   },
   {
     id: "retail-ecommerce",
-    imageSrc: "/industry5.png",
+    imageSrc: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&q=80&w=1000",
     fallbackSrc:
       "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800",
-    alt: "SumUp card reader POS terminal and contactless credit card payment",
+    alt: "E-commerce parcel being handed over for delivery",
   },
 ];
 
@@ -79,7 +79,7 @@ export const TailoredIndustriesHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold tracking-tight text-[#1c1817] leading-[1.08] max-w-4xl"
           >
-            Tailored to your Industry.
+            Packaging tuned to your sector.
           </motion.h1>
 
           {/* Subtitle */}
@@ -89,7 +89,7 @@ export const TailoredIndustriesHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="text-sm sm:text-lg md:text-xl text-slate-600 font-normal mt-3 sm:mt-4 md:mt-5 max-w-2xl leading-relaxed"
           >
-            From perishable foods to high-value electronics. Loginord crafts specialized supply-chain solutions that fit your requirements and regulations.
+            Fresh produce needs airflow. Electronics need static protection. Exports need board that survives four weeks at sea. We specify against the failure mode, not the catalogue.
           </motion.p>
         </div>
 

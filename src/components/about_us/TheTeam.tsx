@@ -14,25 +14,25 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Anders Smithsson",
-    role: "Founder & CEO",
+    role: "Founder & Managing Director",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800",
     linkedin: "#",
   },
   {
     name: "Sophie Van Dijk",
-    role: "Commercial Director",
+    role: "Head of Structural Design",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800",
     linkedin: "#",
   },
   {
     name: "Michael Reyes",
-    role: "Head of Operations",
+    role: "Plant & Production Head",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
     linkedin: "#",
   },
   {
     name: "Claire Fontaine",
-    role: "Quality & Compliance Lead",
+    role: "Quality & Sustainability Lead",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800",
     linkedin: "#",
   },

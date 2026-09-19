@@ -17,7 +17,7 @@ export const ContactHero: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817]"
           >
-            Tailored Logistics
+            Let’s talk packaging.
           </motion.h1>
 
           <motion.div
@@ -38,11 +38,11 @@ export const ContactHero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 md:my-14"
         >
-          {/* Image 1: Rotterdam City Sunset */}
+          {/* Image 1: Plant floor */}
           <div className="relative w-full h-[280px] sm:h-[360px] md:h-[420px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl bg-slate-900">
             <Image
-              src="https://images.unsplash.com/photo-1543716091-a840c05249ec?auto=format&fit=crop&q=80&w=1200"
-              alt="Rotterdam Port Skyline Sunset"
+              src="https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&q=80&w=1200"
+              alt="Corrugated board being converted at the Genpack plant"
               fill
               priority
               unoptimized
@@ -51,11 +51,11 @@ export const ContactHero: React.FC = () => {
             />
           </div>
 
-          {/* Image 2: Houston Skyline Sunrise */}
+          {/* Image 2: Design studio */}
           <div className="relative w-full h-[280px] sm:h-[360px] md:h-[420px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl bg-slate-900">
             <Image
-              src="https://images.unsplash.com/photo-1530089711124-9ce31bd6256d?auto=format&fit=crop&q=80&w=1200"
-              alt="Houston Commercial Hub Aerial View"
+              src="https://images.unsplash.com/photo-1638560926839-cb90ababd947?auto=format&fit=crop&q=80&w=1200"
+              alt="Kraft packaging samples laid out in the design studio"
               fill
               priority
               unoptimized
@@ -74,7 +74,7 @@ export const ContactHero: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817] mb-6"
           >
-            For a Global World.
+            Samples are free.
           </motion.h2>
 
           <motion.p
@@ -84,7 +84,7 @@ export const ContactHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="text-lg sm:text-xl md:text-2xl text-slate-600 font-urbanist leading-relaxed max-w-2xl"
           >
-            Whether you're looking for a quote, have a specific question, or just want to explore how we can support your logistics needs — we're here to help.
+            Send us the product dimensions, the weight and where it is travelling. You will get a board specification, a structural CAD sample and a delivered price — usually inside one working day.
           </motion.p>
         </div>
 

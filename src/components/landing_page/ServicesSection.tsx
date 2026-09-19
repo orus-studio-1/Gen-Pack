@@ -3,13 +3,17 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import CTAButton from "./CTAButton";
+import { IMAGES } from "@/data/products";
 
 interface ServiceItem {
   id: string;
   number: string;
   title: string;
+  blurb: string;
   imageSrc: string;
   alt: string;
+  href: string;
 }
 
 interface ServicesSectionProps {
@@ -20,51 +24,79 @@ interface ServicesSectionProps {
 }
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({
-  titleLine1 = "Logistics that",
-  titleLine2 = "fit your needs.",
-  subtitle = "From temperature-controlled transport to regional distribution — we’ve got it covered.",
+  titleLine1 = "Packaging built",
+  titleLine2 = "around your product.",
+  subtitle = "From a plain kraft roll to a printed, die-cut retail pack — everything converted, printed and tested under one roof.",
   className = "",
 }) => {
   const services: ServiceItem[] = [
     {
       id: "service-1",
       number: "01",
-      title: "Full & Partial Truckloads",
-      imageSrc: "/Logistic1.png",
-      alt: "Full and Partial Truckloads Transport",
+      title: "Corrugated Rolls & Sheets",
+      blurb:
+        "Single face, 2-ply, 3-ply and double-wall kraft rolls slit to your width — the plastic-free way to wrap, cushion and separate.",
+      imageSrc: IMAGES.paperRolls,
+      alt: "Kraft paper rolls stacked on a rack",
+      href: "/product?category=corrugated-rolls",
     },
     {
       id: "service-2",
       number: "02",
-      title: "Regional Distribution",
-      imageSrc: "/Logistic2.png",
-      alt: "Regional Distribution Containers",
+      title: "Custom Boxes & Die-Cutting",
+      blurb:
+        "FEFCO standards or a bespoke structure cut to the millimetre around your product, so you stop paying to ship air.",
+      imageSrc: IMAGES.boxBlank,
+      alt: "Printed die-cut corrugated blank",
+      href: "/product?category=corrugated-boxes",
     },
     {
       id: "service-3",
       number: "03",
-      title: "Warehousing & Fulfillment",
-      imageSrc: "/Logistic3.png",
-      alt: "Warehousing and Fulfillment Racks",
+      title: "Plastic-Free Protection",
+      blurb:
+        "Paper void fill, honeycomb, moulded pulp and kraft cushioning that replace bubble wrap, air pillows and EPS foam entirely.",
+      imageSrc: IMAGES.paperSack,
+      alt: "Crumpled kraft paper used as protective void fill",
+      href: "/product?category=eco-innovations",
     },
     {
       id: "service-4",
       number: "04",
-      title: "Refrigerated Transport",
-      imageSrc: "/Logistic4.png",
-      alt: "Refrigerated Transport Trucks",
+      title: "Retail & Shelf-Ready Displays",
+      blurb:
+        "Shelf-ready cartons, counter units and POS displays that go from the pallet to the shelf without a second touch.",
+      imageSrc: IMAGES.shelfBox,
+      alt: "Shelf-ready packaging on a retail aisle",
+      href: "/product?category=retail-packaging",
     },
     {
       id: "service-5",
       number: "05",
-      title: "3PL Subcontracting",
-      imageSrc: "/Logistic6.png",
-      alt: "3PL Subcontracting Logistics Fleet",
+      title: "Print, Finishing & Branding",
+      blurb:
+        "Six-colour flexo, offset litho lamination, spot UV, embossing and foil — with water-based inks that keep the pack recyclable.",
+      imageSrc: IMAGES.press,
+      alt: "Printing press running packaging artwork",
+      href: "/product?category=customization-print",
+    },
+    {
+      id: "service-6",
+      number: "06",
+      title: "Structural Design & Testing",
+      blurb:
+        "Free CAD samples, drop and compression testing, and a board specification matched to your real transit route.",
+      imageSrc: IMAGES.craftDesk,
+      alt: "Packaging design desk with kraft samples",
+      href: "/services",
     },
   ];
 
   return (
-    <section className={`relative w-full bg-white text-gray-900 py-14 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
+    <section
+      id="services"
+      className={`relative w-full bg-white text-gray-900 py-14 sm:py-28 lg:py-36 font-urbanist select-none scroll-mt-24 ${className}`}
+    >
       <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-start">
           {/* Left Column: Sticky Title & Subtitle */}
@@ -76,18 +108,29 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             <p className="text-sm sm:text-lg text-gray-800 font-normal mt-3 sm:mt-5 leading-relaxed max-w-md">
               {subtitle}
             </p>
+            <div className="mt-6 sm:mt-8">
+              <CTAButton
+                label="Browse the Catalogue"
+                href="/product"
+                variant="outline"
+                size="sm"
+                textColor="text-[#1c1817]"
+                iconColor="text-[#1c1817]"
+              />
+            </div>
           </div>
 
-          {/* Right Column: Scrollable Services Stack (Starting at Bottom Offset) */}
+          {/* Right Column: Scrollable Services Stack */}
           <div className="lg:col-span-7 pt-4 lg:pt-[35vh] space-y-12 sm:space-y-24 pb-12 sm:pb-20">
             {services.map((service) => (
-              <motion.div
+              <motion.a
                 key={service.id}
+                href={service.href}
                 initial={{ opacity: 0, y: 70 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.15 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col"
+                className="flex flex-col group"
               >
                 {/* Number Badge */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
@@ -100,14 +143,18 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 </div>
 
                 {/* Service Title */}
-                <h3 className="text-xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-4 sm:mb-6">
+                <h3 className="text-xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors">
                   {service.title}
                 </h3>
 
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-xl mb-4 sm:mb-6">
+                  {service.blurb}
+                </p>
+
                 {/* Service Card Image */}
-                <div className="relative w-full h-[220px] sm:h-[340px] md:h-[460px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-gray-100/80 group">
+                <div className="relative w-full h-[220px] sm:h-[340px] md:h-[460px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-gray-100/80">
                   <Image
-                    src={service.imageSrc}
+                    src={`${service.imageSrc}?auto=format&fit=crop&w=1200&q=72`}
                     alt={service.alt}
                     fill
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -115,7 +162,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     priority={service.number === "01"}
                   />
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

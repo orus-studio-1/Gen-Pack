@@ -1,16 +1,14 @@
 import React from "react";
 import type { Metadata } from "next";
-import Navbar from "@/components/landing_page/Navbar";
-
 import ServicesHero from "@/components/services/ServicesHero";
 import CoreCapabilities from "@/components/services/CoreCapabilities";
 import WhatSetsUsApart from "@/components/services/WhatSetsUsApart";
 import OurProcess from "@/components/services/OurProcess";
 
 export const metadata: Metadata = {
-  title: "Services | Genpact - Transport & Logistics",
+  title: "Packaging Services",
   description:
-    "Tailored logistics solutions for a global world. From last-mile delivery to international freight, Genpact (Loginord) offers flexible and scalable logistics.",
+    "Structural design, CAD prototyping, transit testing, flexo and offset printing, and just-in-time supply — the full packaging service behind every Genpack carton.",
 };
 
 export default function ServicesPage() {

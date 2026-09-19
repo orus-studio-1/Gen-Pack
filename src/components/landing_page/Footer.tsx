@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import TopPattern from "./TopPattern";
 import CTAButton from "./CTAButton";
+import Logo from "@/components/brand/Logo";
+import { SITE } from "@/data/site";
 
 interface FooterProps {
   className?: string;
@@ -40,19 +42,19 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           <div className="lg:col-span-7 flex flex-col justify-between space-y-10">
             <div>
               {/* Logo */}
-              <Link href="/" className="inline-flex items-center gap-1 group">
-                <span className="text-4xl sm:text-5xl font-bold tracking-tight text-white group-hover:text-orange-400 transition-colors">
-                  Genpact
-                </span>
-                <span className="text-3xl sm:text-4xl font-bold text-orange-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                  ↗
-                </span>
-              </Link>
+              <Logo height={44} className="sm:hidden" />
+              <Logo height={54} className="hidden sm:inline-flex" />
+
+              <p className="mt-5 max-w-md text-sm sm:text-base text-gray-400 leading-relaxed">
+                Corrugated rolls, boxes, inserts and retail displays manufactured
+                from 100% recyclable kraft — plastic-free packaging built around
+                your product, your line and your carbon targets.
+              </p>
 
               {/* Newsletter Block */}
               <div className="mt-8 sm:mt-10">
                 <h3 className="text-base sm:text-lg font-semibold text-white mb-4">
-                  Keep on track by subscribing our Newsletter.
+                  Packaging insights, new board grades and sustainability updates.
                 </h3>
                 <form
                   onSubmit={handleSubmit}
@@ -126,32 +128,36 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               <h4 className="text-lg font-semibold text-white mb-4 sm:mb-5">
                 Contacts
               </h4>
-              <ul className="space-y-3 text-sm text-gray-300 font-mono">
+              <ul className="space-y-3 text-sm text-gray-300">
                 <li>
                   <a
-                    href="mailto:info@genpact.com"
-                    className="hover:text-orange-400 transition-colors"
+                    href={`mailto:${SITE.email}`}
+                    className="hover:text-orange-400 transition-colors font-mono"
                   >
-                    info@genpact.com
+                    {SITE.email}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="mailto:houston@genpact.com"
-                    className="hover:text-orange-400 transition-colors"
+                    href={`mailto:${SITE.salesEmail}`}
+                    className="hover:text-orange-400 transition-colors font-mono"
                   >
-                    houston@genpact.com
+                    {SITE.salesEmail}
                   </a>
                 </li>
                 <li className="pt-1">
-                  <a href="tel:+3123732600" className="hover:text-orange-400 transition-colors">
-                    +31 23 732 600
+                  <a href={SITE.phoneHref} className="hover:text-orange-400 transition-colors font-mono">
+                    {SITE.phone}
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+17135976172" className="hover:text-orange-400 transition-colors">
-                    +1 713 5976172
+                  <a href={SITE.altPhoneHref} className="hover:text-orange-400 transition-colors font-mono">
+                    {SITE.altPhone}
                   </a>
+                </li>
+                <li className="pt-2 text-gray-400 leading-relaxed not-italic">
+                  {SITE.address.line2},<br />
+                  {SITE.address.city}, {SITE.address.region}
                 </li>
               </ul>
             </div>
@@ -159,41 +165,26 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
             {/* Services Column */}
             <div>
               <h4 className="text-lg font-semibold text-white mb-4 sm:mb-5">
-                Services & Products
+                Packaging
               </h4>
               <ul className="space-y-3 text-sm text-gray-300">
-                <li>
-                  <Link
-                    href="/services"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/product"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    Products
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/our-fleet"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    Our Fleet
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/industries"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    Industries
-                  </Link>
-                </li>
+                {[
+                  { label: "Corrugated Rolls", href: "/product?category=corrugated-rolls" },
+                  { label: "Corrugated Boxes", href: "/product?category=corrugated-boxes" },
+                  { label: "Eco-Friendly Range", href: "/product?category=eco-innovations" },
+                  { label: "Retail & Displays", href: "/product?category=retail-packaging" },
+                  { label: "Inserts & Protection", href: "/product?category=inserts-protection" },
+                  { label: "All Products", href: "/product" },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="hover:text-orange-400 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -203,33 +194,40 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 Company
               </h4>
               <ul className="space-y-3 text-sm text-gray-300">
-                <li>
-                  <Link
-                    href="/"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about-us"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:text-orange-400 transition-colors"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
+                {[
+                  { label: "Home", href: "/" },
+                  { label: "About Us", href: "/about-us" },
+                  { label: "Services", href: "/services" },
+                  { label: "Industries", href: "/industries" },
+                  // { label: "Our Fleet", href: "/our-fleet" },
+                  { label: "Contact Us", href: "/contact" },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="hover:text-orange-400 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 sm:mt-16 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-gray-500">
+          <p>
+            © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
+          </p>
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>FSC-certified fibre</span>
+            <span className="text-gray-700">•</span>
+            <span>ISO 9001 &amp; ISO 14001 processes</span>
+            <span className="text-gray-700">•</span>
+            <span>100% recyclable board</span>
+          </p>
         </div>
       </div>
     </footer>

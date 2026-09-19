@@ -12,22 +12,22 @@ interface ContactPerson {
 
 const keyContactsData: ContactPerson[] = [
   {
-    name: "Michael Reyes",
-    role: "US Business Development",
-    email: "michael@logi-nord.com",
-    phone: "+1 (832) 555-0192",
+    name: "Sales & Quotations",
+    role: "New enquiries, pricing and samples",
+    email: "sales@genpack.in",
+    phone: "+91 98765 43210",
+  },
+  {
+    name: "Design Studio",
+    role: "Structural CAD, artwork and prototypes",
+    email: "design@genpack.in",
+    phone: "+91 80 4567 8900",
   },
   {
     name: "Customer Support",
-    role: "Global Customer Support",
-    email: "support@logi-nord.com",
-    phone: "+1 (832) 555-0192",
-  },
-  {
-    name: "Sophie Van Dijk",
-    role: "Commercial Director",
-    email: "sophie@logi-nord.com",
-    phone: "+1 (832) 555-0191",
+    role: "Live orders, dispatch and scheduling",
+    email: "support@genpack.in",
+    phone: "+91 80 4567 8901",
   },
 ];
 

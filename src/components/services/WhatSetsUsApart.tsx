@@ -13,8 +13,8 @@ interface DifferentiatorItem {
 const itemsData: DifferentiatorItem[] = [
   {
     id: "diff-1",
-    title: "Certified Reliability",
-    description: "ISO 9001 processes & time-definite performance.",
+    title: "Certified & Traceable",
+    description: "ISO 9001 and ISO 14001 processes, FSC-certified fibre, batch-tested board.",
     icon: (
       <svg
         width="28"
@@ -34,8 +34,8 @@ const itemsData: DifferentiatorItem[] = [
   },
   {
     id: "diff-2",
-    title: "Own Fleet + Trusted Partners",
-    description: "Flexibility and control for consistent delivery.",
+    title: "Manufacturer, Not a Reseller",
+    description: "Corrugating, printing, die-cutting and gluing all happen in our own plant.",
     icon: (
       <svg
         width="28"
@@ -57,9 +57,9 @@ const itemsData: DifferentiatorItem[] = [
   },
   {
     id: "diff-3",
-    title: "Dual-Hub Operations",
+    title: "Two Plants, One Specification",
     description:
-      "Rotterdam & Houston coverage ensures global reach and regional precision.",
+      "Bengaluru and Pune units run the same board grades, so supply never depends on one site.",
     icon: (
       <svg
         width="28"
@@ -80,8 +80,8 @@ const itemsData: DifferentiatorItem[] = [
   },
   {
     id: "diff-4",
-    title: "Client-Centric Integrations",
-    description: "API-based tracking, order management & EDI support.",
+    title: "Plastic-Free by Default",
+    description: "Paper cushioning, paper tape and water-based inks come as standard, not as an upsell.",
     icon: (
       <svg
         width="28"
@@ -100,8 +100,8 @@ const itemsData: DifferentiatorItem[] = [
   },
   {
     id: "diff-5",
-    title: "Scalable for Growth",
-    description: "Modular service plans for evolving business needs.",
+    title: "Scales From 100 to 100,000",
+    description: "Short digital runs for launches, full flexo runs when the volume arrives.",
     icon: (
       <svg
         width="28"
@@ -130,7 +130,7 @@ export const WhatSetsUsApart: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-5 mix-blend-multiply"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1800')",
+            "url('https://images.unsplash.com/photo-1783700697522-fb6c760dae82?auto=format&fit=crop&q=80&w=1800')",
         }}
       />
 
@@ -140,7 +140,7 @@ export const WhatSetsUsApart: React.FC = () => {
           {/* Left Column: Sticky Title & Subtitle (Pinned on left while scrolling) */}
           <div className="lg:col-span-5 lg:sticky lg:top-36 self-start flex flex-col justify-start">
             <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
-              FUELING EVERY MOVE
+              BEHIND EVERY CARTON
             </p>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.06]">
               What Sets Us Apart:

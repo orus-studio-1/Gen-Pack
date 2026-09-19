@@ -24,92 +24,92 @@ const capabilities: CapabilityItem[] = [
   {
     id: "cap-1",
     number: "01",
-    title: "National & International Freight",
+    title: "Structural Design & Prototyping",
     imageSrc:
-      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1638560926839-cb90ababd947?auto=format&fit=crop&q=80&w=1400",
     description:
-      "We move goods across Europe and North America with precision. Whether it's full truckloads or smaller consignments, our multimodal solutions ensure on-time, secure deliveries.",
+      "Our design studio models the pack around your product in CAD, cuts a physical sample on a digital table, and iterates until it fits — before any tooling is committed.",
     features: [
       {
-        label: "Multi-modal shipping:",
-        detail: "Road, rail, air, and ocean freight.",
+        label: "Free CAD samples:",
+        detail: "Physical first article before tooling.",
       },
       {
         label: "Customs-ready:",
-        detail: "International documentation and clearance support.",
+        detail: "Drop, compression and vibration testing.",
       },
       {
-        label: "Route optimization:",
-        detail: "For efficiency, cost, and sustainability.",
+        label: "Board engineering:",
+        detail: "Flute, ply and GSM matched to the route.",
       },
     ],
   },
   {
     id: "cap-2",
     number: "02",
-    title: "Regional Distribution",
+    title: "Printing & Finishing",
     imageSrc:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1758183961426-88d64eb5f787?auto=format&fit=crop&q=80&w=1400",
     description:
-      "Our regional distribution network enables daily and scheduled deliveries in France and the U.S., supported by digital traceability and performance tracking.",
+      "Up to six-colour flexo for shipping cartons and four-colour offset litho lamination for retail packs, finished in-line with lamination, spot UV, embossing and foil.",
     features: [
       {
-        label: "Same-day / next-day options:",
-        detail: "Based on regional hubs.",
+        label: "Water-based inks:",
+        detail: "The printed pack stays recyclable.",
       },
       {
-        label: "Real-time tracking:",
-        detail: "From pick-up to delivery.",
+        label: "Colour-matched proofs:",
+        detail: "Signed off before the run starts.",
       },
       {
-        label: "Proof of delivery (POD):",
-        detail: "Digital and secure.",
+        label: "Variable data print:",
+        detail: "Barcodes, batch codes and QR per unit.",
       },
     ],
   },
   {
     id: "cap-3",
     number: "03",
-    title: "Warehousing & Fulfillment",
+    title: "Manufacturing & Converting",
     imageSrc:
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1693031630157-7ecc8d06de63?auto=format&fit=crop&q=80&w=1400",
     description:
-      "More than storage — our logistics hubs offer advanced capabilities tailored to dynamic supply chains and omni-channel operations.",
+      "Corrugating, die-cutting, gluing and stitching under one roof, so a specification approved on a sample is the specification that runs at a hundred thousand units.",
     features: [
       {
-        label: "Temperature-controlled zones:",
-        detail: "For sensitive goods.",
+        label: "Batch testing:",
+        detail: "Bursting strength and ECT, every run.",
       },
       {
-        label: "Inventory integration:",
-        detail: "Real-time sync with your systems.",
+        label: "Coatings & laminates:",
+        detail: "Moisture, wax and food-grade options.",
       },
       {
-        label: "Value-added services:",
-        detail: "Kitting, labeling, repacking.",
+        label: "Assembly-ready supply:",
+        detail: "Flat-packed, banded and pallet-labelled.",
       },
     ],
   },
   {
     id: "cap-4",
     number: "04",
-    title: "3PL Subcontracting",
+    title: "Scheduled Supply & Stock Holding",
     imageSrc:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1672552226380-486fe900b322?auto=format&fit=crop&q=80&w=1400",
     description:
-      "We support growing businesses with long-term logistics solutions, dedicated assets, and flexible SLAs — acting as an extension of your team.",
+      "Scheduled call-offs, buffer stock held at the plant and delivery straight to your packing hall — so your line never stops waiting on cartons.",
     features: [
       {
-        label: "Custom contracts:",
-        detail: "Tailored to your industry & volumes.",
+        label: "Call-off contracts:",
+        detail: "Priced annually, released monthly.",
       },
       {
-        label: "Dedicated fleet options:",
-        detail: "Branded or white-label.",
+        label: "Buffer stock:",
+        detail: "Held at the plant, not your warehouse.",
       },
       {
-        label: "Client dashboards:",
-        detail: "Real-time data, performance reports.",
+        label: "Own delivery fleet:",
+        detail: "Flat-packed loads that arrive square.",
       },
     ],
   },
@@ -145,7 +145,7 @@ export const CoreCapabilities: React.FC = () => {
                 Core Capabilities
               </h2>
               <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-md font-urbanist">
-                Delivering tailored transport and logistics solutions to move your business forward.
+                Everything between the brief and the pallet — design, print, conversion and supply, handled by one team.
               </p>
             </div>
 

@@ -21,45 +21,45 @@ interface TestimonialsSectionProps {
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   titleLine1 = "What Our",
   titleLine2 = "Clients Say",
-  subtitle = "Delivering best experience. We ensure safe and efficient delivery for our clients every step of the way.",
+  subtitle = "Packaging is judged on arrival, not on the quote. Here is what customers say after the first few thousand units have shipped.",
   className = "",
 }) => {
   const testimonials: Testimonial[] = [
     {
       id: "test-1",
       quote:
-        "“Genpact helped us streamline our entire distribution network in Western Europe. Always on time, always reliable.”",
-      name: "Frank Anderson",
-      company: "European Food Co.",
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
-    },
-    {
-      id: "test-2",
-      quote:
-        "“Genpact became a true partner in our cold-chain operations across the US. Their real-time visibility tools make all the difference.”",
-      name: "Carla Jennings",
-      company: "FreshHarvest Foods",
+        "“Genpack redesigned our mailer so the product fits without void fill. Damage claims dropped by two thirds and our dimensional freight bill came down with them.”",
+      name: "Ananya Rao",
+      company: "Head of Operations, D2C skincare brand",
       avatar:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
     },
     {
+      id: "test-2",
+      quote:
+        "“We moved our entire export line off plastic wrap onto their honeycomb and paper cushioning. Same protection, and our EPR reporting got a lot simpler.”",
+      name: "Rahul Menon",
+      company: "Plant Manager, appliance manufacturer",
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+    },
+    {
       id: "test-3",
       quote:
-        "“What impressed us most was their flexibility during seasonal peaks. Genpact scaled up quickly without compromising quality.”",
-      name: "Thierry Morel",
-      company: "AgriNova Americas",
+        "“Their shelf-ready cartons cut our store replenishment time noticeably. The buyer noticed the shelf presence before we even mentioned it.”",
+      name: "Priya Sharma",
+      company: "Category Lead, national FMCG",
       avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
     },
     {
       id: "test-4",
       quote:
-        "“From the first shipment, it was clear they understood the complexity of electronics transport. Everything has been smooth and secure.”",
-      name: "Derek Tanaka",
-      company: "Nextronix Components",
+        "“Ventilated cartons that actually hold up through pre-cooling and a four-day transit. Our fruit arrives in the condition it left in.”",
+      name: "Vikram Patel",
+      company: "Export Head, fresh produce exporter",
       avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
     },
   ];
 

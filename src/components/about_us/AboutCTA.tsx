@@ -20,15 +20,15 @@ export const AboutCTA: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-orange-400 border border-orange-500/30 rounded-full px-4 py-1.5 mb-8 bg-orange-500/10">
             <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-            <span>START LOGISTICS TODAY</span>
+            <span>START WITH A SAMPLE</span>
           </div>
 
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold font-urbanist text-white tracking-tight mb-6 leading-tight">
-            Ready to move smarter?
+            Ready to lose the plastic?
           </h2>
 
           <p className="text-lg sm:text-2xl text-slate-300 font-urbanist mb-10 max-w-2xl leading-relaxed">
-            Get a tailored logistics strategy for your cargo across Europe and the United States. Fast, transparent, and built for speed.
+            Send us your product dimensions and we will come back with a board specification, a free structural CAD sample and a delivered price.
           </p>
 
           <CTAButton

@@ -1,7 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import Navbar from "@/components/landing_page/Navbar";
-
 import ContactHero from "@/components/contact/ContactHero";
 import ContactFormSection from "@/components/contact/ContactFormSection";
 import KeyContacts from "@/components/contact/KeyContacts";
@@ -9,9 +7,9 @@ import OurLocations from "@/components/about_us/OurLocations";
 import ContactFAQSection from "@/components/contact/ContactFAQSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Genpact - Transport & Logistics",
+  title: "Contact Us",
   description:
-    "Get in touch with Genpact (Loginord). Whether you're looking for a quote, have questions, or want to explore our logistics solutions.",
+    "Request a packaging quote, book a free structural CAD sample, or talk to a Genpack engineer about replacing plastic in your pack.",
 };
 
 export default function ContactPage() {
