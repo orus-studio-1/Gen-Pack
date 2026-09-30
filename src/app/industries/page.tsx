@@ -9,7 +9,7 @@ import TestimonialsSection from "@/components/landing_page/TestimonialsSection";
 export const metadata: Metadata = {
     title: "Industries We Package For",
     description:
-        "From fresh produce and pharmaceuticals to electronics and heavy engineering, Genpack specifies corrugated packaging against how each sector actually ships.",
+        "From fresh produce and pharmaceuticals to electronics and heavy engineering, Carapace specifies corrugated packaging against how each sector actually ships.",
 };
 
 export default function IndustriesPage() {

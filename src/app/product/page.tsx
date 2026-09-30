@@ -9,7 +9,7 @@ import ProductSpecsCTA from "@/components/product/ProductSpecsCTA";
 export const metadata: Metadata = {
   title: "Sustainable Packaging Products",
   description:
-    "Corrugated rolls, FEFCO boxes, eco-friendly void fill, retail displays, industrial bulk packaging and custom print — 70+ recyclable packaging solutions manufactured by Genpack.",
+    "Corrugated rolls, FEFCO boxes, eco-friendly void fill, retail displays, industrial bulk packaging and custom print — 70+ recyclable packaging solutions manufactured by Carapace.",
 };
 
 export default function ProductsPage() {

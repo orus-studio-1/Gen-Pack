@@ -51,7 +51,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
 
   const bgBorderPill = isSolid
     ? "border border-orange-600 bg-orange-600 group-hover:bg-orange-500 group-hover:border-orange-500"
-    : "border border-orange-500 bg-transparent group-hover:bg-orange-500";
+    : "border border-orange-500 bg-transparent group-hover:bg-orange-600 group-hover:text-white";
 
   const bgBorderCircle = isSolid
     ? "border border-orange-600 bg-orange-600 group-hover:bg-orange-500 group-hover:border-orange-500"
@@ -75,7 +75,9 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
         className={`${circleSize} ${bgBorderCircle} rounded-full flex items-center justify-center transition-all duration-300 shadow-sm shrink-0`}
       >
         <svg
-          className={`${iconSize} ${iconColor} transition-transform duration-300 group-hover:translate-x-0.5`}
+          className={`${iconSize} ${iconColor} ${
+    !isSolid ? "group-hover:text-white" : ""
+  } transition-transform duration-300 group-hover:translate-x-0.5`}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

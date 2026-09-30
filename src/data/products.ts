@@ -1,5 +1,5 @@
 /**
- * Genpack product catalogue.
+ * Carapace product catalogue.
  *
  * Single source of truth for the /product listing, the /product/[slug] detail
  * pages and any cross-links (footer, landing page teasers).
@@ -80,7 +80,7 @@ const IMG = {
   boxToothbrush: "https://images.unsplash.com/photo-1605615923013-f26c14fe7155",
   boxBlank: "https://images.unsplash.com/photo-1771255217872-99fe6c876e45",
   boxSticker: "https://images.unsplash.com/photo-1571510175664-855ac60fe8f6",
-  boxHandover: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55",
+  boxHandover: "/newAdded/ecommerce&d2c.png",
   boxPerson: "https://images.unsplash.com/photo-1449247666642-264389f5f5b1",
   saleTags: "https://images.unsplash.com/photo-1607083206968-13611e3d76db",
   takeaway: "https://images.unsplash.com/photo-1597974828431-9078248d8cc9",
@@ -100,8 +100,8 @@ const IMG = {
   pressInk: "https://images.unsplash.com/photo-1758183961426-88d64eb5f787",
   cardboardPile: "https://images.unsplash.com/photo-1719600804011-3bff3909b183",
   cardboardHeap: "https://images.unsplash.com/photo-1662556828474-aaad95b81fb1",
-  craftDesk: "https://images.unsplash.com/photo-1638560926839-cb90ababd947",
-  shelfBox: "https://images.unsplash.com/photo-1606824722920-4c652a70f348",
+  craftDesk: "https://images.unsplash.com/photo-1661595677669-868f3591e5db",
+  shelfBox: "https://images.unsplash.com/photo-1534723452862-4c874018d66d",
   storeAisle: "https://images.unsplash.com/photo-1601600576337-c1d8a0d1373c",
   groceryAisle: "https://images.unsplash.com/photo-1670684684445-a4504dca0bbc",
   produceShelf: "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8",
@@ -112,7 +112,7 @@ const IMG = {
   blister: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae",
   blisterPile: "https://images.unsplash.com/photo-1577401132921-cb39bb0adcff",
   pills: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926",
-  phonePack: "https://images.unsplash.com/photo-1755606159507-a98b20d06578",
+  phonePack: "/newAdded/electronics&appliance.png",
   eyewearPack: "https://images.unsplash.com/photo-1755606045126-1aeb4f0e7c2d",
   paperRolls: "https://images.unsplash.com/photo-1451930264513-2e93da3ba755",
   paperSack: "https://images.unsplash.com/photo-1590820077566-af4e557c1548",

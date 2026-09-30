@@ -14,20 +14,20 @@ const keyContactsData: ContactPerson[] = [
   {
     name: "Sales & Quotations",
     role: "New enquiries, pricing and samples",
-    email: "sales@genpack.in",
-    phone: "+91 98765 43210",
+    email: "sales@carapaceinc.com",
+    phone: "+91 99 0362 2821",
   },
   {
     name: "Design Studio",
     role: "Structural CAD, artwork and prototypes",
-    email: "design@genpack.in",
+    email: "design@carapace.in",
     phone: "+91 80 4567 8900",
   },
   {
     name: "Customer Support",
     role: "Live orders, dispatch and scheduling",
-    email: "support@genpack.in",
-    phone: "+91 80 4567 8901",
+    email: "support@carapace.in",
+    phone: "+91 98 3069 4795",
   },
 ];
 

@@ -42,7 +42,7 @@ export const ContactHero: React.FC = () => {
           <div className="relative w-full h-[280px] sm:h-[360px] md:h-[420px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl bg-slate-900">
             <Image
               src="https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&q=80&w=1200"
-              alt="Corrugated board being converted at the Genpack plant"
+              alt="Corrugated board being converted at the Carapace plant"
               fill
               priority
               unoptimized

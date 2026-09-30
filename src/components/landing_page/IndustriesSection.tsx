@@ -26,7 +26,7 @@ interface IndustriesSectionProps {
 export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
   titleLine1 = "Built for the",
   titleLine2 = "way you ship.",
-  subtitle = "Every sector breaks packaging differently. We specify board, flute and structure against how your product actually travels.",
+  subtitle = "Every sector approaches packaging differently. We specify board, flute and structure around how your product actually travels.",
   className = "",
 }) => {
   const industries: IndustryItem[] = [
@@ -35,7 +35,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
       number: "01",
       title: "E-Commerce & D2C",
       blurb:
-        "Right-sized mailers, tear strips and printed interiors that survive the courier network and still open well on camera.",
+        "Right-sized mailers, easy-open tear strips and printed interiors designed for secure transit and a better unboxing experience.",
       imageSrc: IMAGES.boxHandover,
       alt: "Parcel being handed over for e-commerce delivery",
     },
@@ -44,7 +44,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
       number: "02",
       title: "Food, FMCG & Fresh Produce",
       blurb:
-        "Food-grade liners, ventilated cartons and wax-coated cold-chain boxes that hold up from the pack house to the shelf.",
+        "Food-grade liners, ventilated cartons and cold-chain packaging designed to protect freshness from pack house to shelf.",
       imageSrc: IMAGES.cratesApples,
       alt: "Fresh produce packed in crates for distribution",
     },
@@ -62,7 +62,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
       number: "04",
       title: "Electronics & Appliances",
       blurb:
-        "ESD-safe board, honeycomb cushioning and die-cut fitments that hold high-value units still through every drop test.",
+        "Heavy-duty board, honeycomb cushioning and die-cut fitments that hold high-value units still through every drop test.",
       imageSrc: IMAGES.phonePack,
       alt: "Electronics presented in recyclable kraft packaging",
     },
@@ -71,7 +71,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
       number: "05",
       title: "Industrial, Automotive & Export",
       blurb:
-        "Triple-wall crates, octabins and pallet boxes that replace timber — no fumigation certificate, a fraction of the weight.",
+        "Triple-wall crates, octabins and pallet boxes — lightweight alternatives to timber for heavy-duty packaging.",
       imageSrc: IMAGES.forklift,
       alt: "Palletised export freight being loaded",
     },

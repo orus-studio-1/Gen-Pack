@@ -245,65 +245,92 @@ const FastDeliveryIllustration: React.FC = () => (
 );
 
 // Card 4 Illustration: Certified & Compliant Fleet
-const CertifiedFleetIllustration: React.FC = () => (
-  <div className="relative w-44 h-36 flex flex-col items-center justify-end">
-    {/* White Document Sliding Up & Down */}
+const PackagingPerformanceIllustration: React.FC = () => (
+  <div className="relative w-44 h-40 flex flex-col items-center justify-end">
+
     <motion.div
-      animate={{ y: [0, -10, 0] }}
-      transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-      className="w-32 h-24 bg-white border border-slate-200 rounded-t-lg shadow-md p-2.5 flex flex-col justify-between z-0 transform -translate-y-2"
+      animate={{ scale: [0.6, 1.3, 0.6], opacity: [0.6, 0, 0.6] }}
+      transition={{ repeat: Infinity, duration: 2.2, ease: "easeOut" }}
+      className="absolute bottom-3 w-24 h-4 rounded-full border-2 border-orange-400/70"
+    />
+    <motion.div
+      animate={{ scale: [0.4, 1, 0.4], opacity: [0.5, 0, 0.5] }}
+      transition={{ repeat: Infinity, duration: 2.2, ease: "easeOut", delay: 0.15 }}
+      className="absolute bottom-3 w-16 h-3 rounded-full border-2 border-orange-500/60"
+    />
+
+    <motion.div
+      animate={{ y: [-8, 30], opacity: [0, 1, 0] }}
+      transition={{ repeat: Infinity, duration: 1.6, ease: "easeIn" }}
+      className="absolute top-2 left-6 w-1 h-3 rounded-full bg-cyan-400/70"
+    />
+    <motion.div
+      animate={{ y: [-8, 30], opacity: [0, 1, 0] }}
+      transition={{ repeat: Infinity, duration: 1.6, ease: "easeIn", delay: 0.5 }}
+      className="absolute top-2 right-7 w-1 h-3 rounded-full bg-cyan-400/70"
+    />
+    <motion.div
+      animate={{ y: [-8, 30], opacity: [0, 1, 0] }}
+      transition={{ repeat: Infinity, duration: 1.6, ease: "easeIn", delay: 0.9 }}
+      className="absolute top-2 left-1/2 -translate-x-1/2 w-1 h-3 rounded-full bg-cyan-400/70"
+    />
+
+    <motion.div
+      animate={{ y: [-18, 0, -18] }}
+      transition={{ repeat: Infinity, duration: 2.2, ease: "easeOut" }}
+      className="relative z-10 w-16 h-16 bg-amber-600 rounded-md shadow-lg border border-amber-700 flex items-center justify-center"
     >
-      <div className="flex items-center justify-between">
-        <span className="text-[10px] font-bold text-slate-800 tracking-tight">
-          HACCP Compliant
-        </span>
-        <div className="w-3.5 h-3.5 rounded-full bg-orange-500/20 border border-orange-500 flex items-center justify-center">
-          <svg className="w-2.5 h-2.5 text-orange-600" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4z" />
-          </svg>
-        </div>
-      </div>
-      <div className="space-y-1">
-        <div className="w-full h-1 bg-slate-300 rounded" />
-        <div className="w-4/5 h-1 bg-slate-300 rounded" />
-        <div className="w-3/5 h-1 bg-slate-300 rounded" />
+      <div className="absolute inset-x-0 top-0 h-full w-3 bg-amber-800/50 left-1/2 -translate-x-1/2" />
+      <div className="absolute inset-y-0 left-0 w-full h-3 bg-amber-800/50 top-1/2 -translate-y-1/2" />
+
+      <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center border border-orange-200 z-20">
+        <svg
+          className="w-3.5 h-3.5 text-orange-600"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 2l7 3v6c0 5-3 9-7 11-4-2-7-6-7-11V5l7-3z" />
+          <polyline points="9 12 11 14 15 10" />
+        </svg>
       </div>
     </motion.div>
 
-    {/* Peach/Coral Folder Pocket */}
-    <div className="w-36 h-20 bg-gradient-to-br from-[#ff8c72] to-[#ff785a] rounded-xl shadow-lg border border-orange-300/40 z-10 flex items-center justify-center">
-      <div className="w-12 h-1 bg-white/40 rounded-full -mt-12" />
-    </div>
+    <div className="w-28 border-b-2 border-slate-300 mt-1" />
   </div>
 );
 
 export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({
-  badgeText = "WHY GENPACK",
+  badgeText = "WHY CARAPACE",
   titleLine1 = "Why brands switch",
   titleLine2 = "their packaging to us.",
-  subtitle = "We are a manufacturer with a design studio attached. That means the specification, the tooling and the print all answer to one team — and to your damage rate.",
+  subtitle = "Six decades of manufacturing experience, backed by the capacity and technical know-how to deliver at scale. From specification to production, every detail is considered around your product, performance and supply-chain requirements.",
   className = "",
 }) => {
   const cards = [
     {
       id: "card-1",
-      title: "A named packaging engineer on every account",
+      title: "A dedicated packaging specialist on every account",
       illustration: <MultilingualIllustration />,
     },
     {
       id: "card-2",
-      title: "Nationwide delivery on 7–12 day lead times",
+      title: "Nationwide delivery with 7–12 day lead times",
       illustration: <ShipmentVisibilityIllustration />,
     },
     {
       id: "card-3",
-      title: "Export-ready packs shipping to 20+ countries",
+      title: "Export-ready packaging supplied to 12+ countries",
       illustration: <FastDeliveryIllustration />,
     },
     {
       id: "card-4",
-      title: "FSC fibre, ISO-audited, 100% recyclable",
-      illustration: <CertifiedFleetIllustration />,
+      //title: "FSC fibre, ISO-audited, 100% recyclable",
+      title : "Packaging designed to perform beyond the factory floor", 
+      illustration: <PackagingPerformanceIllustration />,
     },
   ];
 
