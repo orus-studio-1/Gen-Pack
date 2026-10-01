@@ -8,27 +8,35 @@ interface LogoProps {
   className?: string;
   href?: string | null;
   priority?: boolean;
+  height?: number;
+  width?: number;
 }
 
 export const Logo: React.FC<LogoProps> = ({
   className = "",
   href = "/",
   priority = false,
+  height,
+  width,
 }) => {
   const mark = (
     <Image
       src="/carapace-logo.png"
       alt="Carapace — Engineered Packaging Solutions"
-      width={645}
-      height={245}
+      width={width || 645}
+      height={height || 245}
       priority={priority}
       draggable={false}
+      style={
+        height || width
+          ? {
+              height: height ? `${height}px` : undefined,
+              width: width ? `${width}px` : "auto",
+            }
+          : undefined
+      }
       className={`
-        w-[125px]
-        sm:w-[140px]
-        md:w-[155px]
-        lg:w-[165px]
-        xl:w-[175px]
+        ${height || width ? "" : "w-[125px] sm:w-[140px] md:w-[155px] lg:w-[165px] xl:w-[175px]"}
         h-auto
         object-contain
         select-none
