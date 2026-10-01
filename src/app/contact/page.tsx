@@ -9,7 +9,7 @@ import ContactFAQSection from "@/components/contact/ContactFAQSection";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Request a packaging quote, book a free structural CAD sample, or talk to a Genpack engineer about replacing plastic in your pack.",
+    "Request a packaging quote, book a free structural CAD sample, or talk to a Carapace engineer about replacing plastic in your pack.",
 };
 
 export default function ContactPage() {

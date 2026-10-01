@@ -23,7 +23,7 @@ const BLOCKS: InfoBlock[] = [
     badge: "MANUFACTURING",
     title: "What we make",
     paragraphs: [
-      "Genpack is a corrugated packaging manufacturer, not a reseller. Board is converted, printed, die-cut and glued under one roof, which is why we can hold a specification consistent across a hundred thousand units.",
+      "Carapace is a corrugated packaging manufacturer, not a reseller. Board is converted, printed, die-cut and glued under one roof, which is why we can hold a specification consistent across a hundred thousand units.",
       "Every grade we run starts as FSC-certified or post-consumer recycled kraft. Nothing leaves the plant with plastic tape, plastic windows or plastic laminate unless a customer specifically asks for it — and we will usually talk you out of it.",
       "In-house structural designers build custom-fitted boxes, internal inserts and display units engineered for strength first and shelf appeal second.",
     ],

@@ -20,8 +20,13 @@ interface ClientsPartnersProps {
   className?: string;
 }
 
+// Set this back to true once certificate numbers/badges are issued —
+// nothing else in this file needs to change. The certifications marquee
+// below is left fully intact so it's ready to go the moment this flips.
+const SHOW_CERTIFICATIONS = false;
+
 export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
-  badgeText = "CERTIFICATIONS & STANDARDS",
+  badgeText,
   className = "",
 }) => {
   /* The credentials that actually matter when a buyer audits a packaging
@@ -39,8 +44,34 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
     { name: "Plastic-Free Packs", icon: FaBoxOpen, color: "text-slate-700" },
   ];
 
+  /* Client roster shown in place of certifications for now. Each item can
+     later take a `logo: "/path/to/logo.png"` field — swap the text <span>
+     below for an <img> once actual logo files are available. */
+  const clients = [
+    { name: "Manyavar" },
+    { name: "Dynamic" },
+    { name: "Orient" },
+    { name: "Ballentine" },
+    { name: "Havells" },
+    { name: "Crompton" },
+    { name: "Industry Safety Product (ISP)" },
+    { name: "Glider" },
+    { name: "Cat Mint" },
+    { name: "Global Clothing" },
+    { name: "Tirupati Agro Products" },
+  ];
+
+  const resolvedBadgeText =
+    badgeText ?? (SHOW_CERTIFICATIONS ? "CERTIFICATIONS & STANDARDS" : "OUR CLIENTS");
+
+  const resolvedSubtext = SHOW_CERTIFICATIONS
+    ? "Audited processes, traceable fibre and documentation supplied with every consignment."
+    : "Trusted by leading brands across apparel, electronics, agro and industrial safety.";
+
   // Duplicated for a seamless 50% infinite marquee loop.
-  const marqueeItems = [...standards, ...standards];
+  const marqueeItems = SHOW_CERTIFICATIONS
+    ? [...standards, ...standards]
+    : [...clients, ...clients];
 
   return (
     <section
@@ -53,12 +84,11 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             <div className="w-1 h-1 rounded-full bg-orange-500" />
           </div>
           <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-gray-700">
-            {badgeText}
+            {resolvedBadgeText}
           </span>
         </div>
         <p className="text-xs sm:text-sm text-gray-600 max-w-md sm:text-right">
-          Audited processes, traceable fibre and documentation supplied with
-          every consignment.
+          {resolvedSubtext}
         </p>
       </div>
 
@@ -74,20 +104,34 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
           }}
           className="flex items-center gap-10 sm:gap-14 md:gap-20 w-max shrink-0 pr-10 sm:pr-14 md:pr-20"
         >
-          {marqueeItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={`${item.name}-${index}`}
-                className="flex items-center gap-3 shrink-0 opacity-80"
-              >
-                <Icon className={`w-7 h-7 sm:w-9 sm:h-9 ${item.color}`} />
-                <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-800 whitespace-nowrap">
-                  {item.name}
-                </span>
-              </div>
-            );
-          })}
+          {SHOW_CERTIFICATIONS
+            ? (marqueeItems as typeof standards).map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={`${item.name}-${index}`}
+                    className="flex items-center gap-3 shrink-0 opacity-80"
+                  >
+                    <Icon className={`w-7 h-7 sm:w-9 sm:h-9 ${item.color}`} />
+                    <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-800 whitespace-nowrap">
+                      {item.name}
+                    </span>
+                  </div>
+                );
+              })
+            : (marqueeItems as typeof clients).map((item, index) => (
+                <div
+                  key={`${item.name}-${index}`}
+                  className="flex items-center gap-3 shrink-0 opacity-80"
+                >
+                  {/* Swap this span for an <img src={item.logo} .../> once
+                      client logo files are available, keeping the same
+                      gap/opacity/whitespace treatment as certifications had. */}
+                  <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-800 whitespace-nowrap">
+                    {item.name}
+                  </span>
+                </div>
+              ))}
         </motion.div>
       </div>
     </section>

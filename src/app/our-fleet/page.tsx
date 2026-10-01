@@ -10,7 +10,7 @@ import FleetCTA from "@/components/fleet/FleetCTA";
 export const metadata: Metadata = {
     title: "Our Delivery Fleet",
     description:
-        "Own fleet, scheduled routes and full-load dispatch — how Genpack gets packaging from the plant to your line without the flat-pack arriving crushed.",
+        "Own fleet, scheduled routes and full-load dispatch — how Carapace gets packaging from the plant to your line without the flat-pack arriving crushed.",
 };
 
 export default function OurFleetPage() {

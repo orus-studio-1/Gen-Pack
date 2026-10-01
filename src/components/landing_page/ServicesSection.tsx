@@ -45,7 +45,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       number: "02",
       title: "Custom Boxes & Die-Cutting",
       blurb:
-        "FEFCO standards or a bespoke structure cut to the millimetre around your product, so you stop paying to ship air.",
+        "Bespoke structure cut to the millimetre around your product, so you stop paying to ship air.",
       imageSrc: IMAGES.boxBlank,
       alt: "Printed die-cut corrugated blank",
       href: "/product?category=corrugated-boxes",
@@ -75,7 +75,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       number: "05",
       title: "Print, Finishing & Branding",
       blurb:
-        "Six-colour flexo, offset litho lamination, spot UV, embossing and foil — with water-based inks that keep the pack recyclable.",
+        "From multi-colour flexographic printing to litho lamination, embossing, foil and specialty finishes.",
       imageSrc: IMAGES.press,
       alt: "Printing press running packaging artwork",
       href: "/product?category=customization-print",
@@ -85,7 +85,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       number: "06",
       title: "Structural Design & Testing",
       blurb:
-        "Free CAD samples, drop and compression testing, and a board specification matched to your real transit route.",
+        "CAD-led structural design, prototyping and performance testing — with board grades tailored to your product, load and transit requirements.",
       imageSrc: IMAGES.craftDesk,
       alt: "Packaging design desk with kraft samples",
       href: "/services",

@@ -28,7 +28,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
     {
       id: "test-1",
       quote:
-        "“Genpack redesigned our mailer so the product fits without void fill. Damage claims dropped by two thirds and our dimensional freight bill came down with them.”",
+        "Carapace redesigned our mailer so the product fits without void fill. Damage claims dropped by two thirds and our dimensional freight bill came down with them.”",
       name: "Ananya Rao",
       company: "Head of Operations, D2C skincare brand",
       avatar:

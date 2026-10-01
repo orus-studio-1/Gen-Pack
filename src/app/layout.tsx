@@ -15,8 +15,8 @@ const urbanist = Urbanist({
 
 export const metadata: Metadata = {
   title: {
-    default: "Genpack — Sustainable Corrugated Packaging Manufacturer",
-    template: "%s | Genpack",
+    default: "Carapace — Sustainable Corrugated Packaging Manufacturer",
+    template: "%s | Carapace",
   },
   description: SITE.description,
   keywords: [
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     "export packaging",
   ],
   openGraph: {
-    title: "Genpack — Sustainable Corrugated Packaging Manufacturer",
+    title: "Carapace — Sustainable Corrugated Packaging Manufacturer",
     description: SITE.description,
-    siteName: "Genpack",
+    siteName: "Carapace",
     type: "website",
   },
 };

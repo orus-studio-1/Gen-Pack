@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TopPattern from "./TopPattern";
 
 interface QuickFactsSectionProps {
@@ -10,6 +10,81 @@ interface QuickFactsSectionProps {
   titleLine3?: string;
 }
 
+function parseStatValue(raw: string): { prefix: string; number: number; suffix: string; decimals: number } {
+  const match = raw.match(/^([^\d]*)([\d.]+)(.*)$/);
+  if (!match) {
+    return { prefix: "", number: 0, suffix: raw, decimals: 0 };
+  }
+  const [, prefix, numStr, suffix] = match;
+  const decimals = numStr.includes(".") ? numStr.split(".")[1].length : 0;
+  return { prefix, number: parseFloat(numStr), suffix, decimals };
+}
+
+function useCountUp(raw: string, start: boolean, duration = 1400) {
+  const { prefix, number, suffix, decimals } = parseStatValue(raw);
+  const [display, setDisplay] = useState(() => prefix + (0).toFixed(decimals) + suffix);
+  const hasRun = useRef(false);
+
+  useEffect(() => {
+    if (!start || hasRun.current) return;
+    hasRun.current = true;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplay(prefix + number.toFixed(decimals) + suffix);
+      return;
+    }
+
+    let rafId: number;
+    const startTime = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = number * eased;
+      setDisplay(prefix + current.toFixed(decimals) + suffix);
+
+      if (progress < 1) {
+        rafId = requestAnimationFrame(tick);
+      } else {
+        setDisplay(prefix + number.toFixed(decimals) + suffix);
+      }
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [start]);
+
+  return display;
+}
+
+const StatItem: React.FC<{ value: string; label: string; start: boolean; delay: number }> = ({
+  value,
+  label,
+  start,
+  delay,
+}) => {
+  const animatedValue = useCountUp(value, start);
+
+  return (
+    <div
+      className="flex flex-col transition-all duration-700 ease-out"
+      style={{
+        transitionDelay: `${delay}ms`,
+        opacity: start ? 1 : 0,
+        transform: start ? "translateY(0)" : "translateY(16px)",
+      }}
+    >
+      <span className="text-3xl xs:text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-gray-900 leading-none tabular-nums">
+        {animatedValue}
+      </span>
+      <span className="text-xs sm:text-sm md:text-base text-gray-500 font-normal mt-2 tracking-normal leading-snug">
+        {label}
+      </span>
+    </div>
+  );
+};
+
 export const QuickFactsSection: React.FC<QuickFactsSectionProps> = ({
   badgeText = "QUICK FACTS",
   titleLine1 = "Trusted by brands",
@@ -18,22 +93,43 @@ export const QuickFactsSection: React.FC<QuickFactsSectionProps> = ({
 }) => {
   const stats = [
     {
+      value: "58+",
+      label: "Years of Industry Experience.",
+    },
+    {
+      value: "50+",
+      label: "Million Boxes Manufactured Annually.",
+    },
+    {
+      value: "12+",
+      label: "Industries Served.",
+    },
+    {
       value: "100%",
-      label: "Recyclable, plastic-free board.",
-    },
-    {
-      value: "70+",
-      label: "Packaging products in production.",
-    },
-    {
-      value: "12M+",
-      label: "Boxes converted every year.",
-    },
-    {
-      value: "48h",
-      label: "Average quote turnaround.",
+      label: "Custom Packaging Solutions.",
     },
   ];
+
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const node = gridRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center bg-white text-gray-900 overflow-hidden font-urbanist select-none py-16 sm:py-20 md:py-28">
@@ -73,16 +169,15 @@ export const QuickFactsSection: React.FC<QuickFactsSectionProps> = ({
 
           {/* Right Column: 2x2 Metrics Grid (Pushed to Far Right & Lower Row) */}
           <div className="lg:col-span-6 lg:col-start-7 pt-2 sm:pt-12 lg:pt-36">
-            <div className="grid grid-cols-2 gap-x-6 sm:gap-x-12 gap-y-8 sm:gap-y-16">
+            <div ref={gridRef} className="grid grid-cols-2 gap-x-6 sm:gap-x-12 gap-y-8 sm:gap-y-16">
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col">
-                  <span className="text-3xl xs:text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-gray-900 leading-none">
-                    {stat.value}
-                  </span>
-                  <span className="text-xs sm:text-sm md:text-base text-gray-500 font-normal mt-2 tracking-normal leading-snug">
-                    {stat.label}
-                  </span>
-                </div>
+                <StatItem
+                  key={index}
+                  value={stat.value}
+                  label={stat.label}
+                  start={inView}
+                  delay={index * 120}
+                />
               ))}
             </div>
           </div>
@@ -93,5 +188,3 @@ export const QuickFactsSection: React.FC<QuickFactsSectionProps> = ({
 };
 
 export default QuickFactsSection;
-
-

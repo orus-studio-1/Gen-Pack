@@ -8,7 +8,7 @@ import OurProcess from "@/components/services/OurProcess";
 export const metadata: Metadata = {
   title: "Packaging Services",
   description:
-    "Structural design, CAD prototyping, transit testing, flexo and offset printing, and just-in-time supply — the full packaging service behind every Genpack carton.",
+    "Structural design, CAD prototyping, transit testing, flexo and offset printing, and just-in-time supply — the full packaging service behind every Carapace carton.",
 };
 
 export default function ServicesPage() {

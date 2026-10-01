@@ -87,7 +87,7 @@ export const IndustryStandards: React.FC = () => {
               Certified. Verified. Compliant.
             </h2>
             <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed max-w-md font-urbanist">
-              Genpack runs to ISO 9001 quality management and ISO 14001 environmental management, with FSC-certified fibre and food-grade compliant liners available across the range. Board is tested batch by batch and the documentation ships with the order.
+              Carapace runs to ISO 9001 quality management and ISO 14001 environmental management, with FSC-certified fibre and food-grade compliant liners available across the range. Board is tested batch by batch and the documentation ships with the order.
             </p>
           </div>
 

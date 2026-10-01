@@ -12,7 +12,7 @@ import AboutCTA from "@/components/about_us/AboutCTA";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Genpack is a corrugated packaging manufacturer built around one idea: protective packaging should be fully recyclable by default. Our story, our plant and the people behind it.",
+    "Carapace is a corrugated packaging manufacturer built around one idea: protective packaging should be fully recyclable by default. Our story, our plant and the people behind it.",
 };
 
 export default function AboutUsPage() {
@@ -24,8 +24,8 @@ export default function AboutUsPage() {
       <OurHistoryTimeline />
       <WhatDrivesUs />
       <OurLocations />
-      <TheTeam />
-      <IndustryStandards />
+      {/*<TheTeam />*/}
+      {/*<IndustryStandards />*/}
       <AboutCTA />
 
 

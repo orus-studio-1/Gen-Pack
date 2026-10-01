@@ -16,11 +16,11 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  titleLine1 = "Packaging that protects",
-  titleLine2 = "the planet too.",
+  titleLine1 = "Engineering Packaging that Powers",
+  titleLine2 = "Modern Supply Chains",
   locationText = "Manufactured in India. Shipped worldwide.",
-  subtextLine1 = "100% recyclable corrugated rolls, boxes and inserts.",
-  subtextLine2 = "Engineered around your product, not a catalogue.",
+  subtextLine1 = "Recyclable corrugated rolls, inserts and specialty products.",
+  subtextLine2 = "Built around your product, not a catalogue.",
   ctaText = "Explore Our Products",
 }) => {
   return (
@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Background Video with token color overlays */}
       <BackgroundVideo
         imageSrc={`${IMAGES.factory}?auto=format&fit=crop&w=2000&q=75`}
-        imageAlt="Corrugated board being converted and stacked inside the Genpack plant"
+        imageAlt="Corrugated board being converted and stacked inside the Carapace plant"
       />
 
       {/* Top Edge-to-Edge Moving SVG Arrow Banner (Behind Navbar) */}
@@ -37,11 +37,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Main Content Area */}
-      <div className="w-full max-w-[1500px] h-full flex flex-col justify-between px-4 sm:px-8 md:px-16 lg:px-24 pt-24 sm:pt-32 md:pt-36 pb-8 sm:pb-12 relative z-20 mx-auto">
+      <div className="w-full max-w-[1500px] h-full flex flex-col justify-between px-4 sm:px-8 md:px-16 lg:px-24 pt-24 sm:pt-32 md:pt-36 pb-4 sm:pb-6 relative z-20 mx-auto">
         {/* Center Section: Main Headline & Subtitle */}
-        <div className="mt-4 sm:mt-8 md:mt-12 mb-auto max-w-6xl">
-          {/* Main Big Headline */}
-          <h1 className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[5.8rem] xl:text-[5.5rem] font-semibold tracking-tight leading-[1.1] sm:leading-[1.05] text-white drop-shadow-sm break-words">
+        <div className="mt-4 sm:mt-8 md:mt-12 mb-auto w-full max-w-none">
+          <h1 className="text-xl xs:text-2xl sm:text-[1.9rem] md:text-[2.15rem] lg:text-[2.9rem] xl:text-[3.8rem] 2xl:text-[4.4rem] font-semibold tracking-tight leading-[1.15] sm:leading-[1.1] text-white drop-shadow-sm break-words sm:whitespace-nowrap">
             <span className="block">{titleLine1}</span>
             <span className="block">{titleLine2}</span>
           </h1>
@@ -51,20 +50,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-[2px] sm:border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
               <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-orange-500" />
             </div>
-            <p className="text-sm sm:text-lg md:text-xl text-slate-100 font-normal tracking-wide">
+            <p className="text-sm sm:text-base md:text-lg text-slate-100 font-normal tracking-wide">
               {locationText}
             </p>
           </div>
         </div>
 
         {/* Bottom Section: Subtext & CTA Button */}
-        <div className="w-full flex pt-8 sm:pt-12 flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 pb-2">
+        <div className="w-full flex pt-6 sm:pt-10 flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 pb-2 mt-6">
           {/* Bottom Left Logistics Description */}
-          <div className="max-w-md space-y-1">
-            <p className="text-slate-200 text-xs sm:text-base md:text-lg leading-snug font-normal">
+          <div className="max-w-sm space-y-1">
+            <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-snug font-normal">
               {subtextLine1}
             </p>
-            <p className="text-slate-200 text-xs sm:text-base md:text-lg leading-snug font-normal">
+            <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-snug font-normal">
               {subtextLine2}
             </p>
           </div>
@@ -80,4 +79,3 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 };
 
 export default HeroSection;
-

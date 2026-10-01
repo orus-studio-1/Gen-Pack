@@ -16,7 +16,6 @@ export default function Home() {
       <ServicesSection />
       <IndustriesSection />
       <WhyChooseUsSection />
-      <TestimonialsSection />
     </main>
   );
 }

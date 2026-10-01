@@ -37,9 +37,12 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
 
       {/* Main Footer Content */}
       <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 py-12 sm:py-20 lg:py-24">
+        {/* Left block narrowed from col-span-7 to col-span-6, right block widened
+            from col-span-5 to col-span-6, so Contacts has more absolute room
+            to work with before it even hits its own internal column split. */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           {/* Left Block (Logo, Newsletter, Connect) */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-10">
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-10">
             <div>
               {/* Logo */}
               <Logo height={44} className="sm:hidden" />
@@ -122,17 +125,21 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           </div>
 
           {/* Right Block (Contacts, Services, Company Navigation Links) */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 pt-2">
+          {/* Custom fr-based columns instead of equal thirds: Contacts gets
+              ~40% more width than Packaging/Company, since it holds two
+              emails, two phone numbers and two full addresses versus short
+              link lists. Falls back to a single stacked column below sm. */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-[1.4fr_1fr_1fr] gap-8 sm:gap-8 pt-2">
             {/* Contacts Column */}
-            <div>
+            <div className="sm:pr-4">
               <h4 className="text-lg font-semibold text-white mb-4 sm:mb-5">
                 Contacts
               </h4>
-              <ul className="space-y-3 text-sm text-gray-300">
+              <ul className="space-y-3.5 text-sm text-gray-300">
                 <li>
                   <a
                     href={`mailto:${SITE.email}`}
-                    className="hover:text-orange-400 transition-colors font-mono"
+                    className="hover:text-orange-400 transition-colors font-mono break-all"
                   >
                     {SITE.email}
                   </a>
@@ -140,7 +147,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 <li>
                   <a
                     href={`mailto:${SITE.salesEmail}`}
-                    className="hover:text-orange-400 transition-colors font-mono"
+                    className="hover:text-orange-400 transition-colors font-mono break-all"
                   >
                     {SITE.salesEmail}
                   </a>
@@ -155,9 +162,15 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                     {SITE.altPhone}
                   </a>
                 </li>
-                <li className="pt-2 text-gray-400 leading-relaxed not-italic">
-                  {SITE.address.line2},<br />
-                  {SITE.address.city}, {SITE.address.region}
+                <li className="pt-3 text-gray-400 leading-relaxed not-italic">
+                  <p className="font-bold text-gray-200 mb-0.5">Manufacturing Unit I</p>
+                  {SITE.address1.line},<br />
+                  {SITE.address1.city}, {SITE.address1.region}
+                </li>
+                <li className="pt-3 text-gray-400 leading-relaxed not-italic">
+                  <p className="font-bold text-gray-200 mb-0.5">Manufacturing Unit II</p>
+                  {SITE.address2.line},<br />
+                  {SITE.address2.city}, {SITE.address2.region}
                 </li>
               </ul>
             </div>
@@ -221,13 +234,13 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           <p>
             © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
           </p>
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          {/*<p className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <span>FSC-certified fibre</span>
             <span className="text-gray-700">•</span>
             <span>ISO 9001 &amp; ISO 14001 processes</span>
             <span className="text-gray-700">•</span>
             <span>100% recyclable board</span>
-          </p>
+          </p>*/}
         </div>
       </div>
     </footer>

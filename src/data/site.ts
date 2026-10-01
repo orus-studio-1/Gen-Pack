@@ -3,23 +3,28 @@
  * addresses, phone numbers and social handles before going live.
  */
 export const SITE = {
-  name: "Genpack",
-  legalName: "Genpack Packaging Pvt. Ltd.",
+  name: "Carapace",
+  legalName: "Sri Vishnu Industries",
   tagline: "Sustainable corrugated packaging, engineered to protect.",
   description:
-    "Genpack manufactures 100% recyclable corrugated rolls, boxes, inserts and retail displays — plastic-free packaging engineered for e-commerce, FMCG, pharma and export supply chains.",
-  email: "hello@genpack.in",
-  salesEmail: "sales@genpack.in",
-  phone: "+91 98765 43210",
-  phoneHref: "tel:+919876543210",
-  altPhone: "+91 80 4567 8900",
-  altPhoneHref: "tel:+918045678900",
-  address: {
-    line1: "Genpack Corrugation Plant",
-    line2: "Plot 42, Industrial Area Phase II",
-    city: "Bengaluru",
-    region: "Karnataka 560058",
+    "Carapace manufactures 100% recyclable corrugated rolls, boxes, inserts and retail displays — plastic-free packaging engineered for e-commerce, FMCG, pharma and export supply chains.",
+  email: "info@carapaceinc.com",
+  salesEmail: "sales@carapaceinc.com",
+  phone: "+91 9903622821",
+  phoneHref: "tel:+919903622821",
+  altPhone: "+91 9830694795",
+  altPhoneHref: "tel:+919830694795",
+  address1 : {
+    line: "76/H/1 & 2, Dr. S. C. Banerjee Road",
+    city: "Kolkata – 700010",
+    region: "West Bengal",
     country: "India",
+  },
+  address2 : {
+    line: "6 & 7 P.T.R Siding Shalimar",
+    city: "Howrah – 711102",
+    region: "West Bengal",
+    country: "India"
   },
   hours: "Mon – Sat, 9:00 – 18:30 IST",
   social: {
