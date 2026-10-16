@@ -21,7 +21,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <Link
       href={`/product/${product.slug}`}
-      className="group bg-white rounded-2xl border border-slate-200/80 overflow-hidden flex flex-col select-none font-urbanist transition-all duration-300 hover:border-orange-300 hover:shadow-xl hover:shadow-slate-900/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
+      className="group bg-white rounded-2xl border border-slate-200/80 overflow-hidden flex flex-col select-none font-urbanist transition-all duration-300 hover:border-orange-600/50 hover:shadow-xl hover:shadow-slate-900/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2"
     >
       {/* Product Photography */}
       <div className="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden">

@@ -17,7 +17,7 @@ export const ServicesHero: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817]"
           >
-            Packaging Services
+            Packaging Expertise
           </motion.h1>
 
           <motion.div
@@ -26,7 +26,7 @@ export const ServicesHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-slate-800 border border-slate-200 rounded-full px-4 py-2 self-start md:self-auto shadow-sm"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse" />
             <span>OUR SERVICES</span>
           </motion.div>
         </div>
@@ -39,8 +39,8 @@ export const ServicesHero: React.FC = () => {
           className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl bg-slate-900 aspect-[16/9] max-h-[650px] my-10 md:my-14"
         >
           <Image
-            src="https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&q=80&w=1400"
-            alt="Corrugated board being converted and stacked in the plant"
+            src="https://img.magnific.com/free-photo/factory-worker-packaging-boxes_23-2151994449.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Engineered packaging production and automated converting line"
             fill
             priority
             unoptimized
@@ -68,7 +68,7 @@ export const ServicesHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="text-lg sm:text-xl md:text-2xl text-slate-600 font-urbanist leading-relaxed max-w-3xl"
           >
-            Structural design, CAD prototyping, transit testing, printing and just-in-time supply. We do not just take an order for boxes — we work out what the box has to survive first.
+            Structural design, CAD prototyping, transit testing, printing and just-in-time supply all considered around how your packaging needs to perform from production through delivery.
           </motion.p>
         </div>
 

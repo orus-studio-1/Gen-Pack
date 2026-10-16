@@ -20,7 +20,7 @@ const serveCards: IndustryServeCardData[] = [
     id: "food-beverage",
     title: "Food, FMCG & Fresh Produce",
     subtitle: "Food-grade board, airflow and cold-chain coatings.",
-    imageSrc: "https://images.unsplash.com/photo-1771904867001-1ee164bf353c?auto=format&fit=crop&q=80&w=1000",
+    imageSrc: "/newAdded/food-fmcg.jpg",
     fallbackSrc: "https://images.unsplash.com/photo-1762591871417-67d8940c34a5?auto=format&fit=crop&q=80&w=1000",
     alt: "Fresh produce packed into ventilated crates",
     points: [
@@ -59,7 +59,7 @@ const serveCards: IndustryServeCardData[] = [
     id: "electronics-tech",
     title: "Electronics & Technology",
     subtitle: "ESD-safe board and precision cushioning.",
-    imageSrc: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=1000",
+    imageSrc: "/newAdded/electronics-industry.jpg",
     fallbackSrc: "https://images.unsplash.com/photo-1640955785023-1854685dae05?auto=format&fit=crop&q=80&w=1000",
     alt: "Circuit boards under test before ESD-safe packing",
     points: [

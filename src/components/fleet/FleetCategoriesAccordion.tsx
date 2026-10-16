@@ -85,9 +85,9 @@ export const FleetCategoriesAccordion: React.FC = () => {
             <div className="space-y-6">
               {/* Badge */}
               <div className="flex items-center gap-2">
-                <svg className="w-3.5 h-3.5 text-orange-500 shrink-0" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="6" stroke="#f97316" strokeWidth="2.5" />
-                  <circle cx="8" cy="8" r="2" fill="#f97316" />
+                <svg className="w-3.5 h-3.5 text-orange-600 shrink-0" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="6" stroke="#ea580c" strokeWidth="2.5" />
+                  <circle cx="8" cy="8" r="2" fill="#ea580c" />
                 </svg>
                 <span className="font-bold text-xs md:text-sm tracking-[0.2em] uppercase text-slate-300">
                   HOW YOUR ORDER ARRIVES
@@ -114,10 +114,10 @@ export const FleetCategoriesAccordion: React.FC = () => {
             <div className="pt-4 flex items-center gap-3">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full border border-orange-500/60 bg-transparent text-white font-semibold text-sm sm:text-base hover:bg-orange-500 transition-all duration-300"
+                className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full border border-orange-600/60 bg-transparent text-white font-semibold text-sm sm:text-base hover:bg-orange-600 transition-all duration-300"
               >
                 <span>Talk to Our Fleet Team</span>
-                <span className="w-8 h-8 rounded-full border border-orange-500/80 flex items-center justify-center group-hover:border-white transition-colors">
+                <span className="w-8 h-8 rounded-full border border-orange-600/80 flex items-center justify-center group-hover:border-white transition-colors">
                   <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <line x1="7" y1="17" x2="17" y2="7" />
                     <polyline points="7 7 17 7 17 17" />
@@ -145,9 +145,9 @@ export const FleetCategoriesAccordion: React.FC = () => {
                     <div className="flex items-center gap-3 sm:gap-4">
                       {/* Target Icon + Number */}
                       <div className="flex items-center gap-1.5 shrink-0">
-                        <svg className="w-3.5 h-3.5 text-orange-500 shrink-0" viewBox="0 0 16 16" fill="none">
-                          <circle cx="8" cy="8" r="6" stroke="#f97316" strokeWidth="2.5" />
-                          <circle cx="8" cy="8" r="2" fill="#f97316" />
+                        <svg className="w-3.5 h-3.5 text-orange-600 shrink-0" viewBox="0 0 16 16" fill="none">
+                          <circle cx="8" cy="8" r="6" stroke="#ea580c" strokeWidth="2.5" />
+                          <circle cx="8" cy="8" r="2" fill="#ea580c" />
                         </svg>
                         <span className="text-xs sm:text-sm font-bold text-slate-500 tracking-wider">
                           {item.number}
@@ -166,8 +166,8 @@ export const FleetCategoriesAccordion: React.FC = () => {
                       aria-label="Toggle category details"
                       className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full border flex items-center justify-center transition-all shrink-0 ${
                         isOpen
-                          ? "border-orange-500/50 text-orange-500"
-                          : "border-slate-300 text-slate-700 group-hover:border-orange-500 group-hover:text-orange-600"
+                          ? "border-orange-600/50 text-orange-600"
+                          : "border-slate-300 text-slate-700 group-hover:border-orange-600 group-hover:text-orange-600"
                       }`}
                     >
                       {isOpen ? (

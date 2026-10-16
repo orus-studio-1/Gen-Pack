@@ -6,14 +6,14 @@ import WhatSetsUsApart from "@/components/services/WhatSetsUsApart";
 import OurProcess from "@/components/services/OurProcess";
 
 export const metadata: Metadata = {
-  title: "Packaging Services",
+  title: "Packaging Expertise",
   description:
     "Structural design, CAD prototyping, transit testing, flexo and offset printing, and just-in-time supply — the full packaging service behind every Carapace carton.",
 };
 
 export default function ServicesPage() {
   return (
-    <main className="w-full min-h-screen relative bg-[#f4f4f6] selection:bg-orange-500 selection:text-white">
+    <main className="w-full min-h-screen relative bg-[#f4f4f6] selection:bg-orange-600 selection:text-white">
       {/* Services Hero */}
       <ServicesHero />
 

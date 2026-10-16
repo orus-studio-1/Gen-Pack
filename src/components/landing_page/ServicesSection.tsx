@@ -134,8 +134,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               >
                 {/* Number Badge */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-                    <div className="w-1 h-1 rounded-full bg-orange-500" />
+                  <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+                    <div className="w-1 h-1 rounded-full bg-orange-600" />
                   </div>
                   <span className="text-xs sm:text-sm font-bold tracking-widest text-gray-700 uppercase">
                     {service.number}

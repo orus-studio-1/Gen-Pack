@@ -14,7 +14,7 @@ export interface IndustryCardData {
 const industriesList: IndustryCardData[] = [
   {
     id: "perishable-foods",
-    imageSrc: "https://images.unsplash.com/photo-1771904867001-1ee164bf353c?auto=format&fit=crop&q=80&w=1000",
+    imageSrc: "https://images.unsplash.com/photo-1762591871417-67d8940c34a5?auto=format&fit=crop&q=80&w=1000",
     fallbackSrc:
       "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&q=80&w=800",
     alt: "Fresh produce packed in ventilated crates for distribution",
@@ -35,7 +35,7 @@ const industriesList: IndustryCardData[] = [
   },
   {
     id: "electronics",
-    imageSrc: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=1000",
+    imageSrc: "/newAdded/electronics.jpg",
     fallbackSrc:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
     alt: "Circuit boards being tested before ESD-safe packing",
@@ -68,7 +68,7 @@ export const TailoredIndustriesHero: React.FC = () => {
               <span className="w-1 h-1 rounded-full bg-orange-600" />
             </span>
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#1c1817] uppercase">
-              INDUSTRIES
+              Built for your industry
             </span>
           </motion.div>
 
@@ -89,7 +89,7 @@ export const TailoredIndustriesHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="text-sm sm:text-lg md:text-xl text-slate-600 font-normal mt-3 sm:mt-4 md:mt-5 max-w-2xl leading-relaxed"
           >
-            Fresh produce needs airflow. Electronics need static protection. Exports need board that survives four weeks at sea. We specify against the failure mode, not the catalogue.
+             Fresh produce needs airflow. Electronics need static protection. Exports need a board that survives four weeks at sea. We specify for the demands the packaging must withstand.
           </motion.p>
         </div>
 

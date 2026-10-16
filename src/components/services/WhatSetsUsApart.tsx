@@ -8,6 +8,7 @@ interface DifferentiatorItem {
   title: string;
   description: string;
   icon: React.ReactNode;
+  hidden?: boolean;
 }
 
 const itemsData: DifferentiatorItem[] = [
@@ -15,6 +16,8 @@ const itemsData: DifferentiatorItem[] = [
     id: "diff-1",
     title: "Certified & Traceable",
     description: "ISO 9001 and ISO 14001 processes, FSC-certified fibre, batch-tested board.",
+    // Temporarily hidden per client request; retain in code so it can easily be re-enabled
+    hidden: true,
     icon: (
       <svg
         width="28"
@@ -59,7 +62,7 @@ const itemsData: DifferentiatorItem[] = [
     id: "diff-3",
     title: "Two Plants, One Specification",
     description:
-      "Bengaluru and Pune units run the same board grades, so supply never depends on one site.",
+      "Unit 1 and Unit 2 run the same board grades, ensuring consistency across production and continuity of supply.",
     icon: (
       <svg
         width="28"
@@ -75,6 +78,54 @@ const itemsData: DifferentiatorItem[] = [
         <circle cx="12" cy="12" r="10" />
         <line x1="2" y1="12" x2="22" y2="12" />
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    ),
+  },
+  {
+    id: "diff-accountability",
+    title: "One Point of Accountability",
+    description:
+      "One team stays with the requirement from commercial brief through final delivery.",
+    icon: (
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#ff5500"
+        strokeWidth="2.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="shrink-0"
+      >
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <polyline points="16 11 18 13 22 9" />
+      </svg>
+    ),
+  },
+  {
+    id: "diff-commercial",
+    title: "Commercially Considered",
+    description:
+      "Packaging decisions account for material use, production economics and the realities of volume.",
+    icon: (
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#ff5500"
+        strokeWidth="2.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="shrink-0"
+      >
+        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+        <path d="M7 21h10" />
+        <path d="M12 3v18" />
+        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
       </svg>
     ),
   },
@@ -140,7 +191,7 @@ export const WhatSetsUsApart: React.FC = () => {
           {/* Left Column: Sticky Title & Subtitle (Pinned on left while scrolling) */}
           <div className="lg:col-span-5 lg:sticky lg:top-36 self-start flex flex-col justify-start">
             <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
-              BEHIND EVERY CARTON
+              
             </p>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.06]">
               What Sets Us Apart:
@@ -149,31 +200,33 @@ export const WhatSetsUsApart: React.FC = () => {
 
           {/* Right Column: Scrollable Items entering smoothly from bottom */}
           <div className="lg:col-span-7 flex flex-col space-y-12 sm:space-y-16 py-4 lg:pt-8">
-            {itemsData.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 70 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6 items-center border-b border-black/10 pb-8 sm:pb-10 last:border-b-0"
-              >
-                {/* Icon + Title */}
-                <div className="sm:col-span-6 flex items-center gap-4">
-                  {item.icon}
-                  <span className="text-xl sm:text-2xl font-bold font-urbanist text-[#1c1817] leading-snug">
-                    {item.title}
-                  </span>
-                </div>
+            {itemsData
+              .filter((item) => !item.hidden)
+              .map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 70 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6 items-center border-b border-black/10 pb-8 sm:pb-10 last:border-b-0"
+                >
+                  {/* Icon + Title */}
+                  <div className="sm:col-span-6 flex items-center gap-4">
+                    {item.icon}
+                    <span className="text-xl sm:text-2xl font-bold font-urbanist text-[#1c1817] leading-snug">
+                      {item.title}
+                    </span>
+                  </div>
 
-                {/* Description */}
-                <div className="sm:col-span-6">
-                  <p className="text-base sm:text-lg text-[#333333] font-normal leading-relaxed font-urbanist">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                  {/* Description */}
+                  <div className="sm:col-span-6">
+                    <p className="text-base sm:text-lg text-[#333333] font-normal leading-relaxed font-urbanist">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
           </div>
 
         </div>

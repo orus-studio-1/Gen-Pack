@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import CTAButton from "@/components/landing_page/CTAButton";
 
 export const ContactFormSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -79,7 +79,7 @@ export const ContactFormSection: React.FC = () => {
                     placeholder="Jane Smith"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors"
+                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 text-sm sm:text-base transition-colors"
                   />
                 </div>
 
@@ -92,7 +92,7 @@ export const ContactFormSection: React.FC = () => {
                     placeholder="Acme Corp."
                     value={formData.companyName}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors"
+                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 text-sm sm:text-base transition-colors"
                   />
                 </div>
               </div>
@@ -109,7 +109,7 @@ export const ContactFormSection: React.FC = () => {
                     placeholder="jane@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors"
+                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 text-sm sm:text-base transition-colors"
                   />
                 </div>
 
@@ -122,7 +122,7 @@ export const ContactFormSection: React.FC = () => {
                     placeholder="+1 555 123 4567"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors"
+                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 text-sm sm:text-base transition-colors"
                   />
                 </div>
               </div>
@@ -130,21 +130,24 @@ export const ContactFormSection: React.FC = () => {
               {/* Row 3: Contact Reason Dropdown */}
               <div>
                 <label className="block text-xs sm:text-sm font-bold text-[#1c1817] mb-2 ">
-                  05 What are you contacting us about?
+                  05 How can we help you?
                 </label>
                 <div className="relative">
                   <select
                     value={formData.topic}
                     onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] bg-white appearance-none focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors pr-10 cursor-pointer"
+                    className="w-full px-5 py-3.5 rounded-full border border-slate-300 text-[#1c1817] bg-white appearance-none focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 text-sm sm:text-base transition-colors pr-10 cursor-pointer"
                   >
                     <option value="">Select..</option>
-                    <option value="boxes">Corrugated Boxes</option>
-                    <option value="rolls">Corrugated Rolls &amp; Sheets</option>
-                    <option value="eco">Plastic-Free Protection</option>
-                    <option value="retail">Retail &amp; Display Packaging</option>
-                    <option value="custom">Custom Design &amp; Printing</option>
-                    <option value="other">General Inquiry</option>
+                    <option value="boxes">Corrugated Packaging</option>
+                    <option value="rolls">Corrugated Board, Rolls &amp; Sheets</option>
+                    <option value="eco">Protective Packaging &amp; Inserts</option>
+                    <option value="retail">Custom Packaging &amp; Die-Cut Solutions</option>
+                    <option value="custom">Printing &amp; Branding</option>
+                    <option value="custom">Bulk Order &amp; Quotations</option>
+                    <option value="custom">Export &amp; International Enquiries</option>
+                    <option value="custom">Partnership &amp; Distributions</option>
+                    <option value="other">General Enquiry</option>
                   </select>
                   <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
                     ▼
@@ -159,27 +162,22 @@ export const ContactFormSection: React.FC = () => {
                 </label>
                 <textarea
                   rows={4}
-                  placeholder="Product dimensions, weight, monthly volume and where it ships — the more detail, the sharper the quote."
+                  placeholder="Tell us about your requirements, including product specifications, quantities, delivery location or any other details that may help us assist you."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-5 py-4 rounded-2xl border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base transition-colors resize-none"
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-300 text-[#1c1817] placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 text-sm sm:text-base transition-colors resize-none"
                 />
               </div>
 
               {/* Submit Button & Note */}
               <div className="pt-4 space-y-4">
-                <div className="flex items-center g">
-                  <button
+                <div>
+                  <CTAButton
                     type="submit"
-                    className="inline-flex items-center gap-3 bg-[#e03d00] hover:bg-[#c83700] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full transition-colors shadow-md group"
-                  >
-                    <span>Send Message</span>
-                  </button>
-                  <button className="h-[42px] w-[42px] bg-[#e03d00] hover:bg-[#c83700] flex justify-center items-center rounded-full">
-                    <span className="w-8 h-8 rounded-full  flex items-center justify-center text-white text-xs group-hover:translate-x-0.5 transition-transform">
-                      <Image src="https://framerusercontent.com/images/3NSshCmK7vz6VHCPAq6twmsYQ.svg?width=40&height=40" height={50} width={50} alt="text" />
-                    </span>
-                  </button>
+                    label="Send Message"
+                    variant="solid"
+                    size="md"
+                  />
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-500 font-normal">

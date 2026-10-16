@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="w-full min-h-screen relative bg-white selection:bg-orange-500 selection:text-white font-urbanist">
+    <main className="w-full min-h-screen relative bg-white selection:bg-orange-600 selection:text-white font-urbanist">
       <ProductsHero />
       <Suspense fallback={<div className="min-h-[60vh]" />}>
         <ProductsCatalogSection />

@@ -131,8 +131,8 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
               >
                 {/* Number Badge */}
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-                    <div className="w-1 h-1 rounded-full bg-orange-500" />
+                  <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+                    <div className="w-1 h-1 rounded-full bg-orange-600" />
                   </div>
                   <span className="text-xs sm:text-sm font-bold tracking-widest text-slate-300 uppercase">
                     {ind.number}

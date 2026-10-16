@@ -13,8 +13,8 @@ export const PricingFactorsSection: React.FC = () => {
           {/* Intro */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-                <div className="w-1 h-1 rounded-full bg-orange-500" />
+              <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+                <div className="w-1 h-1 rounded-full bg-orange-600" />
               </div>
               <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-slate-500">
                 TRANSPARENT PRICING

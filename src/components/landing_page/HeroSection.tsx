@@ -26,10 +26,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section className="relative w-full max-w-full min-h-screen sm:min-h-[720px] flex flex-col justify-between overflow-hidden font-urbanist text-white select-none">
       {/* Background Video with token color overlays */}
-      <BackgroundVideo
-        imageSrc={`${IMAGES.factory}?auto=format&fit=crop&w=2000&q=75`}
-        imageAlt="Corrugated board being converted and stacked inside the Carapace plant"
-      />
+      <BackgroundVideo videoSrc="/homepage_hero.mp4" />
 
       {/* Top Edge-to-Edge Moving SVG Arrow Banner (Behind Navbar) */}
       <div className="absolute top-0 inset-x-0 w-full max-w-full z-10 pt-2 sm:pt-3 opacity-60 pointer-events-none overflow-hidden">
@@ -47,8 +44,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Location Indicator with Orange Circle Ring */}
           <div className="flex items-center gap-2.5 sm:gap-3 mt-3 sm:mt-5">
-            <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-[2px] sm:border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-              <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-orange-500" />
+            <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-[2px] sm:border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+              <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-orange-600" />
             </div>
             <p className="text-sm sm:text-base md:text-lg text-slate-100 font-normal tracking-wide">
               {locationText}

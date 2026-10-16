@@ -60,7 +60,7 @@ export const WhyExpertiseMattersSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="text-sm sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl sm:max-w-3xl mx-auto"
         >
-          A carton that is perfect for a warehouse pallet will fail in a monsoon yard, and a pack engineered for a courier belt is over-specified for a shop floor. We look at compression loads, humidity, handling and shelf life for your sector first — then choose the flute, the GSM, the coating and the closure. That is how you cut damage and material cost at the same time.
+          Packaging that is perfect for a warehouse pallet may fail in a monsoon yard, while packaging engineered for a courier belt may be over-specified for a shop floor. We look at compression loads, humidity, handling and shelf life for your sector first — then choose the flute, the GSM, the coating and the closure. What follows is a specification shaped by the demands of the product, industry and operating environment. 
         </motion.p>
 
       </div>

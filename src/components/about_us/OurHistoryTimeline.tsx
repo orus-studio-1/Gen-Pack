@@ -40,7 +40,7 @@ const historyData: HistoryItem[] = [
     year: "2026",
     title: "Packaging You Can Recycle.",
     text: "Manufacturing for What’s Next: Today, we manufacture at scale across FMCG, food & beverage, electronics, apparel and automotive. Next: scaling what we make, expanding what we solve and extending where we serve.",
-    image: "https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&w=1200&q=72",
+    image: "https://plus.unsplash.com/premium_photo-1726332459518-757a60823213?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   },
 ];
 
@@ -105,8 +105,8 @@ export const OurHistoryTimeline: React.FC = () => {
                 style={{ top: "0px" }}
               >
                 {/* Orange Ring Dot */}
-                <div className="w-4 h-4 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center flex-shrink-0 bg-[#f4f4f6]">
-                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                <div className="w-4 h-4 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center flex-shrink-0 bg-[#f4f4f6]">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-600" />
                 </div>
 
                 {/* "YEAR" label */}

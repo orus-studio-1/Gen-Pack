@@ -14,20 +14,20 @@ const keyContactsData: ContactPerson[] = [
   {
     name: "Sales & Quotations",
     role: "New enquiries, pricing and samples",
-    email: "sales@carapaceinc.com",
-    phone: "+91 99 0362 2821",
+    email: "sales@carapaceintl.com",
+    phone: "+91 9903622821",
   },
   {
     name: "Design Studio",
     role: "Structural CAD, artwork and prototypes",
-    email: "design@carapace.in",
-    phone: "+91 80 4567 8900",
+    email: "info@carapaceintl.com",
+    phone: "+91 9830694795",
   },
   {
     name: "Customer Support",
     role: "Live orders, dispatch and scheduling",
-    email: "support@carapace.in",
-    phone: "+91 98 3069 4795",
+    email: "info@carapaceintl.com",
+    phone: "+91 9836856922",
   },
 ];
 

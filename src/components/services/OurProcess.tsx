@@ -136,7 +136,7 @@ export const OurProcess: React.FC = () => {
                           <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">
                             {step.number}
                           </span>
-                          <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-500 bg-transparent shrink-0" />
+                          <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-600 bg-transparent shrink-0" />
                         </div>
                         <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">
                           {step.title}
@@ -157,7 +157,7 @@ export const OurProcess: React.FC = () => {
                     {isRight && (
                       <>
                         <div className="flex items-center gap-2 mb-2">
-                          <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-500 bg-transparent shrink-0" />
+                          <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-600 bg-transparent shrink-0" />
                           <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">
                             {step.number}
                           </span>
@@ -175,7 +175,7 @@ export const OurProcess: React.FC = () => {
                   {/* Mobile Render Fallback */}
                   <div className="md:hidden flex flex-col -mt-6">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-500 bg-transparent shrink-0" />
+                      <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-600 bg-transparent shrink-0" />
                       <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">
                         {step.number}
                       </span>

@@ -97,8 +97,8 @@ export const ProductInfoSections: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center gap-2.5 mb-3">
-                  <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-                    <div className="w-1 h-1 rounded-full bg-orange-500" />
+                  <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+                    <div className="w-1 h-1 rounded-full bg-orange-600" />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                     {block.badge}

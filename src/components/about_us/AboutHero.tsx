@@ -26,7 +26,7 @@ export const AboutHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-slate-800 border border-slate-200 rounded-full px-4 py-2 self-start md:self-auto shadow-sm"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse" />
             <span>ABOUT US</span>
           </motion.div>
         </div>

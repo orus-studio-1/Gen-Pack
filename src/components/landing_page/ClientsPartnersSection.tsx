@@ -15,6 +15,20 @@ import {
   FaBoxOpen,
 } from "react-icons/fa6";
 
+import {
+  ManyavarLogo,
+  DynamicLogo,
+  OrientLogo,
+  BallentineLogo,
+  HavellsLogo,
+  CromptonLogo,
+  IspLogo,
+  GliderLogo,
+  CatMintLogo,
+  GlobalClothingLogo,
+  TirupatiAgroLogo,
+} from "./ClientLogos";
+
 interface ClientsPartnersProps {
   badgeText?: string;
   className?: string;
@@ -44,21 +58,20 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
     { name: "Plastic-Free Packs", icon: FaBoxOpen, color: "text-slate-700" },
   ];
 
-  /* Client roster shown in place of certifications for now. Each item can
-     later take a `logo: "/path/to/logo.png"` field — swap the text <span>
-     below for an <img> once actual logo files are available. */
+  /* Client roster with matching monochrome SVG brand logos that seamlessly
+     integrate with the UI. */
   const clients = [
-    { name: "Manyavar" },
-    { name: "Dynamic" },
-    { name: "Orient" },
-    { name: "Ballentine" },
-    { name: "Havells" },
-    { name: "Crompton" },
-    { name: "Industry Safety Product (ISP)" },
-    { name: "Glider" },
-    { name: "Cat Mint" },
-    { name: "Global Clothing" },
-    { name: "Tirupati Agro Products" },
+    { name: "Manyavar", logo: <ManyavarLogo /> },
+    { name: "Dynamic", logo: <DynamicLogo /> },
+    { name: "Orient", logo: <OrientLogo /> },
+    { name: "Ballentine", logo: <BallentineLogo /> },
+    { name: "Havells", logo: <HavellsLogo /> },
+    { name: "Crompton", logo: <CromptonLogo /> },
+    { name: "Industry Safety Product (ISP)", logo: <IspLogo /> },
+    { name: "Glider", logo: <GliderLogo /> },
+    { name: "Cat Mint", logo: <CatMintLogo /> },
+    { name: "Global Clothing", logo: <GlobalClothingLogo /> },
+    { name: "Tirupati Agro Products", logo: <TirupatiAgroLogo /> },
   ];
 
   const resolvedBadgeText =
@@ -66,7 +79,7 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
 
   const resolvedSubtext = SHOW_CERTIFICATIONS
     ? "Audited processes, traceable fibre and documentation supplied with every consignment."
-    : "Trusted by leading brands across apparel, electronics, agro and industrial safety.";
+    : "";
 
   // Duplicated for a seamless 50% infinite marquee loop.
   const marqueeItems = SHOW_CERTIFICATIONS
@@ -75,13 +88,13 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
 
   return (
     <section
-      className={`w-full bg-[#f4f4f4] py-10 sm:py-14 border-t border-b border-gray-200/60 overflow-hidden font-urbanist select-none ${className}`}
+      className={`w-full bg-[#f4f4f4] pt-4 sm:pt-6 pb-8 sm:pb-10 border-t border-b border-gray-200/60 overflow-hidden font-urbanist select-none ${className}`}
     >
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2.5">
         {/* Top-left Badge Indicator */}
         <div className="flex items-center gap-2">
-          <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-            <div className="w-1 h-1 rounded-full bg-orange-500" />
+          <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+            <div className="w-1 h-1 rounded-full bg-orange-600" />
           </div>
           <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-gray-700">
             {resolvedBadgeText}
@@ -93,7 +106,7 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
       </div>
 
       {/* Moving Marquee Container */}
-      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24 overflow-hidden flex pointer-events-none">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden flex pointer-events-none">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{
@@ -102,7 +115,7 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             ease: "linear",
             duration: 30,
           }}
-          className="flex items-center gap-10 sm:gap-14 md:gap-20 w-max shrink-0 pr-10 sm:pr-14 md:pr-20"
+          className="flex items-center gap-12 sm:gap-16 md:gap-20 w-max shrink-0 pr-12 sm:pr-16 md:pr-20"
         >
           {SHOW_CERTIFICATIONS
             ? (marqueeItems as typeof standards).map((item, index) => {
@@ -122,14 +135,10 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             : (marqueeItems as typeof clients).map((item, index) => (
                 <div
                   key={`${item.name}-${index}`}
-                  className="flex items-center gap-3 shrink-0 opacity-80"
+                  className="flex items-center shrink-0 opacity-75 hover:opacity-100 transition-opacity duration-300"
+                  title={item.name}
                 >
-                  {/* Swap this span for an <img src={item.logo} .../> once
-                      client logo files are available, keeping the same
-                      gap/opacity/whitespace treatment as certifications had. */}
-                  <span className="text-base sm:text-lg font-semibold tracking-tight text-gray-800 whitespace-nowrap">
-                    {item.name}
-                  </span>
+                  {item.logo}
                 </div>
               ))}
         </motion.div>

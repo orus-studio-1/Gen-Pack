@@ -65,16 +65,16 @@ export default async function ProductDetailPage({
   ];
 
   return (
-    <main className="w-full min-h-screen bg-white text-[#1c1817] selection:bg-orange-500 selection:text-white overflow-x-clip font-urbanist">
+    <main className="w-full min-h-screen bg-white text-[#1c1817] selection:bg-orange-600 selection:text-white overflow-x-clip font-urbanist">
       {/* ─── Breadcrumb ─── */}
       <section className="w-full pt-24 sm:pt-28 md:pt-36 pb-3 sm:pb-4 bg-white">
         <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
           <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#999999] flex-wrap">
-            <Link href="/" className="hover:text-orange-500 transition-colors">
+            <Link href="/" className="hover:text-orange-600 transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link href="/product" className="hover:text-orange-500 transition-colors">
+            <Link href="/product" className="hover:text-orange-600 transition-colors">
               Products
             </Link>
             {primary && (
@@ -82,7 +82,7 @@ export default async function ProductDetailPage({
                 <span>/</span>
                 <Link
                   href={`/product?category=${primary.id}#catalog`}
-                  className="hover:text-orange-500 transition-colors"
+                  className="hover:text-orange-600 transition-colors"
                 >
                   {primary.name}
                 </Link>
@@ -101,8 +101,8 @@ export default async function ProductDetailPage({
             {/* Left: copy */}
             <div className="lg:col-span-5 pt-2 sm:pt-4">
               <div className="flex items-center gap-2 mb-3 sm:mb-4">
-                <span className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-                  <span className="w-1 h-1 rounded-full bg-orange-500" />
+                <span className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+                  <span className="w-1 h-1 rounded-full bg-orange-600" />
                 </span>
                 <span className="font-bold text-xs sm:text-sm tracking-[0.2em] uppercase text-[#1c1817]">
                   {primary?.name}
@@ -221,7 +221,7 @@ export default async function ProductDetailPage({
                   .slice(0, 6)
                   .map((benefit) => (
                     <li key={benefit} className="flex items-start gap-3">
-                      <span className="mt-1.5 w-2 h-2 rounded-full bg-orange-500 shrink-0" />
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-orange-600 shrink-0" />
                       <span className="text-sm sm:text-base text-slate-700 leading-relaxed">
                         {benefit}
                       </span>
@@ -248,7 +248,7 @@ export default async function ProductDetailPage({
                   <Link
                     key={catId}
                     href={`/product?category=${catId}#catalog`}
-                    className="text-sm font-semibold px-4 py-2 rounded-full border border-slate-200 text-slate-600 hover:border-orange-400 hover:text-orange-600 transition-colors"
+                    className="text-sm font-semibold px-4 py-2 rounded-full border border-slate-200 text-slate-600 hover:border-orange-600 hover:text-orange-600 transition-colors"
                   >
                     {cat.name}
                   </Link>
@@ -289,7 +289,7 @@ export default async function ProductDetailPage({
 
       {/* ─── CTA ─── */}
       <section className="w-full py-16 sm:py-24 bg-[#1c1817] text-white relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[320px] bg-orange-500/10 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[320px] bg-orange-600/10 blur-[130px] rounded-full pointer-events-none" />
         <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24 relative z-10">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">

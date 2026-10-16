@@ -69,7 +69,7 @@ export const ContactFAQSection: React.FC = () => {
             Asked Questions
           </h2>
           <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-            The questions we get asked most about board grades, tooling, lead times and going plastic-free. Still unsure? Send us your current pack and we will look at it.
+            Still unsure? Share your requirements, we will help you with the needful.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export const ContactFAQSection: React.FC = () => {
                 {/* Top Row: Number Badge & Open/Close Toggle Button */}
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-500 bg-transparent shrink-0" />
+                    <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-600 bg-transparent shrink-0" />
                     <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#555555] font-mono">
                       {faq.number}
                     </span>
@@ -100,7 +100,7 @@ export const ContactFAQSection: React.FC = () => {
                   {/* Circular Plus/Cross Toggle */}
                   <div
                     className={`w-10 h-10 rounded-full border flex items-center justify-center transition-colors duration-300 ${isOpen
-                        ? "border-orange-500 text-orange-600 bg-orange-50/50"
+                        ? "border-orange-600 text-orange-600 bg-orange-50/50"
                         : "border-slate-300 text-slate-600 bg-white"
                       }`}
                   >

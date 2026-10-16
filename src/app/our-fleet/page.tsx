@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function OurFleetPage() {
     return (
-        <main className="w-full min-h-screen relative bg-white selection:bg-orange-500 selection:text-white">
+        <main className="w-full min-h-screen relative bg-white selection:bg-orange-600 selection:text-white">
             <FleetHero />
             <FleetByTheNumbers />
             <FleetCategoriesAccordion />

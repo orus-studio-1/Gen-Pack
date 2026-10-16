@@ -11,17 +11,19 @@ interface CTAButtonProps {
   size?: "sm" | "md" | "lg";
   textColor?: string;
   iconColor?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 export const CTAButton: React.FC<CTAButtonProps> = ({
   label = "Know Our Services",
   onClick,
-  href = "#services",
+  href,
   className = "",
   variant = "outline",
   size = "md",
   textColor = "text-white",
   iconColor = "text-white",
+  type = "button",
 }) => {
   const Component = href ? "a" : "button";
 
@@ -50,17 +52,18 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
       : "w-4 h-4 md:w-4.5 md:h-4.5";
 
   const bgBorderPill = isSolid
-    ? "border border-orange-600 bg-orange-600 group-hover:bg-orange-500 group-hover:border-orange-500"
-    : "border border-orange-500 bg-transparent group-hover:bg-orange-600 group-hover:text-white";
+    ? "border border-orange-600 bg-orange-600 group-hover:bg-orange-700 group-hover:border-orange-700"
+    : "border border-orange-600 bg-transparent group-hover:bg-orange-600 group-hover:border-orange-600 group-hover:text-white";
 
   const bgBorderCircle = isSolid
-    ? "border border-orange-600 bg-orange-600 group-hover:bg-orange-500 group-hover:border-orange-500"
-    : "border border-orange-500 bg-transparent group-hover:bg-orange-500";
+    ? "border border-orange-600 bg-orange-600 group-hover:bg-orange-700 group-hover:border-orange-700"
+    : "border border-orange-600 bg-transparent group-hover:bg-orange-600 group-hover:border-orange-600";
 
   return (
     <Component
       href={href}
       onClick={onClick}
+      type={href ? undefined : type}
       className={`inline-flex items-center gap-2.5 md:gap-3 group cursor-pointer ${textColor} font-urbanist select-none ${className}`}
     >
       {/* Main Pill Button */}

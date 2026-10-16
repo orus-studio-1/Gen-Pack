@@ -16,9 +16,9 @@ interface WhyChooseUsProps {
 const MultilingualIllustration: React.FC = () => (
   <div className="relative w-40 h-40 flex items-center justify-center">
     {/* Center Orange Headset Icon */}
-    <div className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center z-10 shadow-sm">
+    <div className="w-12 h-12 rounded-full bg-orange-600/10 border border-orange-600/30 flex items-center justify-center z-10 shadow-sm">
       <svg
-        className="w-6 h-6 text-orange-500"
+        className="w-6 h-6 text-orange-600"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -131,7 +131,7 @@ const ShipmentVisibilityIllustration: React.FC = () => (
       transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
       className="absolute top-0 flex flex-col items-center"
     >
-      <div className="w-8 h-8 rounded-full bg-orange-500 border-2 border-white shadow-md flex items-center justify-center text-white font-bold">
+      <div className="w-8 h-8 rounded-full bg-orange-600 border-2 border-white shadow-md flex items-center justify-center text-white font-bold">
         <svg
           className="w-4 h-4"
           viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ const ShipmentVisibilityIllustration: React.FC = () => (
           <polyline points="20 6 9 17 4 12" />
         </svg>
       </div>
-      <div className="w-0.5 h-2 bg-orange-500" />
+      <div className="w-0.5 h-2 bg-orange-600" />
     </motion.div>
 
     {/* Scene: Truck + Storefront */}
@@ -171,7 +171,7 @@ const ShipmentVisibilityIllustration: React.FC = () => (
       {/* Storefront Building */}
       <div className="w-14 h-14 bg-amber-100 border border-amber-200 rounded-t-sm flex flex-col items-center relative overflow-hidden">
         {/* Striped Awning */}
-        <div className="w-full h-4 bg-gradient-to-r from-orange-500 via-white to-orange-500 bg-[length:12px_100%] rounded-t-sm border-b border-orange-600" />
+        <div className="w-full h-4 bg-gradient-to-r from-orange-600 via-white to-orange-600 bg-[length:12px_100%] rounded-t-sm border-b border-orange-600" />
         {/* Window / Door */}
         <div className="w-6 h-8 bg-cyan-500/80 mt-1 rounded-t-sm border border-cyan-600 flex items-center justify-center">
           <div className="w-2 h-4 bg-slate-700 rounded-t-full" />
@@ -194,7 +194,7 @@ const FastDeliveryIllustration: React.FC = () => (
         cy="50"
         r="42"
         fill="none"
-        stroke="#f97316"
+        stroke="#ea580c"
         strokeWidth="2"
         strokeDasharray="6 6"
       />
@@ -251,12 +251,12 @@ const PackagingPerformanceIllustration: React.FC = () => (
     <motion.div
       animate={{ scale: [0.6, 1.3, 0.6], opacity: [0.6, 0, 0.6] }}
       transition={{ repeat: Infinity, duration: 2.2, ease: "easeOut" }}
-      className="absolute bottom-3 w-24 h-4 rounded-full border-2 border-orange-400/70"
+      className="absolute bottom-3 w-24 h-4 rounded-full border-2 border-orange-600/70"
     />
     <motion.div
       animate={{ scale: [0.4, 1, 0.4], opacity: [0.5, 0, 0.5] }}
       transition={{ repeat: Infinity, duration: 2.2, ease: "easeOut", delay: 0.15 }}
-      className="absolute bottom-3 w-16 h-3 rounded-full border-2 border-orange-500/60"
+      className="absolute bottom-3 w-16 h-3 rounded-full border-2 border-orange-600/60"
     />
 
     <motion.div
@@ -342,8 +342,8 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({
           <div className="lg:col-span-5 max-w-xl">
             {/* Upper Badge */}
             <div className="flex items-center gap-2 mb-3 sm:mb-5">
-              <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-                <div className="w-1 h-1 rounded-full bg-orange-500" />
+              <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+                <div className="w-1 h-1 rounded-full bg-orange-600" />
               </div>
               <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-gray-700">
                 {badgeText}

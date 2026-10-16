@@ -908,7 +908,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Heavy-duty octagonal corrugated containers engineered for large-volume industrial packaging.",
     idealFor: ["Powders", "Granules", "Resins"],
-    image: IMG.factory,
+    image: "/products/pallet-boxes.png",
     benefits: [
       "Eight-sided geometry eliminates the sidewall bulge of square bins",
       "Ships flat and erects on the pallet in under a minute",

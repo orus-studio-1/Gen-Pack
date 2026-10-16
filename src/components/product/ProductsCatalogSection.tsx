@@ -61,8 +61,8 @@ export const ProductsCatalogSection: React.FC = () => {
         {/* Section Heading */}
         <div className="max-w-3xl mb-10 sm:mb-12">
           <div className="flex items-center gap-2.5 mb-4">
-            <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-500 flex items-center justify-center shrink-0">
-              <div className="w-1 h-1 rounded-full bg-orange-500" />
+            <div className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
+              <div className="w-1 h-1 rounded-full bg-orange-600" />
             </div>
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase text-slate-500">
               PRODUCT CATALOGUE
@@ -124,7 +124,7 @@ export const ProductsCatalogSection: React.FC = () => {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by product, flute, use case or industry"
               aria-label="Search products"
-              className="w-full bg-white border border-slate-200 rounded-full pl-11 pr-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full bg-white border border-slate-200 rounded-full pl-11 pr-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-orange-600 transition-colors"
             />
           </div>
         </div>

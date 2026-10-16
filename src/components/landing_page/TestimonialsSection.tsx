@@ -67,12 +67,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
     <section className={`w-full bg-[#f4f4f4] py-14 sm:py-24 lg:py-32 font-urbanist select-none ${className}`}>
       <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
         {/* Top Header Row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 mb-8 sm:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-10 lg:gap-16 mb-8 sm:mb-16">
           <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold tracking-tight text-gray-900 leading-[1.08] shrink-0">
             <span className="block">{titleLine1}</span>
             <span className="block">{titleLine2}</span>
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-medium max-w-md leading-relaxed md:text-left">
+          <p className="text-base sm:text-lg lg:text-xl xl:text-[1.3rem] text-gray-600 font-normal max-w-xl lg:max-w-2xl xl:max-w-3xl leading-relaxed md:text-left">
             {subtitle}
           </p>
         </div>

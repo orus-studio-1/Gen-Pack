@@ -35,9 +35,9 @@ export const FleetHero: React.FC = () => {
         >
           {/* Target Icon + INTRODUCING Badge */}
           <div className="inline-flex items-center justify-center gap-2 mb-1">
-            <svg className="w-3.5 h-3.5 text-orange-500 shrink-0" viewBox="0 0 16 16" fill="none">
-              <circle cx="8" cy="8" r="6" stroke="#f97316" strokeWidth="2.5" />
-              <circle cx="8" cy="8" r="2" fill="#f97316" />
+            <svg className="w-3.5 h-3.5 text-orange-600 shrink-0" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="#ea580c" strokeWidth="2.5" />
+              <circle cx="8" cy="8" r="2" fill="#ea580c" />
             </svg>
             <span className="font-bold text-xs md:text-sm tracking-[0.25em] uppercase text-[#1c1817]">
               INTRODUCING

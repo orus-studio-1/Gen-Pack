@@ -181,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                   after:left-0
                   after:w-0
                   after:h-0.5
-                  after:bg-orange-500
+                  after:bg-orange-600
                   hover:after:w-full
                   after:transition-all
                   after:duration-300
@@ -372,7 +372,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                           `
                           : `
                             text-white
-                            hover:text-orange-400
+                            hover:text-orange-600
                           `
                       }
                     `}

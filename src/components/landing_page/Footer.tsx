@@ -69,9 +69,10 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="example@email.com"
                     required
-                    className="w-full bg-transparent border border-gray-700/80 rounded-full px-5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                    className="w-full bg-transparent border border-gray-700/80 rounded-full px-5 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-600 transition-colors"
                   />
                   <CTAButton
+                    type="submit"
                     label="Subscribe"
                     variant="outline"
                     size="sm"
@@ -91,10 +92,10 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-800 bg-[#25201f] text-gray-300 hover:text-white hover:border-orange-500/60 hover:bg-orange-500/10 transition-all duration-300 shadow-sm"
+                  className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-800 bg-[#25201f] text-gray-300 hover:text-white hover:border-orange-600/60 hover:bg-orange-600/10 transition-all duration-300 shadow-sm"
                 >
                   <span>LinkedIn</span>
-                  <span className="text-orange-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <span className="text-orange-600 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                     ↗
                   </span>
                 </a>
@@ -102,10 +103,10 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-800 bg-[#25201f] text-gray-300 hover:text-white hover:border-orange-500/60 hover:bg-orange-500/10 transition-all duration-300 shadow-sm"
+                  className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-800 bg-[#25201f] text-gray-300 hover:text-white hover:border-orange-600/60 hover:bg-orange-600/10 transition-all duration-300 shadow-sm"
                 >
                   <span>Instagram</span>
-                  <span className="text-orange-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <span className="text-orange-600 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                     ↗
                   </span>
                 </a>
@@ -113,10 +114,10 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-800 bg-[#25201f] text-gray-300 hover:text-white hover:border-orange-500/60 hover:bg-orange-500/10 transition-all duration-300 shadow-sm"
+                  className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-800 bg-[#25201f] text-gray-300 hover:text-white hover:border-orange-600/60 hover:bg-orange-600/10 transition-all duration-300 shadow-sm"
                 >
                   <span>Facebook</span>
-                  <span className="text-orange-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <span className="text-orange-600 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                     ↗
                   </span>
                 </a>
@@ -139,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 <li>
                   <a
                     href={`mailto:${SITE.email}`}
-                    className="hover:text-orange-400 transition-colors font-mono break-all"
+                    className="hover:text-orange-600 transition-colors font-mono break-all"
                   >
                     {SITE.email}
                   </a>
@@ -147,18 +148,18 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 <li>
                   <a
                     href={`mailto:${SITE.salesEmail}`}
-                    className="hover:text-orange-400 transition-colors font-mono break-all"
+                    className="hover:text-orange-600 transition-colors font-mono break-all"
                   >
                     {SITE.salesEmail}
                   </a>
                 </li>
                 <li className="pt-1">
-                  <a href={SITE.phoneHref} className="hover:text-orange-400 transition-colors font-mono">
+                  <a href={SITE.phoneHref} className="hover:text-orange-600 transition-colors font-mono">
                     {SITE.phone}
                   </a>
                 </li>
                 <li>
-                  <a href={SITE.altPhoneHref} className="hover:text-orange-400 transition-colors font-mono">
+                  <a href={SITE.altPhoneHref} className="hover:text-orange-600 transition-colors font-mono">
                     {SITE.altPhone}
                   </a>
                 </li>
@@ -192,7 +193,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="hover:text-orange-400 transition-colors"
+                      className="hover:text-orange-600 transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -218,7 +219,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="hover:text-orange-400 transition-colors"
+                      className="hover:text-orange-600 transition-colors"
                     >
                       {item.label}
                     </Link>

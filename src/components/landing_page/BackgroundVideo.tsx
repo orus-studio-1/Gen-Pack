@@ -11,7 +11,7 @@ interface BackgroundVideoProps {
 }
 
 export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
-  videoSrc = "/hero_section_bg.mp4",
+  videoSrc = "/homepage_hero.mp4",
   imageSrc,
   imageAlt = "",
 }) => {

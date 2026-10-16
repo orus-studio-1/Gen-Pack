@@ -26,7 +26,7 @@ export const ContactHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="flex items-center gap-2 font-semibold text-xs md:text-sm tracking-wider uppercase text-slate-800 border border-slate-200 rounded-full px-4 py-2 self-start md:self-auto shadow-sm"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse" />
             <span>CONTACT US</span>
           </motion.div>
         </div>
@@ -41,8 +41,8 @@ export const ContactHero: React.FC = () => {
           {/* Image 1: Plant floor */}
           <div className="relative w-full h-[280px] sm:h-[360px] md:h-[420px] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl bg-slate-900">
             <Image
-              src="https://images.unsplash.com/photo-1734357310900-4b513a3a5ae0?auto=format&fit=crop&q=80&w=1200"
-              alt="Corrugated board being converted at the Carapace plant"
+              src="https://images.unsplash.com/photo-1693031630157-7ecc8d06de63?auto=format&fit=crop&q=80&w=1200"
+              alt="Corrugated converting line inside the packaging plant"
               fill
               priority
               unoptimized
@@ -82,9 +82,9 @@ export const ContactHero: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            className="text-lg sm:text-xl md:text-2xl text-slate-600 font-urbanist leading-relaxed max-w-2xl"
+            className="text-lg sm:text-xl md:text-2xl text-slate-600 font-urbanist leading-relaxed max-w-3xl"
           >
-            Send us the product dimensions, the weight and where it is travelling. You will get a board specification, a structural CAD sample and a delivered price — usually inside one working day.
+            Share your product dimensions, weight and transit requirements. We’ll translate them into the right board specification, structural CAD and commercial proposal, ready for review before production begins.
           </motion.p>
         </div>
 
