@@ -8,8 +8,8 @@ export const SITE = {
   tagline: "Sustainable corrugated packaging, engineered to protect.",
   description:
     "Carapace manufactures 100% recyclable corrugated rolls, boxes, inserts and retail displays — plastic-free packaging engineered for e-commerce, FMCG, pharma and export supply chains.",
-  email: "info@carapaceinc.com",
-  salesEmail: "sales@carapaceinc.com",
+  email: "info@carapaceintl.com",
+  salesEmail: "sales@carapaceintl.com",
   phone: "+91 9903622821",
   phoneHref: "tel:+919903622821",
   altPhone: "+91 9830694795",
@@ -28,7 +28,7 @@ export const SITE = {
   },
   hours: "Mon – Sat, 9:00 – 18:30 IST",
   social: {
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/company/genpack-corp/",
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",
   },
