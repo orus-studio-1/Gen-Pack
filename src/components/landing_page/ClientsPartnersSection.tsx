@@ -16,17 +16,24 @@ import {
 } from "react-icons/fa6";
 
 import {
-  ManyavarLogo,
-  DynamicLogo,
-  OrientLogo,
-  BallentineLogo,
+  ItcLogo,
+  NestleLogo,
+  HulLogo,
+  PepsiCoLogo,
+  TataConsumerLogo,
+  BoschLogo,
+  LgLogo,
   HavellsLogo,
+  BritanniaLogo,
+  DaburLogo,
   CromptonLogo,
+  ManyavarLogo,
+  AdityaBirlaLogo,
+  OrientLogo,
+  BiskFarmLogo,
+  BallentineLogo,
   IspLogo,
   GliderLogo,
-  CatMintLogo,
-  GlobalClothingLogo,
-  TirupatiAgroLogo,
 } from "./ClientLogos";
 
 interface ClientsPartnersProps {
@@ -58,20 +65,29 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
     { name: "Plastic-Free Packs", icon: FaBoxOpen, color: "text-slate-700" },
   ];
 
-  /* Client roster with matching monochrome SVG brand logos that seamlessly
-     integrate with the UI. */
+  /* Client roster with matching high-fidelity brand logos in designated order:
+     ITC -> Nestlé -> HUL -> PepsiCo -> Tata Consumer -> Bosch -> LG -> Havells ->
+     Britannia -> Dabur -> Crompton -> Manyavar -> Aditya Birla Fashion ->
+     Orient Electric -> Bisk Farm -> Ballantine -> ISP -> Glider */
   const clients = [
-    { name: "Manyavar", logo: <ManyavarLogo /> },
-    { name: "Dynamic", logo: <DynamicLogo /> },
-    { name: "Orient", logo: <OrientLogo /> },
-    { name: "Ballentine", logo: <BallentineLogo /> },
+    { name: "ITC", logo: <ItcLogo /> },
+    { name: "Nestlé", logo: <NestleLogo /> },
+    { name: "HUL", logo: <HulLogo /> },
+    { name: "PepsiCo", logo: <PepsiCoLogo /> },
+    { name: "Tata Consumer", logo: <TataConsumerLogo /> },
+    { name: "Bosch", logo: <BoschLogo /> },
+    { name: "LG", logo: <LgLogo /> },
     { name: "Havells", logo: <HavellsLogo /> },
+    { name: "Britannia", logo: <BritanniaLogo /> },
+    { name: "Dabur", logo: <DaburLogo /> },
     { name: "Crompton", logo: <CromptonLogo /> },
-    { name: "Industry Safety Product (ISP)", logo: <IspLogo /> },
+    { name: "Manyavar", logo: <ManyavarLogo /> },
+    { name: "Aditya Birla Fashion", logo: <AdityaBirlaLogo /> },
+    { name: "Orient Electric", logo: <OrientLogo /> },
+    { name: "Bisk Farm", logo: <BiskFarmLogo /> },
+    { name: "Ballantine", logo: <BallentineLogo /> },
+    { name: "ISP", logo: <IspLogo /> },
     { name: "Glider", logo: <GliderLogo /> },
-    { name: "Cat Mint", logo: <CatMintLogo /> },
-    { name: "Global Clothing", logo: <GlobalClothingLogo /> },
-    { name: "Tirupati Agro Products", logo: <TirupatiAgroLogo /> },
   ];
 
   const resolvedBadgeText =
@@ -113,7 +129,7 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear",
-            duration: 30,
+            duration: 45,
           }}
           className="flex items-center gap-12 sm:gap-16 md:gap-20 w-max shrink-0 pr-12 sm:pr-16 md:pr-20"
         >
@@ -135,7 +151,7 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             : (marqueeItems as typeof clients).map((item, index) => (
                 <div
                   key={`${item.name}-${index}`}
-                  className="flex items-center shrink-0 opacity-75 hover:opacity-100 transition-opacity duration-300"
+                  className="flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-300"
                   title={item.name}
                 >
                   {item.logo}

@@ -640,14 +640,16 @@ export const OurLocations: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: High-Res Genpack Manufacturing & Distribution Facility Photo */}
-          <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[480px] bg-slate-900">
+          {/* Right Column: High-Res Advanced Corrugated Packaging Manufacturing Facility */}
+          <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[480px] bg-slate-900 overflow-hidden">
             <Image
-              src="/carapace-facility.jpg"
-              alt="Genpack Modern Manufacturing and Corrugation Facility"
+              src="/global-standards-manufacturing.jpg"
+              alt="Advanced Corrugated Packaging Manufacturing Facility"
               fill
+              priority
+              quality={95}
               sizes="(max-width: 1024px) 100vw, 850px"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
         </div>

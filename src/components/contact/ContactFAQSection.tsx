@@ -14,38 +14,88 @@ const faqData: FAQItem[] = [
   {
     id: "faq-1",
     number: "01",
-    question: "What is your minimum order quantity?",
+    question: "What types of packaging do you manufacture?",
     answer:
-      "Stock sizes start from 100 units. Custom die-cut structures usually start from 250 to 500 units, because a cutting forme has to be made first. Digital print lets us go lower for launches and sampling — tell us the volume and we will tell you honestly whether tooling is worth it yet.",
+      "We manufacture 3-ply, 5-ply, and 7-ply corrugated boxes, custom cartons, printed packaging, die-cut boxes, sheets, rolls, and protective packaging. From everyday shipping cartons to specialized industrial applications, our packaging is designed around the product and its requirements.",
   },
   {
     id: "faq-2",
     number: "02",
-    question: "How quickly will I get a quote and a sample?",
+    question: "Can you manufacture boxes to our exact specifications?",
     answer:
-      "Most quotes go out within one working day of receiving product dimensions, weight and the transit route. A physical structural sample follows in three to five working days, and it is free — we would rather you break it in testing than break a customer's order.",
+      "Absolutely. We manufacture boxes to specified dimensions, material grades, structural designs, and printing requirements. Existing samples or technical drawings can also be used as references to ensure the packaging meets your specifications.",
   },
   {
     id: "faq-3",
     number: "03",
-    question: "Is your packaging genuinely recyclable?",
+    question: "How do I know which packaging is right for my product?",
     answer:
-      "Yes, and that is a design constraint rather than a claim. Standard packs use kraft board, water-based inks, paper tape and paper-based inserts, so the whole pack goes into one recycling stream. Where a brief needs a barrier coating or a cold-chain liner, we say so up front and specify the most recoverable option available.",
+      "It depends on what you're packing and how it's handled. Product weight, fragility, stacking, storage, and transportation all influence the right choice of materials, board strength, and box construction.",
   },
   {
     id: "faq-4",
     number: "04",
-    question: "Can you replace the plastic in our current packaging?",
+    question: "What's the difference between 3-ply, 5-ply, and 7-ply boxes?",
     answer:
-      "That is most of what we do. Bubble wrap becomes paper bubble wrap or kraft cushioning, air pillows become paper void fill, EPS becomes honeycomb or moulded pulp, and plastic partitions become die-cut corrugated dividers. Send us your current pack and we will quote a like-for-like paper equivalent with test results.",
+      "The difference lies in the number of paper layers and corrugated mediums. Three-ply generally suits lighter applications, while five-ply and seven-ply are commonly used for more demanding requirements. Actual strength also depends on paper grade, flute configuration, and box design.",
   },
   {
     id: "faq-5",
     number: "05",
-    question: "What are your lead times and how do you deliver?",
+    question: "Can you replicate our existing packaging?",
     answer:
-      "Standard lead time is seven to twelve working days from artwork sign-off, with repeat orders faster. We deliver flat-packed on our own fleet across the region and by contracted carrier elsewhere, and we can hold buffer stock at the plant against a scheduled call-off so your line never waits on cartons.",
+      "Yes. We can reproduce existing packaging using physical samples, design schematics, or approved specifications. Where appropriate, we can also recommend adjustments to improve structural performance, material efficiency, or overall functionality.",
   },
+  {
+    id: "faq-6",
+    number: "06",
+    question: "Can you print our branding on the boxes?",
+    answer:
+      "Of course. We manufacture printed and unprinted boxes featuring logos, product information, QR codes, handling instructions, and other branding elements. Printing options depend on the artwork, colour requirements, packaging material, and order volume.",
+  },
+  {
+    id: "faq-7",
+    number: "07",
+    question: "What is your minimum order quantity?",
+    answer:
+      "Minimum order quantities depend on box dimensions, material specifications, printing, and design complexity. Custom orders may require higher volumes to account for production setup costs and manufacturing efficiency.",
+  },
+  {
+    id: "faq-8",
+    number: "08",
+    question: "How is the price of corrugated packaging determined?",
+    answer:
+      "Pricing depends on box dimensions, paper grade, construction, printing requirements, and order volume. Larger quantities can often lower the cost per unit by spreading production setup costs across more quantities.",
+  },
+  {
+    id: "faq-9",
+    number: "09",
+    question: "What information do you need for a quotation?",
+    answer:
+      "Product dimensions, estimated quantity, weight, printing requirements, and delivery location are a good starting point. Design schematics, reference images, or existing samples can help establish a more accurate specification and quotation.",
+  },
+  {
+    id: "faq-10",
+    number: "10",
+    question: "Can you handle bulk and recurring orders?",
+    answer:
+      "Yes. We support bulk and recurring packaging requirements across industries. Production planning considers order volumes, approved specifications, and delivery schedules to support consistent supply and operational continuity",
+  },
+  {
+    id: "faq-11",
+    number: "11",
+    question: "Do you deliver across India and internationally?",
+    answer:
+      "Yes. With manufacturing operations based in Kolkata, we supply businesses across India and support international packaging enquiries. Delivery arrangements depend on order volumes, destination, and logistics requirements.",
+  },
+  {
+    id: "faq-12",
+    number: "12",
+    question: "How can I get started with Carapace?",
+    answer:
+      "Getting started is simple. Submit your packaging requirements, estimated quantity, and delivery location through our enquiry form. Existing samples or design specifications can also be included to help streamline the quotation process.",
+  }
+  
 ];
 
 export const ContactFAQSection: React.FC = () => {

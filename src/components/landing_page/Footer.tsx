@@ -89,7 +89,7 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               </h4>
               <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-gray-300">
                 <a
-                  href="https://linkedin.com"
+                  href={SITE.social.linkedin}
                   target="_blank"
                   rel="noreferrer"
                   className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-800 bg-[#25201f] text-gray-300 hover:text-white hover:border-orange-600/60 hover:bg-orange-600/10 transition-all duration-300 shadow-sm"
