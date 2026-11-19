@@ -10,7 +10,7 @@ const destinationPoints = [
   { label: "Saudi Arabia", top: "43.0%", left: "57.5%", svgX: 575, svgY: 215 },
   { label: "Europe", top: "26.0%", left: "52.0%", svgX: 520, svgY: 130 },
   { label: "Africa", top: "60.0%", left: "56.0%", svgX: 560, svgY: 300 },
-  { label: "North America", top: "32.0%", left: "23.0%", svgX: 230, svgY: 160 },
+  
   { label: "Asia-Pacific", top: "56.0%", left: "78.0%", svgX: 780, svgY: 280 },
 ];
 
@@ -60,33 +60,11 @@ const globalStats = [
   },
 ];
 
-// Key Export Markets list with custom minimalist architectural landmark icons
-const keyMarkets = [
+// Global Markets by region with custom minimalist architectural landmark icons
+const globalMarkets = [
   {
-    name: "UAE",
-    icon: (
-      <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20" />
-        <path d="M10 22V6l2-4 2 4v16" />
-        <path d="M7 22v-9l3-2" />
-        <path d="M17 22v-9l-3-2" />
-        <path d="M4 22h16" />
-      </svg>
-    ),
-  },
-  {
-    name: "Saudi Arabia",
-    icon: (
-      <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M7 22l3-18h4l3 18" />
-        <path d="M10 4c0 3 4 3 4 0" />
-        <path d="M12 4v4" />
-        <path d="M4 22h16" />
-      </svg>
-    ),
-  },
-  {
-    name: "Oman",
+    region: "South Asia",
+    countries: ["Nepal", "Bangladesh", "Sri Lanka"],
     icon: (
       <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M5 22V8l3-3v17" />
@@ -98,50 +76,55 @@ const keyMarkets = [
     ),
   },
   {
-    name: "Qatar",
+    region: "Middle East",
+    countries: ["UAE", "Saudi Arabia", "Oman", "Qatar"],
     icon: (
       <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 22c2-6 1-12-1-18h10c-2 6-1 12 1 18" />
-        <path d="M9 10l6 4" />
-        <path d="M15 10l-6 4" />
-        <path d="M5 22h14" />
-      </svg>
-    ),
-  },
-  {
-    name: "Kuwait",
-    icon: (
-      <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 22V3" />
-        <circle cx="9" cy="10" r="3" />
-        <circle cx="9" cy="16" r="2" />
-        <path d="M16 22v-11" />
-        <circle cx="16" cy="14" r="2" />
-        <path d="M5 22h14" />
-      </svg>
-    ),
-  },
-  {
-    name: "Bahrain",
-    icon: (
-      <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M6 22l3-18c1 6 1 12 0 18" />
-        <path d="M18 22l-3-18c-1 6-1 12 0 18" />
-        <path d="M9 10h6" />
-        <path d="M9 15h6" />
+        <path d="M12 2v20" />
+        <path d="M10 22V6l2-4 2 4v16" />
+        <path d="M7 22v-9l3-2" />
+        <path d="M17 22v-9l-3-2" />
         <path d="M4 22h16" />
       </svg>
     ),
   },
   {
-    name: "& Many More",
+    region: "Africa",
+    countries: ["Kenya", "South Africa"],
     icon: (
       <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3.6 9h16.8" />
-        <path d="M3.6 15h16.8" />
-        <path d="M11.5 3a17 17 0 0 0 0 18" />
-        <path d="M12.5 3a17 17 0 0 1 0 18" />
+        <path d="M3 21 12 5l9 16" />
+        <path d="m12 5 3 16" />
+        <path d="M3 21h18" />
+      </svg>
+    ),
+  },
+  {
+    region: "Europe",
+    countries: ["United Kingdom", "Germany"],
+    icon: (
+      <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v3" />
+        <path d="M6 22c3-5 4-11 5-17h2c1 6 2 12 5 17" />
+        <path d="M9.5 13h5" />
+        <path d="M9 22a3 3 0 0 1 6 0" />
+        <path d="M4 22h16" />
+      </svg>
+    ),
+  },
+  {
+    region: "Asia-Pacific",
+    countries: ["Australia", "Singapore", "Malaysia"],
+    icon: (
+      <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v3" />
+        <path d="M6 8c3 0 5-1 6-3 1 2 3 3 6 3" />
+        <path d="M8 8v4" />
+        <path d="M16 8v4" />
+        <path d="M5 14c3 0 5-1 7-2 2 1 4 2 7 2" />
+        <path d="M8 14v8" />
+        <path d="M16 14v8" />
+        <path d="M4 22h16" />
       </svg>
     ),
   },
@@ -403,25 +386,15 @@ export const OurLocations: React.FC = () => {
                   strokeWidth="1.8"
                   strokeDasharray="5 9"
                   opacity="0.45"
-                  animate={{ strokeDashoffset: [0, -28] }}
+                  animate={{ strokeDashoffset: [0, -28] }}  
                   transition={{ duration: 2.8, repeat: Infinity, ease: "linear" }}
                 />
 
-                {/* 5. Kolkata -> North America */}
-                <motion.path
-                  d={`M ${kolkataOrigin.svgX} ${kolkataOrigin.svgY} C 500 130, 340 120, ${destinationPoints[4].svgX} ${destinationPoints[4].svgY}`}
-                  fill="none"
-                  stroke="#ea580c"
-                  strokeWidth="1.5"
-                  strokeDasharray="5 10"
-                  opacity="0.4"
-                  animate={{ strokeDashoffset: [0, -30] }}
-                  transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
-                />
+                
 
                 {/* 6. Kolkata -> Asia-Pacific */}
                 <motion.path
-                  d={`M ${kolkataOrigin.svgX} ${kolkataOrigin.svgY} C 740 265, 765 275, ${destinationPoints[5].svgX} ${destinationPoints[5].svgY}`}
+                  d={`M ${kolkataOrigin.svgX} ${kolkataOrigin.svgY} C 740 265, 765 275, ${destinationPoints[4].svgX} ${destinationPoints[4].svgY}`}
                   fill="none"
                   stroke="#ea580c"
                   strokeWidth="1.8"
@@ -561,22 +534,22 @@ export const OurLocations: React.FC = () => {
           </div>
         </div>
 
-        {/* BOTTOM SECTION: "OUR KEY MARKETS" Strip with Minimalist Landmark Icons (Image 1 Reference) */}
+        {/* BOTTOM SECTION: "GLOBAL MARKETS" Region Cards + Countries by Region */}
         <div className="mt-16 sm:mt-20 pt-10 sm:pt-12 border-t border-slate-200/90">
-          
+
           {/* Eyebrow Label */}
           <div className="text-center mb-8">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs text-[10px] sm:text-xs font-bold font-mono tracking-[0.2em] uppercase text-slate-600">
               <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
-              OUR KEY MARKETS
+              GLOBAL MARKETS
             </span>
           </div>
 
-          {/* 7 Countries Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
-            {keyMarkets.map((market, idx) => (
+          {/* 6 Region Cards Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {globalMarkets.map((market, idx) => (
               <motion.div
-                key={market.name}
+                key={market.region}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -588,10 +561,32 @@ export const OurLocations: React.FC = () => {
                   {market.icon}
                 </div>
                 <span className="text-xs sm:text-sm font-bold font-urbanist text-[#1c1817] tracking-tight group-hover:text-orange-600 transition-colors">
-                  {market.name}
+                  {market.region}
                 </span>
               </motion.div>
             ))}
+          </div>
+
+          {/* Countries by Region */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {globalMarkets
+              .filter((market) => market.countries.length > 0)
+              .map((market, idx) => (
+                <motion.div
+                  key={market.region}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                >
+                  <h4 className="text-sm sm:text-base font-bold font-urbanist text-[#1c1817] tracking-tight mb-1 text-center">
+                    {market.region}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed text-center">
+                    {market.countries.join(" · ")}
+                  </p>
+                </motion.div>
+              ))}
           </div>
         </div>
 
@@ -643,8 +638,8 @@ export const OurLocations: React.FC = () => {
           {/* Right Column: High-Res Advanced Corrugated Packaging Manufacturing Facility */}
           <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[480px] bg-slate-900 overflow-hidden">
             <Image
-              src="/global-standards-manufacturing.jpg"
-              alt="Advanced Corrugated Packaging Manufacturing Facility"
+              src="/about-us/global_standards_warehouse.png"
+              alt="Corrugated boxes on a conveyor in a warehouse with stocked pallet racks"
               fill
               priority
               quality={95}
@@ -684,7 +679,7 @@ export const OurLocations: React.FC = () => {
             {sustainabilityPillars.map((pillar, idx) => (
               <div
                 key={pillar.title}
-                className={`flex flex-col items-start ${idx > 0 ? "sm:pl-4 lg:pl-6" : ""}`}
+                className={`flex flex-col items-start ${idx > 0 ? "sm:pl-4 lg:pl-6" : "lg:-ml-6"}`}
               >
                 <div className="text-orange-600 mb-3">
                   {pillar.icon}
@@ -716,7 +711,7 @@ export const OurLocations: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-xs sm:text-sm lg:text-base text-slate-300 font-normal text-center md:text-left max-w-lg leading-relaxed relative z-10">
-            Partner with Genpack for reliable packaging solutions and long-term global
+            Partner with Carapace for reliable packaging solutions and long-term global
             partnerships.
           </p>
 

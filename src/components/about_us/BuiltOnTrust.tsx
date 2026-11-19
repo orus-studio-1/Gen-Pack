@@ -27,7 +27,7 @@ export const BuiltOnTrust: React.FC = () => {
 
           <div className="max-w-5xl space-y-6 md:space-y-7">
             <p className="text-lg sm:text-xl md:text-2xl text-slate-800 font-normal leading-relaxed tracking-tight">
-              Established in 1968, Carapace by Sri Vishnu Industries has been a trusted leader in corrugated packaging, delivering more than 50 million boxes annually to clients across 12+ industries — from manufacturing and e-commerce to FMCG and logistics.
+               in 1968, Carapace has been a trusted leader in corrugated packaging, delivering more than 50 million boxes annually to clients across 12+ industries — from manufacturing and e-commerce to FMCG and logistics.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl text-slate-800 font-normal leading-relaxed tracking-tight">

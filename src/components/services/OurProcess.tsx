@@ -126,8 +126,8 @@ export const OurProcess: React.FC = () => {
                 >
                   {/* Left Column Box (Active if step is left-aligned on Desktop) */}
                   <div
-                    className={`pl-12 md:pl-0 flex flex-col ${
-                      !isRight ? "md:items-end md:text-right" : "md:opacity-0 md:pointer-events-none hidden md:flex"
+                    className={`hidden md:flex flex-col ${
+                      !isRight ? "md:items-end md:text-right" : "md:opacity-0 md:pointer-events-none"
                     }`}
                   >
                     {!isRight && (
@@ -150,9 +150,9 @@ export const OurProcess: React.FC = () => {
 
                   {/* Right Column Box (Active if step is right-aligned on Desktop, or Mobile view) */}
                   <div
-                    className={`pl-12 md:pl-0 flex flex-col ${
-                      isRight ? "md:items-start md:text-left" : "md:opacity-0 md:pointer-events-none hidden md:flex"
-                    }`}
+                    className={`hidden md:flex flex-col ${
+                      isRight ? "md:items-start md:text-left" : "md:opacity-0 md:pointer-events-none"
+          }`}
                   >
                     {isRight && (
                       <>
@@ -173,7 +173,7 @@ export const OurProcess: React.FC = () => {
                   </div>
 
                   {/* Mobile Render Fallback */}
-                  <div className="md:hidden flex flex-col -mt-6">
+                  <div className="md:hidden flex flex-col pl-12">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-600 bg-transparent shrink-0" />
                       <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">

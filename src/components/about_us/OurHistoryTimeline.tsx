@@ -22,7 +22,7 @@ const historyData: HistoryItem[] = [
     year: "1985",
     title: "From Boxes to Structures.",
     text: "We added die-cutting and brought structural design in-house, expanding our capabilities beyond conventional cartons to packaging engineered around the product, its protection and its journey through the supply chain.",
-    image: "https://images.unsplash.com/photo-1638560926839-cb90ababd947?auto=format&fit=crop&w=1200&q=72",
+    image: "/about-us/history_boxes_to_structures.png",
   },
   {
     year: "2002",
