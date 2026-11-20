@@ -545,7 +545,7 @@ export const OurLocations: React.FC = () => {
             </span>
           </div>
 
-          {/* 6 Region Cards Grid */}
+          {/* 5 Region Cards: icon, region name and countries in one card */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
             {globalMarkets.map((market, idx) => (
               <motion.div
@@ -555,40 +555,23 @@ export const OurLocations: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="flex flex-col items-center justify-center p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-orange-600/40 transition-all duration-300 text-center group cursor-default"
+                className="flex flex-col items-center justify-start p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-orange-600/40 transition-all duration-300 text-center group cursor-default"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-slate-600 group-hover:text-orange-600 transition-colors mb-2.5">
                   {market.icon}
                 </div>
-                <span className="text-xs sm:text-sm font-bold font-urbanist text-[#1c1817] tracking-tight group-hover:text-orange-600 transition-colors">
+                <span className="text-sm sm:text-base font-bold font-urbanist text-[#1c1817] tracking-tight group-hover:text-orange-600 transition-colors">
                   {market.region}
                 </span>
+                <p className="mt-1.5 text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                  {market.countries.join(" · ")}
+                </p>
               </motion.div>
             ))}
           </div>
 
-          {/* Countries by Region */}
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-            {globalMarkets
-              .filter((market) => market.countries.length > 0)
-              .map((market, idx) => (
-                <motion.div
-                  key={market.region}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                >
-                  <h4 className="text-sm sm:text-base font-bold font-urbanist text-[#1c1817] tracking-tight mb-1 text-center">
-                    {market.region}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed text-center">
-                    {market.countries.join(" · ")}
-                  </p>
-                </motion.div>
-              ))}
-          </div>
-        </div>
+      
+        </div>  
 
         {/* 1. GLOBAL STANDARDS SECTION: Charcoal (#1c1817) Card + Facility Exterior Image */}
         <div className="mt-14 sm:mt-20 rounded-3xl overflow-hidden border border-white/10 shadow-xl bg-[#1c1817] grid grid-cols-1 lg:grid-cols-12">

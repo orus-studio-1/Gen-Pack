@@ -19,8 +19,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   titleLine1 = "Engineering Packaging that Powers",
   titleLine2 = "Modern Supply Chains",
   locationText = "Manufactured in India. Shipped worldwide.",
-  subtextLine1 = "Recyclable corrugated rolls, inserts and specialty products.",
-  subtextLine2 = "Built around your product, not a catalogue.",
+  subtextLine1 = "Recyclable corrugated rolls, inserts and specialty products. Built around your product, not a catalogue.",
   ctaText = "Explore Our Products",
 }) => {
   return (
@@ -59,9 +58,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="max-w-sm space-y-1">
             <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-snug font-normal">
               {subtextLine1}
-            </p>
-            <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-snug font-normal">
-              {subtextLine2}
             </p>
           </div>
 

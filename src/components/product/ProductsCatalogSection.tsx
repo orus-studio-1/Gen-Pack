@@ -55,7 +55,7 @@ export const ProductsCatalogSection: React.FC = () => {
   return (
     <section
       id="catalog"
-      className="w-full bg-[#fcfcfc] text-[#1c1817] py-16 sm:py-24 md:py-28 font-urbanist border-t border-slate-100 scroll-mt-24"
+      className="w-full bg-[#fcfcfc] text-[#1c1817] pt-10 sm:pt-12 md:pt-16 pb-16 sm:pb-24 md:pb-28 font-urbanist border-t border-slate-100 scroll-mt-24"
     >
       <div className="w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
         {/* Section Heading */}
