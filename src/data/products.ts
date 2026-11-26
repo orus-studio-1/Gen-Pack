@@ -39,6 +39,19 @@ export interface Product {
   /** Industries and applications this product is built for. */
   idealFor: string[];
   image: string;
+  /**
+   * How the photo fills its frame. Defaults to "cover" (cropped edge-to-edge).
+   * Use "contain" for photos that would lose important content when cropped,
+   * e.g. portrait or near-square shots. The spare space is filled with a soft,
+   * blurred copy of the same photo (white photos simply stay white).
+   */
+  imageFit?: "cover" | "contain";
+  /**
+   * Focal point for "cover" crops, as a CSS object-position (e.g. "50% 80%").
+   * Use it when a photo's shape differs from the frame so the important part
+   * stays in view. Defaults to the centre.
+   */
+  imagePosition?: string;
   /** Optional extra selling points, used on the detail page. */
   benefits?: string[];
 }
@@ -115,6 +128,60 @@ const IMG = {
   phonePack: "/newAdded/electronics&appliance.png",
   eyewearPack: "https://images.unsplash.com/photo-1755606045126-1aeb4f0e7c2d",
   paperRolls: "https://images.unsplash.com/photo-1451930264513-2e93da3ba755",
+  singleFaceRoll: "https://images.unsplash.com/photo-1795599909869-fb263b56ece0",
+  eFluteRoll: "https://images.unsplash.com/photo-1795600618945-514df79df42c",
+  bFluteRoll: "https://images.unsplash.com/photo-1795601070552-9c18bc467a7c",
+  twoPlyRoll: "https://images.unsplash.com/photo-1795601924321-28533d503039",
+  threePlyRoll: "https://images.unsplash.com/photo-1795601920418-d7b41986e6af",
+  customizedRoll: "https://images.unsplash.com/photo-1795601912997-b9f464031293",
+  bcDoubleWallRoll: "https://images.unsplash.com/photo-1795601481341-ad33a37943ee",
+  fivePanelFolder: "https://images.unsplash.com/photo-1795603569267-c2ef5c7adc77",
+  onePieceFolder: "https://images.unsplash.com/photo-1795604162634-b6087e57690a",
+  dieCutBox: "https://images.unsplash.com/photo-1795604150435-c11efcddf924",
+  folderTypeBox: "https://images.unsplash.com/photo-1795604137002-d607889b28b2",
+  rscBox: "https://images.unsplash.com/photo-1795604722471-0b780ef8bfb5",
+  hscBox: "https://images.unsplash.com/photo-1795604745089-d7f4da61eea1",
+  folBox: "https://images.unsplash.com/photo-1795604736474-edbb7df317cb",
+  ftdBox: "https://images.unsplash.com/photo-1795604728340-f4f0ac9026b2",
+  halfTelescopeBox: "https://images.unsplash.com/photo-1795604756665-1471d726f4bc",
+  threePlyKraftBox: "https://images.unsplash.com/photo-1795673283935-56c853216e76",
+  fivePlyKraftBox: "https://images.unsplash.com/photo-1795673288587-864bf6b66cff",
+  sevenPlyKraftBox: "https://images.unsplash.com/photo-1795673292666-dd29d871d36f",
+  layerPads: "https://images.unsplash.com/photo-1795672290874-25dee5179979",
+  slipSheets: "https://images.unsplash.com/photo-1795672285878-a54b33d615e6",
+  honeycombInserts: "https://images.unsplash.com/photo-1795672268679-95176fd0d080",
+  paperCushionInserts: "https://images.unsplash.com/photo-1795672278925-bd15857a66de",
+  corrugatedDividers: "https://images.unsplash.com/photo-1795672273166-f02ed1fefa64",
+  bottlePartitions: "https://images.unsplash.com/photo-1795673827462-4638c4d6121d",
+  paperBubbleWrap: "https://images.unsplash.com/photo-1795673846438-c64b9bf8e021",
+  corrugatedPads: "https://images.unsplash.com/photo-1795673888875-fad92e3afd19",
+  honeycombBoards: "https://images.unsplash.com/photo-1795673853627-da966ce713a5",
+  recyclableKraftInserts: "https://images.unsplash.com/photo-1795673839169-5f39ce11dc7b",
+  waterResistantBox: "https://images.unsplash.com/photo-1795674541741-aa9698b428d8",
+  thermalInsulatedBoxes: "https://images.unsplash.com/photo-1795674554008-4900d1c52249",
+  reusableTotes: "https://images.unsplash.com/photo-1795674547724-4d805d428abe",
+  foodGradeBoxes: "https://images.unsplash.com/photo-1795674564784-c414bb6e2683",
+  moistureResistantBoxes: "https://images.unsplash.com/photo-1795674575327-f889ad720813",
+  popDisplays: "https://images.unsplash.com/photo-1795676294484-5e50fda390ac",
+  exportShippingBoxes: "https://images.unsplash.com/photo-1795676273690-489e5a652031",
+  exportCrates: "https://images.unsplash.com/photo-1795676288767-f491ef68b2aa",
+  gaylordBoxes: "https://images.unsplash.com/photo-1795676301932-7ef1b7d7511e",
+  octabinContainers: "https://images.unsplash.com/photo-1795676314181-8b2345e87bfc",
+  insidePrinting: "https://images.unsplash.com/photo-1795677333889-0dcd3bc9895e",
+  spotUv: "https://images.unsplash.com/photo-1795677328290-bb1ec495bbe7",
+  foilStamping: "https://images.unsplash.com/photo-1795677321287-ed9f7bdb6da9",
+  debossing: "https://images.unsplash.com/photo-1795677342838-4aaab48689dd",
+  barcodes: "https://images.unsplash.com/photo-1795677315911-be830c48db62",
+  sequentialNumbering: "https://images.unsplash.com/photo-1795678412327-bcee2b4edc2d",
+  perforatedTearLines: "https://images.unsplash.com/photo-1795678432785-20bda038b9a2",
+  dieCutHandles: "https://images.unsplash.com/photo-1795678380577-00f3707d1e91",
+  lamination: "https://images.unsplash.com/photo-1795678398804-77f4b647be99",
+  securityPrinting: "https://images.unsplash.com/photo-1795678440417-51adab3e40dc",
+  cardboardFitments: "https://images.unsplash.com/photo-1795679248891-730bf514609f",
+  dieCutInserts: "https://images.unsplash.com/photo-1795679242823-e3e8d1ca39c3",
+  edgeProtectors: "https://images.unsplash.com/photo-1795679234642-cf12967b7e6a",
+  antiStaticFoam: "https://images.unsplash.com/photo-1795679225590-e2e8e6c71664",
+  pulpMouldedInserts: "https://images.unsplash.com/photo-1795679264590-dba4ea10c590",
   paperSack: "https://images.unsplash.com/photo-1590820077566-af4e557c1548",
   shreddedPaper: "https://images.unsplash.com/photo-1715522594847-67c90b5b8667",
   plainBox: "https://images.unsplash.com/photo-1567570670593-6596d461ad38",
@@ -256,7 +323,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Flexible single-face corrugated rolls designed for wrapping delicate products and providing lightweight cushioning during storage and transit.",
     idealFor: ["Furniture", "Glassware", "E-commerce"],
-    image: IMG.paperRolls,
+    image: IMG.singleFaceRoll,
     benefits: [
       "Wraps around curves, corners and irregular shapes without cracking",
       "Cuts cleanly by hand or on a roll dispenser — no tooling required",
@@ -272,7 +339,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Durable corrugated rolls engineered for superior impact protection of heavy and industrial products.",
     idealFor: ["Machinery", "Exports", "Industrial packaging"],
-    image: IMG.corrugatedLines,
+    image: IMG.paperRolls,
     benefits: [
       "Reinforced flute holds its shape under sustained compression",
       "High-GSM liner resists puncture from sharp machined edges",
@@ -288,7 +355,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Smooth-finish E-flute corrugated rolls offering excellent printability and lightweight protection.",
     idealFor: ["Retail packaging", "Cosmetics"],
-    image: IMG.corrugatedCloseUp,
+    image: IMG.eFluteRoll,
   },
   {
     slug: "b-flute-corrugated-roll",
@@ -299,7 +366,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Versatile B-flute corrugated rolls providing balanced cushioning and compression strength.",
     idealFor: ["FMCG", "Logistics"],
-    image: IMG.kraftSheet,
+    image: IMG.bFluteRoll,
   },
   {
     slug: "c-flute-corrugated-roll",
@@ -321,7 +388,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Double-wall corrugated rolls delivering maximum strength and durability for demanding shipping applications.",
     idealFor: ["Export packaging", "Heavy equipment"],
-    image: IMG.corrugatedTexture,
+    image: IMG.bcDoubleWallRoll,
   },
   {
     slug: "2-ply-corrugated-roll",
@@ -332,7 +399,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Cost-effective and lightweight corrugated rolls ideal for wrapping, cushioning and protecting irregularly shaped items.",
     idealFor: ["Movers & packers", "E-commerce", "Furniture", "Logistics"],
-    image: IMG.kraftCrinkled,
+    image: IMG.twoPlyRoll,
   },
   {
     slug: "3-ply-corrugated-roll",
@@ -343,7 +410,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Sturdy and versatile corrugated paper rolls designed to safeguard fragile and semi-heavy items during storage and transit.",
     idealFor: ["Ceramics", "Glassware", "Electronics packaging"],
-    image: IMG.kraftPaper,
+    image: IMG.threePlyRoll,
   },
   {
     slug: "customized-corrugated-roll",
@@ -354,7 +421,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Custom-engineered corrugated rolls built to specific packaging, branding or cushioning requirements with variable ply strength.",
     idealFor: ["Industrial packaging", "OEM vendors", "Bulk manufacturers"],
-    image: IMG.kraftParcel,
+    image: IMG.customizedRoll,
     benefits: [
       "Any combination of ply, flute and GSM within our board range",
       "Printed liner available for branded wrapping and dispatch areas",
@@ -372,7 +439,7 @@ export const PRODUCTS: Product[] = [
     description:
       "The industry's most widely used corrugated shipping box, offering strength, efficiency and cost-effective packaging.",
     idealFor: ["E-commerce", "Logistics"],
-    image: IMG.boxStack,
+    image: IMG.rscBox,
     benefits: [
       "Flaps meet at the centre for a fast, single-strip tape seal",
       "Near-zero board waste in die-cutting keeps unit cost lowest",
@@ -388,7 +455,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Open-top corrugated containers providing easy access for storage and warehouse applications.",
     idealFor: ["Manufacturing", "Warehousing"],
-    image: IMG.boxBrown,
+    image: IMG.hscBox,
   },
   {
     slug: "full-overlap-slotted-container",
@@ -399,7 +466,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Heavy-duty corrugated boxes with overlapping flaps for enhanced stacking strength and protection.",
     idealFor: ["Exports", "Machinery"],
-    image: IMG.boxBrownAlt,
+    image: IMG.folBox,
   },
   {
     slug: "full-telescope-box",
@@ -410,7 +477,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Two-piece telescope boxes offering exceptional strength and premium product presentation.",
     idealFor: ["Industrial components"],
-    image: IMG.boxWhiteTable,
+    image: IMG.ftdBox,
   },
   {
     slug: "half-telescope-box",
@@ -421,7 +488,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Strong two-piece packaging providing added protection for delicate or valuable products.",
     idealFor: ["Electronics"],
-    image: IMG.boxWhiteTableAlt,
+    image: IMG.halfTelescopeBox,
   },
   {
     slug: "five-panel-folder",
@@ -432,7 +499,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Corrugated folders specifically designed for packaging long or flat products securely.",
     idealFor: ["Furniture", "Automotive"],
-    image: IMG.boxShallow,
+    image: IMG.fivePanelFolder,
   },
   {
     slug: "one-piece-folder",
@@ -443,7 +510,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Lightweight single-piece corrugated folders ideal for shipping flat items with minimal assembly.",
     idealFor: ["Books", "Panels"],
-    image: IMG.boxBrownTall,
+    image: IMG.onePieceFolder,
   },
   {
     slug: "die-cut-corrugated-box",
@@ -454,7 +521,8 @@ export const PRODUCTS: Product[] = [
     description:
       "Custom-engineered die-cut boxes manufactured to fit the product exactly while enhancing presentation.",
     idealFor: ["Retail", "Electronics"],
-    image: IMG.boxBlank,
+    image: IMG.dieCutBox,
+    imageFit: "contain",
     benefits: [
       "Self-locking closure means no tape at the packing station",
       "Eliminates void fill by fitting the product within millimetres",
@@ -470,7 +538,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Easy-to-assemble corrugated folder boxes suitable for a wide range of packaging applications.",
     idealFor: ["Apparel", "Documents"],
-    image: IMG.boxOnTable,
+    image: IMG.folderTypeBox,
   },
   {
     slug: "3-ply-brown-kraft-box",
@@ -481,7 +549,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Lightweight yet sturdy boxes perfect for everyday packaging, retail deliveries and low-weight shipping.",
     idealFor: ["E-commerce saleTags", "Lightweight goods", "Protective outer packaging"],
-    image: IMG.plainBox,
+    image: IMG.threePlyKraftBox,
   },
   {
     slug: "5-ply-kraft-box",
@@ -492,7 +560,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Stronger five-layer corrugated boxes made for medium to heavy items that need extra wall rigidity.",
     idealFor: ["Electronics", "Household goods", "Industrial packaging"],
-    image: IMG.boxesFloor,
+    image: IMG.fivePlyKraftBox,
   },
   {
     slug: "7-ply-heavy-duty-box",
@@ -503,7 +571,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Designed for demanding transit conditions, these heavy-duty boxes ensure maximum protection over long distances.",
     idealFor: ["Industrial equipment", "Bulk exports", "Long-distance shipping"],
-    image: IMG.warehouseStack,
+    image: IMG.sevenPlyKraftBox,
   },
 
   /* ── Eco-Friendly Innovations ─────────────────────────────────── */
@@ -532,7 +600,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Durable corrugated layer pads that separate stacked products and improve load stability during shipping.",
     idealFor: ["Warehousing", "FMCG", "Exports"],
-    image: IMG.corrugatedLines,
+    image: IMG.layerPads,
   },
   {
     slug: "corrugated-slip-sheets",
@@ -543,7 +611,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Lightweight corrugated slip sheets that reduce shipping weight while improving pallet handling efficiency.",
     idealFor: ["Export logistics", "Manufacturing"],
-    image: IMG.pallets,
+    image: IMG.slipSheets,
   },
   {
     slug: "honeycomb-inserts",
@@ -554,7 +622,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Eco-friendly honeycomb inserts providing superior strength and impact protection without plastic.",
     idealFor: ["Electronics", "Furniture", "Appliances"],
-    image: IMG.corrugatedPattern,
+    image: IMG.honeycombInserts,
     benefits: [
       "Strength-to-weight ratio comparable to EPS at a fraction of the volume",
       "Absorbs repeated impacts without permanent deformation",
@@ -570,7 +638,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Recyclable paper cushion inserts engineered to absorb impact while supporting sustainable packaging initiatives.",
     idealFor: ["D2C brands", "Glassware", "Cosmetics"],
-    image: IMG.shreddedPaper,
+    image: IMG.paperCushionInserts,
   },
   {
     slug: "corrugated-dividers",
@@ -581,7 +649,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Recyclable corrugated dividers that securely separate products and minimise damage during transportation.",
     idealFor: ["Bottles", "Jars", "FMCG", "Cosmetics"],
-    image: IMG.boxesOpen,
+    image: IMG.corrugatedDividers,
     benefits: [
       "Cell count and size built to your product's exact footprint",
       "Slot-together assembly with no glue or staples",
@@ -597,7 +665,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Sustainable bottle partitions that prevent breakage during storage and shipment.",
     idealFor: ["Beverage industry", "Wineries", "Pharmaceuticals"],
-    image: IMG.cardboardHeap,
+    image: IMG.bottlePartitions,
   },
   {
     slug: "paper-bubble-wrap",
@@ -608,7 +676,7 @@ export const PRODUCTS: Product[] = [
     description:
       "A plastic-free alternative to bubble wrap, made from kraft paper with a honeycomb structure that expands and locks around the product.",
     idealFor: ["Glassware", "Electronics", "Gifting"],
-    image: IMG.fragileParcel,
+    image: IMG.paperBubbleWrap,
     benefits: [
       "Expands up to three times its flat width as it is pulled",
       "Self-gripping — wraps without tape on most shapes",
@@ -624,7 +692,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Flat, layered kraft sheets that add internal cushioning and protect items from impact.",
     idealFor: ["Separating fragile items", "Padding cartons"],
-    image: IMG.kraftSheet,
+    image: IMG.corrugatedPads,
   },
   {
     slug: "honeycomb-boards",
@@ -635,7 +703,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Rigid kraft panels with a honeycomb core that deliver strength without weight.",
     idealFor: ["Pallet bases", "Partitions", "Eco furniture"],
-    image: IMG.loadingDock,
+    image: IMG.honeycombBoards,
   },
   {
     slug: "recyclable-kraft-inserts",
@@ -646,7 +714,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Custom-cut eco inserts that keep your products secure while enhancing brand appeal.",
     idealFor: ["Sustainable packaging", "Product displays", "D2C unboxing"],
-    image: IMG.boxOpenTable,
+    image: IMG.recyclableKraftInserts,
   },
 
   /* ── Functional & Advanced Variants ───────────────────────────── */
@@ -675,7 +743,8 @@ export const PRODUCTS: Product[] = [
     description:
       "Moisture-resistant corrugated boxes engineered for humid environments and outdoor transportation.",
     idealFor: ["FMCG", "Agriculture", "Exports"],
-    image: IMG.boxTextured,
+    image: IMG.waterResistantBox,
+    imagePosition: "50% 55%",
   },
   {
     slug: "corrugated-pallet-boxes",
@@ -697,7 +766,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Thermally insulated corrugated packaging designed to maintain product temperature during transit.",
     idealFor: ["Vaccines", "Pharmaceuticals", "Frozen food"],
-    image: IMG.blister,
+    image: IMG.thermalInsulatedBoxes,
     benefits: [
       "Liner and wall thickness matched to your required hold time",
       "Compatible with gel packs, dry ice and phase-change materials",
@@ -713,7 +782,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Durable reusable corrugated totes engineered for repeated warehousing and return logistics applications.",
     idealFor: ["Warehousing", "Inventory management"],
-    image: IMG.boxesRack,
+    image: IMG.reusableTotes,
   },
   {
     slug: "food-grade-corrugated-boxes",
@@ -724,7 +793,8 @@ export const PRODUCTS: Product[] = [
     description:
       "Hygienic food-grade corrugated boxes suitable for direct and secondary food packaging applications.",
     idealFor: ["Food processing", "Bakeries", "Fresh produce"],
-    image: IMG.takeaway,
+    image: IMG.foodGradeBoxes,
+    imagePosition: "50% 80%",
   },
   {
     slug: "moisture-resistant-corrugated-boxes",
@@ -735,7 +805,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Corrugated packaging with enhanced moisture resistance for extended protection in damp environments.",
     idealFor: ["Agriculture", "Exports"],
-    image: IMG.cratesOranges,
+    image: IMG.moistureResistantBoxes,
   },
   {
     slug: "wax-coated-corrugated-boxes",
@@ -824,7 +894,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Custom point-of-purchase displays designed to strengthen in-store branding and drive sales.",
     idealFor: ["Brand promotions", "Product launches"],
-    image: IMG.saleTags,
+    image: IMG.popDisplays,
   },
   {
     slug: "pos-displays",
@@ -859,7 +929,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Heavy-duty export boxes engineered to withstand long-distance shipping and international logistics.",
     idealFor: ["Exporters", "Freight forwarders"],
-    image: IMG.fragileBox,
+    image: IMG.exportShippingBoxes,
     benefits: [
       "Board specified for humidity loss over multi-week ocean transit",
       "No ISPM-15 fumigation certificate required, unlike timber",
@@ -875,7 +945,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Corrugated export crates providing maximum protection for heavy industrial equipment during overseas transportation.",
     idealFor: ["Machinery", "Capital equipment"],
-    image: IMG.forkliftAlt,
+    image: IMG.exportCrates,
   },
   {
     slug: "corrugated-pallet-containers",
@@ -897,7 +967,7 @@ export const PRODUCTS: Product[] = [
     description:
       "High-capacity Gaylord boxes offering exceptional durability for bulk storage and shipping.",
     idealFor: ["Chemicals", "Agriculture", "Recycling"],
-    image: IMG.cardboardPile,
+    image: IMG.gaylordBoxes,
   },
   {
     slug: "octabin-containers",
@@ -908,7 +978,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Heavy-duty octagonal corrugated containers engineered for large-volume industrial packaging.",
     idealFor: ["Powders", "Granules", "Resins"],
-    image: "/products/pallet-boxes.png",
+    image: IMG.octabinContainers,
     benefits: [
       "Eight-sided geometry eliminates the sidewall bulge of square bins",
       "Ships flat and erects on the pallet in under a minute",
@@ -959,7 +1029,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Enhance the customer unboxing experience with custom interior printing carrying branding, instructions or promotional messages.",
     idealFor: ["Luxury brands", "D2C", "Subscription boxes"],
-    image: IMG.boxSticker,
+    image: IMG.insidePrinting,
   },
   {
     slug: "spot-uv",
@@ -970,7 +1040,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Spot UV coating highlights logos, graphics and text with a premium glossy finish against a matt background.",
     idealFor: ["Luxury packaging", "Cosmetics"],
-    image: IMG.boxPink,
+    image: IMG.spotUv,
   },
   {
     slug: "embossing",
@@ -992,7 +1062,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Debossed packaging delivers a refined appearance through recessed branding and design elements.",
     idealFor: ["Premium consumer products"],
-    image: IMG.boxToothbrush,
+    image: IMG.debossing,
   },
   {
     slug: "foil-stamping",
@@ -1003,7 +1073,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Metallic foil stamping enhances packaging with premium gold, silver or coloured foil finishes.",
     idealFor: ["Cosmetics", "Jewellery", "Luxury gifts"],
-    image: IMG.eyewearPack,
+    image: IMG.foilStamping,
   },
   {
     slug: "barcodes",
@@ -1014,7 +1084,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Professionally printed barcodes improve retail scanning, inventory management and supply chain efficiency.",
     idealFor: ["Retail", "Warehousing", "FMCG"],
-    image: IMG.boxLabeled,
+    image: IMG.barcodes,
   },
   {
     slug: "sequential-numbering",
@@ -1025,7 +1095,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Sequential numbering enables batch tracking, traceability and quality control across production runs.",
     idealFor: ["Manufacturing", "Exports"],
-    image: IMG.printWorkshop,
+    image: IMG.sequentialNumbering,
   },
   {
     slug: "security-printing",
@@ -1036,7 +1106,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Advanced security printing incorporates authentication features that help prevent counterfeiting and confirm product authenticity.",
     idealFor: ["Pharmaceuticals", "Electronics", "Luxury goods"],
-    image: IMG.pills,
+    image: IMG.securityPrinting,
   },
   {
     slug: "4-color-printing",
@@ -1063,7 +1133,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Functional or visual cut-outs that make packs easier to carry and put the product on show.",
     idealFor: ["Retail-ready boxes", "Promotional kits"],
-    image: IMG.boxHandover,
+    image: IMG.dieCutHandles,
   },
   {
     slug: "perforated-tear-lines",
@@ -1074,7 +1144,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Built-in tear zones make packages easy to open while providing clear tamper evidence.",
     idealFor: ["E-commerce deliveries", "Secure shipments"],
-    image: IMG.boxPerson,
+    image: IMG.perforatedTearLines,
   },
   {
     slug: "matt-gloss-lamination",
@@ -1085,7 +1155,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Give your box a refined finish with added durability and moisture protection.",
     idealFor: ["Luxury packaging", "Food boxes", "Cosmetic shipments"],
-    image: IMG.boxWhiteTable,
+    image: IMG.lamination,
   },
   {
     slug: "qr-codes-variable-print",
@@ -1109,7 +1179,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Precision-engineered cardboard fitments hold products in place, improving presentation and reducing movement in transit.",
     idealFor: ["Consumer electronics", "Appliances", "Luxury goods"],
-    image: IMG.craftDesk,
+    image: IMG.cardboardFitments,
   },
   {
     slug: "die-cut-corrugated-inserts",
@@ -1120,7 +1190,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Precisely shaped inserts that cradle your product and prevent movement inside the carton.",
     idealFor: ["Electronics", "Cosmetics", "Glassware"],
-    image: IMG.boxWhiteTableAlt,
+    image: IMG.dieCutInserts,
     benefits: [
       "Modelled from your 3D file or a physical sample",
       "Removes the need for loose fill in premium packs",
@@ -1136,7 +1206,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Reinforce box edges and pallet corners to prevent crushing damage during handling.",
     idealFor: ["Fragile goods", "Export shipments", "Palletised loads"],
-    image: IMG.pallets,
+    image: IMG.edgeProtectors,
   },
   {
     slug: "anti-static-foam-inserts",
@@ -1147,7 +1217,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Conductive pink and black foam inserts designed for static-sensitive items.",
     idealFor: ["Chips", "Processors", "PCBs"],
-    image: IMG.pcbAssembly,
+    image: IMG.antiStaticFoam,
   },
   {
     slug: "pulp-moulded-paper-inserts",
@@ -1158,7 +1228,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Biodegradable moulded trays that offer eco-friendly cushioning with a clean, premium look.",
     idealFor: ["Bottles", "Jars", "Glass products"],
-    image: IMG.pulpTray,
+    image: IMG.pulpMouldedInserts,
   },
 ];
 

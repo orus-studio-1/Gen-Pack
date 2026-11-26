@@ -45,9 +45,9 @@ export const FleetHero: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817] leading-none">
-            From our plant to
-            <br />
+          <h1 className="text-[2.6rem] leading-[1.05] sm:leading-none sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight font-urbanist text-[#1c1817]">
+            From our plant to{" "}
+            <br className="hidden sm:block" />
             your packing line.
           </h1>
 

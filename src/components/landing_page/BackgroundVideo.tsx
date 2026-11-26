@@ -8,12 +8,15 @@ interface BackgroundVideoProps {
   /** Render a still photograph instead of a video loop. */
   imageSrc?: string;
   imageAlt?: string;
+  /** Focal point for the still photograph (CSS object-position). */
+  imagePosition?: string;
 }
 
 export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   videoSrc = "/homepage_hero.mp4",
   imageSrc,
   imageAlt = "",
+  imagePosition = "50% 50%",
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -62,7 +65,8 @@ export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center scale-105 opacity-85"
+          style={{ objectPosition: imagePosition }}
+          className="object-cover scale-105 opacity-85"
         />
       ) : (
         /* Background Video Stream */

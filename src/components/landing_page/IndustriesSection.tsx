@@ -80,7 +80,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
   return (
     <section className={`relative w-full bg-[#1c1817] text-white py-14 sm:py-28 lg:py-36 font-urbanist select-none ${className}`}>
       {/* Background Vertical Static Chevron SVG Arrow Column on Left */}
-      <div className="absolute top-0 left-0 w-48 sm:w-64 md:w-80 h-full pointer-events-none z-0 opacity-40 overflow-hidden flex flex-col items-center pt-8">
+      <div className="absolute top-0 left-0 w-48 sm:w-64 md:w-80 h-full pointer-events-none z-0 opacity-40 overflow-hidden hidden sm:flex flex-col items-center pt-8">
         {Array.from({ length: 8 }).map((_, i) => (
           <VerticalPatternTile
             key={`v-pattern-${i}`}

@@ -24,11 +24,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <section className="relative w-full max-w-full min-h-screen sm:min-h-[720px] flex flex-col justify-between overflow-hidden font-urbanist text-white select-none">
-      {/* Background Video with token color overlays */}
-      <BackgroundVideo videoSrc="/homepage_hero.mp4" />
+      {/* Background photograph with token color overlays */}
+      <BackgroundVideo
+        imageSrc="/homepage-hero.jpg"
+        imageAlt="Warehouse aisle lined with palletised cartons and goods on orange racking"
+        imagePosition="46% 50%"
+      />
 
       {/* Top Edge-to-Edge Moving SVG Arrow Banner (Behind Navbar) */}
-      <div className="absolute top-0 inset-x-0 w-full max-w-full z-10 pt-2 sm:pt-3 opacity-60 pointer-events-none overflow-hidden">
+      <div className="hidden sm:block absolute top-0 inset-x-0 w-full max-w-full z-10 pt-2 sm:pt-3 opacity-60 pointer-events-none overflow-hidden">
         <TopPattern />
       </div>
 

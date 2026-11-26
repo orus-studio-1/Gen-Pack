@@ -100,7 +100,7 @@ export const IndustriesWeServeSection: React.FC = () => {
           <div className="relative pt-2 sm:pt-6 pr-0 lg:pr-6 pb-4 sm:pb-6">
 
             {/* Soft Background Vertical Pattern Tile Watermark behind text */}
-            <div className="absolute top-0 -left-6 w-48 sm:w-60 h-60 pointer-events-none z-0 opacity-20 overflow-hidden">
+            <div className="hidden sm:block absolute top-0 -left-6 w-48 sm:w-60 h-60 pointer-events-none z-0 opacity-20 overflow-hidden">
               <VerticalPatternTile
                 strokeColor="#ea580c"
                 strokeWidth={5}

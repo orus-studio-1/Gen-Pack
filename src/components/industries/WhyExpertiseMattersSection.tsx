@@ -9,7 +9,7 @@ export const WhyExpertiseMattersSection: React.FC = () => {
     <section className="relative w-full bg-white text-[#1c1817] py-14 sm:py-24 lg:py-40 font-urbanist select-none overflow-hidden">
       
       {/* Background Vertical Chevron Pattern Column on Left (matching screenshot watermark) */}
-      <div className="absolute top-0 left-0 sm:left-4 md:left-8 w-32 sm:w-48 md:w-64 h-full pointer-events-none z-0 opacity-40 overflow-hidden flex flex-col items-center pt-6">
+      <div className="absolute top-0 left-0 sm:left-4 md:left-8 w-32 sm:w-48 md:w-64 h-full pointer-events-none z-0 opacity-40 overflow-hidden hidden sm:flex flex-col items-center pt-6">
         {Array.from({ length: 8 }).map((_, i) => (
           <VerticalPatternTile
             key={`vert-pattern-${i}`}

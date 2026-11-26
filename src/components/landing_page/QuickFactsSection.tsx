@@ -134,7 +134,7 @@ export const QuickFactsSection: React.FC<QuickFactsSectionProps> = ({
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center bg-white text-gray-900 overflow-hidden font-urbanist select-none py-16 sm:py-20 md:py-28">
       {/* Background Reusable SVG Arrow Pattern (Static mode) */}
-      <div className="absolute top-[60%] -translate-y-1/2 inset-x-0 w-full z-0 pointer-events-none opacity-60">
+      <div className="hidden sm:block absolute top-[60%] -translate-y-1/2 inset-x-0 w-full z-0 pointer-events-none opacity-60">
         <TopPattern
           strokeColor="#e5e7eb"
           opacity={0.6}

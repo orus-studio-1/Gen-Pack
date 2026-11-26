@@ -147,14 +147,28 @@ export default async function ProductDetailPage({
 
             {/* Right: photography */}
             <div className="lg:col-span-7 relative w-full">
-              <div className="relative w-full aspect-[16/11] rounded-2xl md:rounded-3xl overflow-hidden bg-[#f4f4f6] border border-[#e5e5e5]">
+              <div
+                className={`relative w-full aspect-[16/11] rounded-2xl md:rounded-3xl overflow-hidden border border-[#e5e5e5] ${product.imageFit === "contain" ? "bg-white" : "bg-[#f4f4f6]"}`}
+              >
+                {product.imageFit === "contain" && (
+                  /* Blurred backdrop so the letterbox space matches the photo. */
+                  <Image
+                    src={`${product.image}?auto=format&fit=crop&w=200&q=40`}
+                    alt=""
+                    aria-hidden
+                    fill
+                    sizes="200px"
+                    className="object-cover scale-125 blur-2xl opacity-70"
+                  />
+                )}
                 <Image
                   src={`${product.image}?auto=format&fit=crop&w=1400&q=75`}
                   alt={product.name}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover"
+                  style={product.imagePosition ? { objectPosition: product.imagePosition } : undefined}
+                  className={product.imageFit === "contain" ? "object-contain p-4 md:p-6" : "object-cover"}
                 />
               </div>
               <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">

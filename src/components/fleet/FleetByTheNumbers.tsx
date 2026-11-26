@@ -27,7 +27,7 @@ export const FleetByTheNumbers: React.FC = () => {
   return (
     <section className="w-full py-20 md:py-32 bg-white text-[#1c1817] relative overflow-hidden select-none">
       {/* Background Reusable SVG Arrow Pattern from Landing Page */}
-      <div className="absolute top-[50%] -translate-y-1/2 inset-x-0 w-full z-0 pointer-events-none opacity-80">
+      <div className="hidden sm:block absolute top-[50%] -translate-y-1/2 inset-x-0 w-full z-0 pointer-events-none opacity-80">
         <TopPattern
           strokeColor="#e5e7eb"
           opacity={0.8}

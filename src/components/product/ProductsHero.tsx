@@ -19,9 +19,9 @@ export const ProductsHero: React.FC = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#1c1817] font-urbanist"
             >
-              Corrugated,
+              Packaging,
               <br />
-              done properly.
+              engineered for performance.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -29,9 +29,7 @@ export const ProductsHero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
               className="mt-4 text-base sm:text-xl md:text-2xl text-slate-600 font-normal max-w-2xl leading-relaxed"
             >
-              Rolls, boxes, inserts, displays and print finishes — every one of
-              them made from recyclable kraft board and engineered around the
-              product it has to protect.
+              We manufacture corrugated packaging solutions, from boxes and rolls to protective inserts and displays, integrating structural integrity, functional design and material efficiency to address the distinct requirements of diverse industries.
             </motion.p>
           </div>
 
