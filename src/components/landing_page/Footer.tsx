@@ -213,8 +213,10 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                   { label: "About Us", href: "/about-us" },
                   { label: "Services", href: "/services" },
                   { label: "Industries", href: "/industries" },
+                  { label: "Products", href: "/product" },
                   // { label: "Our Fleet", href: "/our-fleet" },
                   { label: "Contact Us", href: "/contact" },
+
                 ].map((item) => (
                   <li key={item.label}>
                     <Link

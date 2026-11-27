@@ -42,8 +42,8 @@ export interface Product {
   /**
    * How the photo fills its frame. Defaults to "cover" (cropped edge-to-edge).
    * Use "contain" for photos that would lose important content when cropped,
-   * e.g. portrait or near-square shots. The spare space is filled with a soft,
-   * blurred copy of the same photo (white photos simply stay white).
+   * e.g. a callout at the photo's edge. Use it only for photos on a white
+   * studio background: the spare space is plain white, so the photo blends in.
    */
   imageFit?: "cover" | "contain";
   /**
@@ -561,6 +561,7 @@ export const PRODUCTS: Product[] = [
       "Stronger five-layer corrugated boxes made for medium to heavy items that need extra wall rigidity.",
     idealFor: ["Electronics", "Household goods", "Industrial packaging"],
     image: IMG.fivePlyKraftBox,
+    imageFit: "contain",
   },
   {
     slug: "7-ply-heavy-duty-box",
@@ -572,6 +573,7 @@ export const PRODUCTS: Product[] = [
       "Designed for demanding transit conditions, these heavy-duty boxes ensure maximum protection over long distances.",
     idealFor: ["Industrial equipment", "Bulk exports", "Long-distance shipping"],
     image: IMG.sevenPlyKraftBox,
+    imageFit: "contain",
   },
 
   /* ── Eco-Friendly Innovations ─────────────────────────────────── */

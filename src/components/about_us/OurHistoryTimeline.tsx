@@ -81,7 +81,79 @@ export const OurHistoryTimeline: React.FC = () => {
   const activeItem = historyData[activeIndex];
 
   return (
-    <div ref={containerRef} className="relative w-full bg-[#f4f4f6] text-[#1c1817] min-h-[250vh]">
+    <>
+      {/* ── Mobile & tablet: vertical timeline (all milestones visible) ── */}
+      <section className="lg:hidden w-full bg-[#f4f4f6] text-[#1c1817] px-6 sm:px-10 py-16 sm:py-20">
+        <div className="w-full max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold font-urbanist text-[#1c1817] tracking-tight mb-10 sm:mb-12">
+            Our History
+          </h2>
+
+          <ol className="relative">
+            {historyData.map((item, index) => {
+              const isLast = index === historyData.length - 1;
+              return (
+                <motion.li
+                  key={item.year}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className={`relative pl-9 sm:pl-11 ${isLast ? "" : "pb-12 sm:pb-14"}`}
+                >
+                  {/* Rail segment linking this milestone to the next */}
+                  {!isLast && (
+                    <span
+                      aria-hidden
+                      className="absolute left-[7px] top-[22px] bottom-0 w-[1.5px] bg-[#1c1817]/15"
+                    />
+                  )}
+
+                  {/* Orange ring dot, centred on the year */}
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-[7px] w-4 h-4 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center bg-[#f4f4f6]"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
+                  </span>
+
+                  {/* Year */}
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-[30px] leading-[30px] font-extrabold font-urbanist tracking-tight text-[#1c1817]">
+                      {item.year}
+                    </span>
+                    <span className="text-[11px] font-bold tracking-widest uppercase text-[#1c1817]/45">
+                      Year
+                    </span>
+                  </div>
+
+                  {/* Title & description */}
+                  <h3 className="mt-4 text-xl sm:text-2xl font-bold font-urbanist text-[#1c1817] leading-snug tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[15px] sm:text-base text-[#4a4a50] font-normal leading-relaxed">
+                    {item.text.trim()}
+                  </p>
+
+                  {/* Image */}
+                  <div className="relative mt-5 w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-md border border-black/5 bg-slate-200">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                </motion.li>
+              );
+            })}
+          </ol>
+        </div>
+      </section>
+
+      {/* ── Desktop: scroll-driven sticky timeline ── */}
+    <div ref={containerRef} className="hidden lg:block relative w-full bg-[#f4f4f6] text-[#1c1817] min-h-[250vh]">
       {/* Sticky view wrapper */}
       <section className="sticky top-0 w-full h-screen flex flex-col justify-center overflow-hidden px-6 md:px-16 lg:px-24">
         <div className="w-full max-w-[1400px] mx-auto py-8">
@@ -184,6 +256,7 @@ export const OurHistoryTimeline: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

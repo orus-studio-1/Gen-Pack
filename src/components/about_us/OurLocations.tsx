@@ -1,8 +1,75 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import {
+  motion,
+  animate,
+  useInView,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
+
+/* ── Global Reach entrance motion ─────────────────────────────────── */
+const EASE_OUT: [number, number, number, number] = [0.2, 0.7, 0.2, 1];
+
+const revealGroup: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+const lineRise: Variants = {
+  hidden: { y: "105%" },
+  show: { y: "0%", transition: { duration: 0.75, ease: EASE_OUT } },
+};
+const drawLine: Variants = {
+  hidden: { scaleX: 0 },
+  show: { scaleX: 1, transition: { duration: 0.9, ease: [0.6, 0, 0.2, 1] } },
+};
+const statsGroup: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
+};
+const iconPop: Variants = {
+  hidden: { scale: 0.6 },
+  show: { scale: 1, transition: { type: "spring", stiffness: 420, damping: 14 } },
+};
+
+/** Counts "15+", "250+", "1,000+" up from zero once it scrolls into view. */
+const CountUp: React.FC<{ value: string; className?: string }> = ({ value, className }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const reduceMotion = useReducedMotion();
+  const match = value.match(/^([^\d]*)([\d,]+)(.*)$/);
+  const prefix = match?.[1] ?? "";
+  const target = match ? parseInt(match[2].replace(/,/g, ""), 10) : 0;
+  const suffix = match?.[3] ?? "";
+  const format = (n: number) => prefix + Math.round(n).toLocaleString("en-US") + suffix;
+  const [counted, setCounted] = useState(match ? format(0) : value);
+  // Reduced-motion visitors see the final figure straight away.
+  const display = reduceMotion ? value : counted;
+
+  useEffect(() => {
+    if (!match || !inView || reduceMotion) return;
+    const controls = animate(0, target, {
+      duration: 1.4,
+      delay: 0.15,
+      ease: [0.33, 1, 0.68, 1],
+      onUpdate: (v) => setCounted(format(v)),
+    });
+    return () => controls.stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView, reduceMotion, target]);
+
+  return (
+    <span ref={ref} className={className} aria-label={value}>
+      {display}
+    </span>
+  );
+};
 
 // International export destination nodes radiating from Kolkata, India
 const destinationPoints = [
@@ -275,50 +342,79 @@ export const OurLocations: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Heading, Subtitle & 3 Global Metrics */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
-            <div>
+          <motion.div
+            className="lg:col-span-5 flex flex-col justify-between"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={revealGroup}
+          >
+            <motion.div variants={revealGroup}>
               {/* Eyebrow Badge */}
-              <div className="flex items-center gap-2 mb-4">
+              <motion.div variants={fadeUp} className="flex items-center gap-2 mb-4">
                 <span className="w-3.5 h-3.5 rounded-full border-[2.5px] border-orange-600 flex items-center justify-center shrink-0">
                   <span className="w-1 h-1 rounded-full bg-orange-600" />
                 </span>
                 <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-slate-500 font-mono">
                   GLOBAL REACH
                 </span>
-              </div>
+              </motion.div>
 
-              {/* Headline */}
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-urbanist tracking-tight leading-[1.04] text-[#1c1817]">
-                Expanding
-                <br />
-                <span className="text-orange-600">Globally.</span>
-              </h2>
+              {/* Headline: each line rises out of its own mask */}
+              <motion.h2
+                variants={revealGroup}
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold font-urbanist tracking-tight leading-[1.04] text-[#1c1817]"
+              >
+                <span className="block overflow-hidden pb-[0.08em] -mb-[0.08em]">
+                  <motion.span variants={lineRise} className="block">
+                    Expanding
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden pb-[0.08em] -mb-[0.08em]">
+                  <motion.span variants={lineRise} className="block text-orange-600">
+                    Globally.
+                  </motion.span>
+                </span>
+              </motion.h2>
 
               {/* Subtitle / Description */}
-              <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-normal mt-4 sm:mt-5 leading-relaxed max-w-lg">
+              <motion.p
+                variants={fadeUp}
+                className="text-sm sm:text-base lg:text-lg text-slate-600 font-normal mt-4 sm:mt-5 leading-relaxed max-w-lg"
+              >
                 We are proud to extend our presence beyond India, serving customers in
                 the GCC and other key international markets with reliable packaging
                 solutions and world-class service.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
-            {/* 3 Global Statistics Counters */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-8 pt-8 border-t border-slate-200/90">
-              {globalStats.map((stat) => (
-                <div key={stat.label} className="flex flex-col">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-600/10 text-orange-600 flex items-center justify-center mb-2.5 shadow-2xs">
-                    {stat.icon}
-                  </div>
-                  <span className="text-2xl sm:text-3xl font-extrabold font-urbanist text-[#1c1817] tracking-tight">
-                    {stat.value}
-                  </span>
-                  <span className="text-[11px] sm:text-xs font-medium text-slate-500 mt-0.5 leading-tight">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+            {/* Divider that draws across, then the 3 global statistics */}
+            <div className="mt-8">
+              <motion.div
+                variants={drawLine}
+                className="h-px w-full bg-slate-200/90 origin-left"
+              />
+              <motion.div variants={statsGroup} className="grid grid-cols-3 gap-3 sm:gap-4 pt-8">
+                {globalStats.map((stat) => (
+                  <motion.div key={stat.label} variants={fadeUp} className="flex flex-col">
+                    <motion.div
+                      variants={iconPop}
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-600/10 text-orange-600 flex items-center justify-center mb-2.5 shadow-2xs"
+                    >
+                      {stat.icon}
+                    </motion.div>
+                    <CountUp
+                      value={stat.value}
+                      className="text-2xl sm:text-3xl font-extrabold font-urbanist text-[#1c1817] tracking-tight tabular-nums"
+                    />
+                    <span className="text-[11px] sm:text-xs font-medium text-slate-500 mt-0.5 leading-tight">
+                      {stat.label}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: World Map + Floating Kolkata Card */}
           <div className="lg:col-span-7 relative flex flex-col items-center">
