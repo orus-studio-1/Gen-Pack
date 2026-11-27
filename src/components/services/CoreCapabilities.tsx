@@ -133,10 +133,11 @@ export const CoreCapabilities: React.FC = () => {
 
       {/* Main Container */}
       <div className="relative z-10 w-full max-w-[1500px] mx-auto px-6 md:px-16 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          
-          {/* Left Column: Sticky Title, Subtitle & CTA Button */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start pt-6 sm:pt-10 pb-8 flex flex-col justify-between min-h-[460px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 sm:gap-16 lg:gap-20 items-start">
+
+          {/* Left Column: Sticky Title, Subtitle & CTA Button
+              (stacks naturally on mobile; fixed height + spread only on desktop) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start lg:pt-10 lg:pb-8 flex flex-col lg:justify-between lg:min-h-[460px]">
             <div>
               <p className="text-xs sm:text-sm font-bold tracking-widest text-slate-400 uppercase mb-4 font-mono">
                 KEY EXPERTISE
@@ -150,7 +151,7 @@ export const CoreCapabilities: React.FC = () => {
             </div>
 
             {/* Bottom Left CTA Button */}
-            <div className="pt-10">
+            <div className="pt-8 lg:pt-10">
               <CTAButton
                 label="Get in Touch"
                 href="/contact"
@@ -161,7 +162,7 @@ export const CoreCapabilities: React.FC = () => {
           </div>
 
           {/* Right Column: Scrollable Core Capability Cards */}
-          <div className="lg:col-span-7 pt-6 lg:pt-12 space-y-16 sm:space-y-24 pb-20">
+          <div className="lg:col-span-7 lg:pt-12 space-y-16 sm:space-y-24 lg:pb-20">
             {capabilities.map((cap) => (
               <motion.div
                 key={cap.id}

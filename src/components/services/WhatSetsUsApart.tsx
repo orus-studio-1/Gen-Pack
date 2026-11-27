@@ -175,7 +175,7 @@ const itemsData: DifferentiatorItem[] = [
 
 export const WhatSetsUsApart: React.FC = () => {
   return (
-    <section className="relative w-full bg-[#e8e8ea] text-[#1c1817] py-24 md:py-36 font-urbanist select-none">
+    <section className="relative w-full bg-[#e8e8ea] text-[#1c1817] py-20 sm:py-24 md:py-36 font-urbanist select-none">
       {/* Background Subtle Freight Truck Watermark */}
       <div
         className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-5 mix-blend-multiply"
@@ -186,11 +186,11 @@ export const WhatSetsUsApart: React.FC = () => {
       />
 
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-start relative">
           
           {/* Left Column: Sticky Title & Subtitle (Pinned on left while scrolling) */}
           <div className="lg:col-span-5 lg:sticky lg:top-36 self-start flex flex-col justify-start">
-            <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
+            <p className="hidden lg:block text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-4 font-mono">
               
             </p>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-urbanist text-[#1c1817] tracking-tight leading-[1.06]">
@@ -199,7 +199,7 @@ export const WhatSetsUsApart: React.FC = () => {
           </div>
 
           {/* Right Column: Scrollable Items entering smoothly from bottom */}
-          <div className="lg:col-span-7 flex flex-col space-y-12 sm:space-y-16 py-4 lg:pt-8">
+          <div className="lg:col-span-7 flex flex-col space-y-12 sm:space-y-16 sm:py-4 lg:pt-8">
             {itemsData
               .filter((item) => !item.hidden)
               .map((item, index) => (
@@ -209,7 +209,7 @@ export const WhatSetsUsApart: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6 items-center border-b border-black/10 pb-8 sm:pb-10 last:border-b-0"
+                  className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6 items-center border-b border-black/10 pb-8 sm:pb-10 last:border-b-0 max-lg:last:pb-0"
                 >
                   {/* Icon + Title */}
                   <div className="sm:col-span-6 flex items-center gap-4">

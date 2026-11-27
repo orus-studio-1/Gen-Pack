@@ -45,11 +45,11 @@ const processSteps: ProcessStep[] = [
 
 export const OurProcess: React.FC = () => {
   return (
-    <section className="w-full bg-white text-[#1c1817] py-24 md:py-36 font-urbanist select-none relative">
+    <section className="w-full bg-white text-[#1c1817] py-20 sm:py-24 md:py-36 font-urbanist select-none relative">
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
         
         {/* Centered Section Header */}
-        <div className="text-center mb-16 md:mb-28 max-w-2xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 md:mb-28 max-w-2xl mx-auto">
           <p className="text-xs sm:text-sm font-bold tracking-widest text-[#666666] uppercase mb-3 font-mono">
             HOW IT WORKS
           </p>
@@ -58,19 +58,61 @@ export const OurProcess: React.FC = () => {
           </h2>
         </div>
 
-        {/* Timeline Container */}
-        <div className="relative w-full max-w-5xl mx-auto">
-          {/* Desktop Center 3-Track Vertical Line SVG (Solid | Animated Dashed | Solid) */}
+        {/* ── Phones: timeline nodes (numbered circles on the centre line,
+               text beside each circle, alternating sides) ── */}
+        <ol className="sm:hidden relative mx-auto max-w-md">
+          {/* Centre line, running from the first circle's centre to the last */}
+          <span
+            aria-hidden
+            className="absolute left-1/2 top-[15px] bottom-[15px] w-px -translate-x-1/2 bg-slate-200"
+          />
+          {processSteps.map((step, index) => {
+            const isRight = index % 2 === 0;
+            const isFirst = index === 0;
+            return (
+              <motion.li
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+                className="relative grid grid-cols-[1fr_44px_1fr] items-start [&:not(:last-child)]:mb-7"
+              >
+                <span
+                  className={`col-start-2 row-start-1 justify-self-center z-10 w-[30px] h-[30px] rounded-full border-2 border-orange-600 flex items-center justify-center font-mono text-[11px] font-bold ${
+                    isFirst ? "bg-orange-600 text-white" : "bg-white text-orange-600"
+                  }`}
+                >
+                  {step.number}
+                </span>
+                <div
+                  className={`row-start-1 min-w-0 pt-1 ${
+                    isRight ? "col-start-3 text-left" : "col-start-1 text-right"
+                  }`}
+                >
+                  <h3 className="text-[19px] font-bold font-urbanist text-[#1c1817] leading-tight tracking-tight">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1.5 text-[13.5px] text-[#555555] leading-relaxed font-urbanist text-pretty">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.li>
+            );
+          })}
+        </ol>
+
+        {/* ── Tablet & desktop: zigzag timeline ── */}
+        <div className="hidden sm:block relative w-full max-w-5xl mx-auto">
+          {/* Center 3-Track Vertical Line (Solid | Animated Dashed | Solid), all screen sizes */}
           <svg
-            className="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 h-full pointer-events-none z-0 overflow-visible"
+            className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 h-full pointer-events-none z-0 overflow-visible"
             width="24"
             height="100%"
             preserveAspectRatio="none"
+            aria-hidden
           >
-            {/* Left Solid Line (Soft & Refined) */}
             <line x1="4" y1="0" x2="4" y2="100%" stroke="#e2e8f0" strokeWidth="1" />
-
-            {/* Center Animated Dashed Line */}
             <motion.line
               x1="12"
               y1="0"
@@ -82,34 +124,10 @@ export const OurProcess: React.FC = () => {
               animate={{ strokeDashoffset: [0, -14] }}
               transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
             />
-
-            {/* Right Solid Line (Soft & Refined) */}
             <line x1="20" y1="0" x2="20" y2="100%" stroke="#e2e8f0" strokeWidth="1" />
           </svg>
 
-          {/* Mobile Left 3-Track Vertical Line SVG */}
-          <svg
-            className="md:hidden absolute left-3 top-0 bottom-0 h-full pointer-events-none z-0 overflow-visible"
-            width="20"
-            height="100%"
-            preserveAspectRatio="none"
-          >
-            <line x1="2" y1="0" x2="2" y2="100%" stroke="#e2e8f0" strokeWidth="1" />
-            <motion.line
-              x1="9"
-              y1="0"
-              x2="9"
-              y2="100%"
-              stroke="#cbd5e1"
-              strokeWidth="1.2"
-              strokeDasharray="8 6"
-              animate={{ strokeDashoffset: [0, -14] }}
-              transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
-            />
-            <line x1="16" y1="0" x2="16" y2="100%" stroke="#e2e8f0" strokeWidth="1" />
-          </svg>
-
-          <div className="space-y-16 md:space-y-28 relative z-10">
+          <div className="sm:space-y-16 md:space-y-28 relative z-10">
             {processSteps.map((step, index) => {
               const isRight = step.side === "right";
 
@@ -120,15 +138,14 @@ export const OurProcess: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className={`flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-16 items-start ${
-                    isRight ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                  className="grid grid-cols-2 gap-12 md:gap-16 items-start"
                 >
-                  {/* Left Column Box (Active if step is left-aligned on Desktop) */}
+                  {/* Left column: filled when the step sits on the left */}
                   <div
-                    className={`hidden md:flex flex-col ${
-                      !isRight ? "md:items-end md:text-right" : "md:opacity-0 md:pointer-events-none"
+                    className={`flex flex-col min-w-0 ${
+                      !isRight ? "items-end text-right" : "invisible"
                     }`}
+                    aria-hidden={isRight}
                   >
                     {!isRight && (
                       <>
@@ -138,21 +155,22 @@ export const OurProcess: React.FC = () => {
                           </span>
                           <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-600 bg-transparent shrink-0" />
                         </div>
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">
+                        <h3 className="text-3xl md:text-4xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">
                           {step.title}
                         </h3>
-                        <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-sm">
+                        <p className="text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-sm text-pretty">
                           {step.description}
                         </p>
                       </>
                     )}
                   </div>
 
-                  {/* Right Column Box (Active if step is right-aligned on Desktop, or Mobile view) */}
+                  {/* Right column: filled when the step sits on the right */}
                   <div
-                    className={`hidden md:flex flex-col ${
-                      isRight ? "md:items-start md:text-left" : "md:opacity-0 md:pointer-events-none"
-          }`}
+                    className={`flex flex-col min-w-0 ${
+                      isRight ? "items-start text-left" : "invisible"
+                    }`}
+                    aria-hidden={!isRight}
                   >
                     {isRight && (
                       <>
@@ -162,30 +180,14 @@ export const OurProcess: React.FC = () => {
                             {step.number}
                           </span>
                         </div>
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">
+                        <h3 className="text-3xl md:text-4xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">
                           {step.title}
                         </h3>
-                        <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-sm">
+                        <p className="text-lg text-[#555555] font-normal leading-relaxed font-urbanist max-w-sm text-pretty">
                           {step.description}
                         </p>
                       </>
                     )}
-                  </div>
-
-                  {/* Mobile Render Fallback */}
-                  <div className="md:hidden flex flex-col pl-12">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="w-2.5 h-2.5 rounded-full border-2 border-orange-600 bg-transparent shrink-0" />
-                      <span className="text-xs sm:text-sm font-bold tracking-widest text-[#555555] font-mono">
-                        {step.number}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold font-urbanist text-[#1c1817] mb-2 leading-tight">
-                      {step.title}
-                    </h3>
-                    <p className="text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-urbanist">
-                      {step.description}
-                    </p>
                   </div>
                 </motion.div>
               );

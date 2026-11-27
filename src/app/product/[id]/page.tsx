@@ -150,17 +150,6 @@ export default async function ProductDetailPage({
               <div
                 className={`relative w-full aspect-[16/11] rounded-2xl md:rounded-3xl overflow-hidden border border-[#e5e5e5] ${product.imageFit === "contain" ? "bg-white" : "bg-[#f4f4f6]"}`}
               >
-                {product.imageFit === "contain" && (
-                  /* Blurred backdrop so the letterbox space matches the photo. */
-                  <Image
-                    src={`${product.image}?auto=format&fit=crop&w=200&q=40`}
-                    alt=""
-                    aria-hidden
-                    fill
-                    sizes="200px"
-                    className="object-cover scale-125 blur-2xl opacity-70"
-                  />
-                )}
                 <Image
                   src={`${product.image}?auto=format&fit=crop&w=1400&q=75`}
                   alt={product.name}
@@ -168,7 +157,7 @@ export default async function ProductDetailPage({
                   priority
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   style={product.imagePosition ? { objectPosition: product.imagePosition } : undefined}
-                  className={product.imageFit === "contain" ? "object-contain p-4 md:p-6" : "object-cover"}
+                  className={product.imageFit === "contain" ? "object-contain" : "object-cover"}
                 />
               </div>
               <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">

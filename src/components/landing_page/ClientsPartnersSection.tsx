@@ -131,7 +131,7 @@ export const ClientsPartnersSection: React.FC<ClientsPartnersProps> = ({
             ease: "linear",
             duration: 45,
           }}
-          className="flex items-center gap-12 sm:gap-16 md:gap-20 w-max shrink-0 pr-12 sm:pr-16 md:pr-20"
+          className="flex items-center gap-12 sm:gap-16 md:gap-20 w-max shrink-0 pr-12 sm:pr-16 md:pr-20 [--logo-scale:0.8] sm:[--logo-scale:1]"
         >
           {SHOW_CERTIFICATIONS
             ? (marqueeItems as typeof standards).map((item, index) => {

@@ -70,7 +70,7 @@ export const ProductsCatalogSection: React.FC = () => {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
             {PRODUCTS.length}+ corrugated packaging solutions,
-            <br className="hidden sm:block" /> all 100% recyclable.
+            <br className="hidden sm:block" /> All recyclable.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Rolls, boxes, inserts, displays and print finishes — filter by what

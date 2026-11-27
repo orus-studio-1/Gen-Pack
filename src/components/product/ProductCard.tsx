@@ -29,24 +29,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div
         className={`relative w-full aspect-[4/3] overflow-hidden ${contain ? "bg-white" : "bg-slate-100"}`}
       >
-        {contain && (
-          /* Blurred backdrop so the letterbox space matches the photo. */
-          <Image
-            src={`${product.image}?auto=format&fit=crop&w=160&q=40`}
-            alt=""
-            aria-hidden
-            fill
-            sizes="160px"
-            className="object-cover scale-125 blur-2xl opacity-70"
-          />
-        )}
         <Image
           src={`${product.image}?auto=format&fit=crop&w=720&q=70`}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           style={product.imagePosition ? { objectPosition: product.imagePosition } : undefined}
-          className={`${contain ? "object-contain p-3" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-105`}
+          className={`${contain ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-105`}
         />
         {categoryLabel && (
           <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-[0.14em] text-slate-700 shadow-sm">
